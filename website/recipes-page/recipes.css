@@ -1,0 +1,212 @@
+html {
+	scroll-behavior: smooth;
+}
+
+
+body {
+	margin: 0;
+	background-color: black;
+	overflow: hidden;	
+}
+
+
+p,h2,ul,a {
+/*	font-family: 'Dancing Script', cursive;
+*/	font-size: 1.5rem;
+	color: white;
+	text-decoration: none;
+}
+
+#next-recipe,#previous-recipe {
+	position: absolute;
+	z-index: 1;
+	top: 50%;
+	font-size: 2rem;
+	border-radius: 5px;
+	border: 1px solid rgb(252, 196, 45);
+	background-color: black;
+	color: white;
+	transition: all 0.3s ease;
+	opacity: 0.8;
+
+}
+
+#next-recipe:hover,#previous-recipe:hover {
+	background-color: rgb(252, 196, 45);
+	color: black;
+	border: 1px solid black;
+
+}
+
+#next-recipe {
+	left: 95%;
+}
+
+#previous-recipe {
+	left: 10%;
+}
+
+
+#next-recipe:hover {
+	transform: translateX(5px);
+}
+
+
+#previous-recipe:hover {
+	transform: translateX(-5px);
+}
+
+
+
+.navigation {
+	position: fixed;
+	display: flex;
+	flex-direction: column;
+	z-index: 1;
+	background-color: black;
+	height: 100%;
+	justify-content: space-between;
+	opacity: 0.8;
+	font-family: 'Dancing Script', cursive;
+	border-right: 1px solid rgb(252, 196, 45);
+	overflow-y: scroll;
+	transition: all 0.3s ease;
+}
+
+
+.navigation a {
+	transition: all 0.3s ease;
+	font-size: 1.5vw;
+	opacity: 1;
+}
+
+
+.navigation a:hover {
+	transform: translateY(-5px);
+}
+
+
+
+.highlight {
+	color: black;
+	border: 2px solid black;
+	background: rgb(252, 196, 45);
+	border-radius:5px; 
+}
+
+
+.container {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+
+
+.dropdown {
+	position: absolute;
+	z-index: 2;
+	left: 50%;
+	top: -5%;
+	transform: translate(-50%,0);
+	font-size: 1rem;
+	border: 1px solid rgb(252, 196, 45);
+	background-color: black;
+	color: rgb(252, 196, 45);
+	font-family: 'Dancing Script', cursive;
+	margin: 0;
+	transition: all 0.3s ease;
+	border-bottom-right-radius: 20px;
+	border-bottom-left-radius: 20px;
+	opacity: 0.8;
+
+
+}
+
+
+.dropdown:hover {
+	top:-5px;
+	opacity: 1;
+}
+
+.lunch {
+	top: 100%;
+}
+
+.dinner {
+	top: 200%;
+}
+
+
+.recipe-image {
+	transition: all 0.5s ease;
+	display: flex;
+}
+
+
+.recipe-image img {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	object-position: center;
+	object-fit: cover;
+	transition: all 0.5s ease;
+
+}
+
+
+.recipe-information {
+	position: absolute;
+	background-color: black;
+	width: 100%;
+	z-index: 1;
+	height: 0%;
+	opacity: 0.8;
+	overflow: scroll;
+	transition: all 0.75s ease;
+}
+
+
+.recipe-steps {
+	position: absolute;
+	left: 50%;
+	width: 50%;
+	height: 100%;
+	border-left: 0.1px solid rgb(252, 196, 45);
+	overflow: scroll;
+
+}
+
+
+.recipe-nutritional-facts {
+	position: absolute;
+	width: 50%;
+	height: 50%;
+	border-bottom: 0.1px solid rgb(252, 196, 45);
+	overflow: scroll;
+	
+}
+
+
+.recipe-ingredients {
+	position: absolute;
+	top: 50%;
+	width: 50%;
+	height: 50%;
+	
+	overflow: scroll;
+}
+
+
+.subtitle {
+	font-family: 'Dancing Script', cursive;
+	color: rgb(252, 196, 45);
+	text-align: center;
+	text-shadow: 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black;
+}
+
+
+
+
+
