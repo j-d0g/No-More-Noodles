@@ -83,7 +83,7 @@
             salt FLOAT NOT NULL,
             sugar SMALLINT NOT NULL,
             time SMALLINT NOT NULL,
-            difficulty TINYINT NOT NULL,
+            difficulty TINYINT,
             ingredients TEXT NOT NULL,
             method TEXT NOT NULL,
             flags INT NOT NULL,
@@ -104,7 +104,7 @@
   $sql = "INSERT INTO login (forename, surname, email, password)
             VALUES ('Lawrence', 'Hunter', 'lh@lh.com', '$password')";
   if ($conn->query($sql)) {
-    echo "User added successfully" . "<br />";
+    echo "Login added successfully" . "<br />";
   }
   else {
     echo "Error: " . $conn->error . "<br />";
@@ -128,7 +128,7 @@
           100, 2, 30, 0.2, 10, 30, 2, 'Test ingredients', 'Test method',
           100, 4.1, 9.8)";
   if ($conn->query($sql)) {
-    echo "User added successfully" . "<br />";
+    echo "Recipe added successfully" . "<br />";
   }
   else {
     echo "Error: " . $conn->error . "<br />";
