@@ -1,8 +1,14 @@
 <?php
 
+// If local:
   $servername = "localhost";
   $username = "root";
   $password = "root";
+
+// If on UoM
+  $servername = "dbhost.cs.man.ac.uk";
+  $username = "m67064lh";
+  $password = "SQLDatabaseP";
 
   // Create connection
   $conn = mysqli_connect($servername, $username, $password);
@@ -13,6 +19,7 @@
   }
   echo "Connected successfully" . "<br />";
 
+/* -- Only on local
   $sql = "DROP DATABASE Y1";
   if ($conn->query($sql)) {
     echo "DATABASE reset" . "<br />";
@@ -30,8 +37,9 @@
   else {
     echo("Error: " . $conn->error . "<br />");
   }
-
-  $conn->select_db("Y1");
+*/
+//$conn->select_db("Y1"); if local
+  $conn->select_db("2020_comp10120_y1");
   if (!$conn) {
     echo("Error: " . $conn->error . "<br />");
   }
