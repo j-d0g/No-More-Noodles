@@ -4,7 +4,7 @@ session_start();
 	include("connection.php");
 	if($_SERVER['REQUEST_METHOD'] == "POST")
 		{//Something was posted
-			$s_name = $_POST['surename'];
+			$s_name = $_POST['surname'];
 			$f_name = $_POST['forename'];
 			$em = $_POST['email'];
 			$pw = $_POST['password'];
@@ -13,7 +13,7 @@ session_start();
 			{
 				//save to db
 				
-				$query = "INSERT INTO login (surename, forename, email, password) VALUES ('$s_name','$f_name','$em','$pw')";
+				$query = "INSERT INTO login (surname, forename, email, password) VALUES ('$s_name','$f_name','$em','$pw')";
 				mysqli_query($conn,$query);
 
 				header("Location: login.php");
@@ -58,12 +58,12 @@ session_start();
  	</style>
 
  	<div id="box">
- 		<form method = "post">
+ 		<form method = "POST">
  			<div >Signup</div><br><br>
- 			<input  type="text" name="forename"><br><br>
- 			<input  type="text" name="surname"><br><br>
- 			<input  type="text" name="email"><br><br>
- 			<input type="password" name="password"><br><br>
+ 			Forename<input  type="text" name="forename"><br><br>
+ 			Surname<input  type="text" name="surname"><br><br>
+ 			Email<input  type="text" name="email"><br><br>
+ 			Password<input type="password" name="password"><br><br>
  			<input type="submit" name="Signup"><br><br>
  			<a href="login.php">Login</a>
  		</form>

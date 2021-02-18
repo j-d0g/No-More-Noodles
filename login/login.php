@@ -1,9 +1,10 @@
 <?php 
 session_start();
+
 	include("connection.php");
 	if($_SERVER['REQUEST_METHOD'] == "POST")
 		{//Something was posted
-			$s_name = $_POST['surename'];
+			$s_name = $_POST['surname'];
 			$f_name = $_POST['forename'];
 			$em = $_POST['email'];
 			$pw = $_POST['password'];
@@ -73,8 +74,8 @@ session_start();
  	<div id="box">
  		<form method = "post">
  			<div >Login</div><br><br>
- 			<input  type="text" name="email"><br><br>
- 			<input type="password" name="password"><br><br>
+ 			Email<input  type="text" name="email"><br><br>
+ 			Password<input type="password" name="password"><br><br>
  			<input type="submit" name="Login"><br><br>
  			<a href="signup.php">Signup</a>
  		</form>
