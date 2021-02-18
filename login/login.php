@@ -4,17 +4,16 @@ session_start();
 	include("connection.php");
 	if($_SERVER['REQUEST_METHOD'] == "POST")
 		{//Something was posted
-			$s_name = $_POST['surname'];
-			$f_name = $_POST['forename'];
+			
 			$em = $_POST['email'];
 			$pw = $_POST['password'];
 			
-			if(!empty($s_name)&& !empty($f_name) && !is_numeric($em) && !empty($pw))
+			if(!is_numeric($em) && !empty($pw))
 			{
 				//read from db
 				
-				$query = "SELECT * FROM users WHERE email = '$em' limit 1";	
-				$result = mysqli_query($con,$query);
+				$query = "SELECT * FROM login WHERE email = '$em' limit 1";	
+				$result = mysqli_query($conn,$query);
 
 				if($result)
 				{

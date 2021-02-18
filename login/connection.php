@@ -12,6 +12,8 @@
 if(!$conn = mysqli_connect($servername,$username,$password))
 	{die("failed to connect!");
 }
-
-
+	$conn->select_db("Y1");
+	if (!$conn) {
+    echo("Error: " . $conn->error . "<br />");
+  }
 ?>
