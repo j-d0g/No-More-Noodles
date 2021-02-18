@@ -9,15 +9,23 @@ session_start();
 			$em = $_POST['email'];
 			$pw = $_POST['password'];
 			
+			$query = "SELECT email FROM login WHERE email = '$em'";
+
 			if(!empty($s_name)&& !empty($f_name) && !is_numeric($em) && !empty($pw))
 			{
 				//save to db
 				
 				$query = "INSERT INTO login (surname, forename, email, password) VALUES ('$s_name','$f_name','$em','$pw')";
-				mysqli_query($conn,$query);
 
+
+				if(!mysqli_query($conn,$query))
+				{
+					echo "Error: "  . "<br>" . mysqli_error($conn);
+				}
+				else{
 				header("Location: login.php");
 				die;
+			}
 			}
 			else
 			{
