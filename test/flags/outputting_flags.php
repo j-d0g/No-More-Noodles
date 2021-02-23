@@ -1,4 +1,13 @@
 <?php
+  echo "
+  <a href='flags_setting_page.html'>
+        <input type='submit' value='Input'/>
+  </a>
+  <a href='flags_output_page.html'>
+        <input type='submit' value='Output'/>
+  </a>
+
+  <h1><br></h1>";
 
 // If local:
   $servername = "localhost";
