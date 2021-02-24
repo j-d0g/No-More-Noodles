@@ -7,6 +7,8 @@ body * {
 
 }
 
+
+
 body {
 	background-color: #212121;
 	margin: 0;
@@ -42,13 +44,14 @@ button {
 	background: #202004;
 	position: absolute;
 	top: 50%;
-	left: 75%;
+	left: 72%;
 	transform: translate(-50%, -50%);
 	border: 1px solid rgb(252, 196, 45);
 	border-top-right-radius: 25px;
 	border-bottom-right-radius: 25px;
 	transition: all 0.3s ease;
 	z-index: -1;
+
 
 }
 
@@ -72,6 +75,10 @@ input {
 
 input::placeholder {
 	font-size: 0.8rem;
+	
+}
+input:focus {
+    outline: none;
 }
 
 .input-email {
@@ -84,6 +91,8 @@ input::placeholder {
 
 }
 
+
+
 .input-password {
 	position: absolute;
 	left: 12%;
@@ -91,6 +100,22 @@ input::placeholder {
 	width: 75%;
 	height: 7%;
 	
+}
+#forename{
+	position: absolute;
+	top: 22%;
+}
+#surname {
+	position: absolute;
+	top: 33%;
+}
+#email {
+	position: absolute; 
+	top: 44%;
+}
+#password {
+	position: absolute;
+	top: 55%;
 }
 
 .checkbox {
@@ -128,6 +153,7 @@ input::placeholder {
 	color: white;
 	border: 1px solid rgb(252, 196, 45);
 	transition: all 0.5s ease;
+	cursor: pointer;
 
 }
 .login-button:hover {
@@ -190,6 +216,10 @@ input::placeholder {
 	transition: all 0.5s ease;
 	font-size: 1rem;
 	opacity: 0.8;
+	position: absolute;
+	top: 66%;
+	width: 76%;
+	cursor: pointer;
 }
 
 #register-button:hover {
