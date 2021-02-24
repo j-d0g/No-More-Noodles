@@ -23,7 +23,7 @@ session_start();
 					echo "Error: "  . "<br>" . mysqli_error($conn);
 				}
 				else{
-				header("Location: login.php");
+				header("Location: registration.php");
 				die;
 			}
 			}
@@ -34,47 +34,3 @@ session_start();
 		}
 
 ?>
- <!DOCTYPE html>
- <html>
- <head>
- 	<title>Signup</title>
- </head>
- <body>
- 
- 	<style type="text/css">
- 		#text{
- 			height: 25px;
- 			border-radius: 5px;
- 			padding: 4px;
- 			border solid thin #aaa;
- 		}
-
- 		#button{
- 			padding : 10px;
- 			width: 100px;
- 			color: white;
- 			background-color: lightblue;
- 			border: none;
- 		}
- 		#box{
- 			background-color: grey;
- 			margin: auto;
- 			width: 300px;
- 			padding: 20px;
- 		}
-
- 	</style>
-
- 	<div id="box">
- 		<form method = "POST">
- 			<div >Signup</div><br><br>
- 			Forename<input  type="text" name="forename"><br><br>
- 			Surname<input  type="text" name="surname"><br><br>
- 			Email<input  type="text" name="email"><br><br>
- 			Password<input type="password" name="password"><br><br>
- 			<input type="submit" name="Signup"><br><br>
- 			<a href="login.php">Login</a>
- 		</form>
- 	</div>
- </body>
- </html>
