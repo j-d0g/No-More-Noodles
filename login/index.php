@@ -3,7 +3,7 @@ session_start();
 	include("connection.php");
 ?>
 <!DOCTYPE html>
-<html>
+<html>   
 <head>
 	<title>Index</title>
 </head>
