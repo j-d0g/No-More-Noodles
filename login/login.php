@@ -24,7 +24,7 @@ session_start();
 						if($user_data['password'] == $pw)
 						{
 							$_SESSION['user_id'] = $user_data['userId'];
-							header("Location: index.php");
+							header("Location: /GitRepos/first_group_project/website/index-page/index.php");
 							die;
 						}
 					}

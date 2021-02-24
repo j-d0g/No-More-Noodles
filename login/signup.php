@@ -23,7 +23,7 @@ session_start();
 					echo "Error: "  . "<br>" . mysqli_error($conn);
 				}
 				else{
-				header("Location: registration.php");
+				header("Location: /GitRepos/first_group_project/website/index-page/index.php");
 				die;
 			}
 			}
