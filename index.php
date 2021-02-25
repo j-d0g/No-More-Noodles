@@ -36,7 +36,14 @@
 			<span>s</span>
 			<span>!</span>
 		</p>
-		<p id="intro-text" class="sidepanel">Explore Easy and fast cooking recipes that are delicate<br>and exquisite. Search recipes, ingredients, and <br>cuisines below:<br><br><input type="text" name="search" placeholder="Search recipes..." id="searchbar"></p>
+		<p id="intro-text" class="sidepanel">Explore Easy and fast cooking recipes that are delicate<br>and exquisite. Search recipes, ingredients, and <br>cuisines below:<br><br>
+		<div class="searchbar">
+			<form method = "POST" action="search/search.php">
+		    	<input type="text" placeholder="Search recipes..." name="search" required>
+		    	<input type="submit" value="Search">
+		    </form>
+		</div>
+		</p>
 	</div>
 
  	<!-- NAVIGATION PANEL -->
