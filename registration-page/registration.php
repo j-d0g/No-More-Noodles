@@ -7,13 +7,13 @@
 	<script src="registration.js"></script>
 </head>
 <body>
-	<div class="form" method = "POST">
-		
+	<div class="form">
+
 		<!-- LOGIN FORM -->
-		<a href="../index.html" id="x-button">X</a>
+		<a href="../index.php" id="x-button">X</a>
 		<div class="line login-form"></div>
 		<img id="logo" src="logo.png">
-		<form class="login_form" action = "login.php" method = "post">
+		<form class="login_form" action = "login/login.php" method = "post">
 			<input type="text" name="email" placeholder="email address" class="input-email login-form">
 			<input type="password" name="password" placeholder="password" class="input-password login-form">
 
@@ -25,12 +25,12 @@
 		<button onclick="swapToRegister()" class="login-form sign-up-button">Sign up</button>
 
 		<!-- REGISTER FORM -->
-		<form class="register_form" action="signup.php" method = "post">
+		<form class="register_form" action="sign_up/signup.php" method = "post">
 			<input  class="input-name register-form" id="forename"  type="text" name="forename" placeholder="Forename">
 			<input  class="input-name register-form" id="surname"   type="text" name="surname" placeholder="Surname">
 			<input class="input-email register-form" id="email"  type="text" name="email" placeholder="Email address">
 			<input class="input-password register-form" id="password"  type="password" name="password" placeholder="password">
-			<!-- <input class="register-form" type="password" name="confirm-password" placeholder="confirm password"> -->
+			<input class="input-password register-form" id="confirm-password" type="password" name="confirm-password" placeholder="confirm password">
 			<input id ="register-button" class="register-form" type="submit" name="Register" value="Register">
 		</form>
 		<div class="line-2 register-form"></div>

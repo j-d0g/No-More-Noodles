@@ -1,15 +1,4 @@
-<<?php
-
-  echo "
-  <a href='flags_setting_page.html'>
-        <input type='submit' value='Input'/>
-  </a>
-  <a href='flags_output_page.html'>
-        <input type='submit' value='Output'/>
-  </a>
-
-  <h1><br></h1>";
-
+<?php
 
 // If local:
   $servername = "localhost";
@@ -46,34 +35,15 @@
       }
     }
 
-
-    $sql = "INSERT INTO user (flag_list) VALUES ($flag_int)";
+    $sql = "INSERT INTO user (flag_list) VALUES ('$flag_int')";
     if ($conn->query($sql)) {
       echo "User added successfully" . "<br />";
+      header("Location: ../../index.php");
+      die();
     }
     else {
       echo "Error: " . $conn->error . "<br />";
     }
-
-
-    $sql = "SELECT * FROM user";
-    $records = $conn->query($sql);
-
-    $output = "<table border='2'>
-                <th>User ID</th>
-                <th>Favourite recipes</th>
-                <th>Owned ingredients</th>
-                <th>Flag list</th>";
-
-    while ($row = $records->fetch_assoc()) {
-      $output .= "<tr>
-                    <td>$row[userId]</td>
-                    <td>$row[favourite_recipes]</td>
-                    <td>$row[owned_ingredients]</td>
-                    <td>$row[flag_list]</td>";
-    }
-    echo "<h1>User table</h1>";
-    echo $output;
 
   }
 

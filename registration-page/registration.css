@@ -75,7 +75,7 @@ input {
 
 input::placeholder {
 	font-size: 0.8rem;
-	
+
 }
 input:focus {
     outline: none;
@@ -99,7 +99,7 @@ input:focus {
 	top: 35%;
 	width: 75%;
 	height: 7%;
-	
+
 }
 #forename{
 	position: absolute;
@@ -110,12 +110,16 @@ input:focus {
 	top: 33%;
 }
 #email {
-	position: absolute; 
+	position: absolute;
 	top: 44%;
 }
 #password {
 	position: absolute;
 	top: 55%;
+}
+#confirm-password {
+	position: absolute;
+	top: 66%;
 }
 
 .checkbox {
@@ -123,7 +127,7 @@ input:focus {
 	top: 46%;
 	left: 12%;
 	opacity: 0.9;
-	
+
 }
 .remember-text {
 	position: absolute;
@@ -184,7 +188,7 @@ input:focus {
 
 
 
-  
+
 
 
 
