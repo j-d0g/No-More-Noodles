@@ -89,6 +89,7 @@
             calories SMALLINT NOT NULL,
             fat SMALLINT NOT NULL,
             carbs SMALLINT NOT NULL,
+            protein SMALLINT NOT NULL,
             salt FLOAT NOT NULL,
             sugar SMALLINT NOT NULL,
             time SMALLINT NOT NULL,
@@ -132,9 +133,9 @@
 
   //Inserting a test recipe
   $sql = "INSERT INTO recipes (recipe_name, image, calories, fat,
-          carbs, salt, sugar, time, difficulty, ingredients, method,
+          carbs, protein, salt, sugar, time, difficulty, ingredients, method,
           flags, user_rating, popularity) VALUES ('test name', 'test path',
-          100, 2, 30, 0.2, 10, 30, 2, 'Test ingredients', 'Test method',
+          100, 2, 30, 10, 0.2, 10, 30, 2, 'Test ingredients', 'Test method',
           100, 4.1, 9.8)";
   if ($conn->query($sql)) {
     echo "Recipe added successfully" . "<br />";
@@ -194,6 +195,7 @@
               <th>Calories</th>
               <th>Fat</th>
               <th>Carbs</th>
+              <th>Protein</th>
               <th>Salt</th>
               <th>Sugar</th>
               <th>Time</th>
@@ -212,6 +214,7 @@
                   <td>$row[calories]</td>
                   <td>$row[fat]</td>
                   <td>$row[carbs]</td>
+                  <td>$row[protein]</td>
                   <td>$row[salt]</td>
                   <td>$row[sugar]</td>
                   <td>$row[time]</td>
