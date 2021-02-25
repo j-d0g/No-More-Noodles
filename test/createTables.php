@@ -134,7 +134,7 @@
   //Inserting test1 recipe
   $sql = "INSERT INTO recipes (recipe_name, image, calories, fat,
           carbs, protein, salt, sugar, time, difficulty, ingredients, method,
-          flags, user_rating, popularity) VALUES ('test 1', '/db_images/test1.jpeg',
+          flags, user_rating, popularity) VALUES ('test 1', 'db_images/test1.jpeg',
           100, 2, 30, 10, 0.2, 10, 30, 2, 'Test ingredients', 'Test method',
           '0000100', 4.1, 9.8)";
   if ($conn->query($sql)) {
@@ -147,7 +147,7 @@
   //Inserting test2 recipe
   $sql = "INSERT INTO recipes (recipe_name, image, calories, fat,
           carbs, protein, salt, sugar, time, difficulty, ingredients, method,
-          flags, user_rating, popularity) VALUES ('test 2', '/db_images/test1.jpeg',
+          flags, user_rating, popularity) VALUES ('test 2', 'db_images/test1.jpeg',
           30, 20, 3, 100, 0.2, 10, 30, 2, 'Test ingredients', 'Test method',
           '0001000', 4.1, 9.8)";
   if ($conn->query($sql)) {
@@ -159,7 +159,7 @@
   //Inserting a test recipe: doughnuts
   $sql = "INSERT INTO recipes (recipe_name, image, calories, fat,
           carbs, protein, salt, sugar, time, difficulty, ingredients, method,
-          flags, user_rating, popularity) VALUES ('doughnut', '/db_images/doughnut.jpeg',
+          flags, user_rating, popularity) VALUES ('doughnut', 'db_images/doughnut.jpeg',
           1000, 2, 30, 140, 0.2, 10, 20, 2, 'Test ingredients', 'Test method',
           '1100100', 4.1, 9.8)";
   if ($conn->query($sql)) {
