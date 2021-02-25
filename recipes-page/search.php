@@ -74,7 +74,7 @@
 
   foreach ($searchResults as $x) {
     $output .= "<tr>
-                  <td><img src = $x[2]></td>
+                  <td><img src = '$x[2]'></td>
                   <td><a href='method.php?recipeId=$x[0]'>$x[1]</a></td>
                   <td>$x[0]</td>
                 </tr>";
