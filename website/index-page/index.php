@@ -39,7 +39,7 @@
 	<a href="index.html" id="Home" class="navigation opacify-animation">Home</a>
 	<a href="../recipes-page/recipes.html" class="navigation opacify-animation" id="dropdown">Recipes</a>
 	<a onclick="openForm()" class="navigation opacify-animation">Faq</a>
-	<a href="../registration-page/registration.html" class="navigation opacify-animation">Login/Register</a>
+	<a href="/first_group_project/login/registration.php" class="navigation opacify-animation">Login/Register</a>
 	<div class="tag">
 		<a href="" class="dropdown-items" id="drop1">breakfast</a>
 		<a href="" class="dropdown-items" id ="drop2">lunch</a>
