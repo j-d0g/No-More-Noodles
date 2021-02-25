@@ -69,7 +69,7 @@
             userId INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY REFERENCES login(userId),
             favourite_recipes TEXT,
             owned_ingredients TEXT,
-            flag_list INT NOT NULL
+            flag_list CHAR(7) NOT NULL
             )
   ";
 
@@ -96,7 +96,7 @@
             difficulty TINYINT,
             ingredients TEXT NOT NULL,
             method TEXT NOT NULL,
-            flags INT NOT NULL,
+            flags CHAR(7) NOT NULL,
             user_rating FLOAT,
             popularity FLOAT
             )
@@ -122,7 +122,7 @@
 
   // Inserting a test user
   $sql = "INSERT INTO user (favourite_recipes, owned_ingredients, flag_list)
-            VALUES ('Test: favourite_recipes', 'Test: owned_ingredients', 100)";
+            VALUES ('Test: favourite_recipes', 'Test: owned_ingredients', '0000100')";
   if ($conn->query($sql)) {
     echo "User added successfully" . "<br />";
   }
@@ -131,12 +131,37 @@
   }
 
 
-  //Inserting a test recipe
+  //Inserting test1 recipe
   $sql = "INSERT INTO recipes (recipe_name, image, calories, fat,
           carbs, protein, salt, sugar, time, difficulty, ingredients, method,
-          flags, user_rating, popularity) VALUES ('test name', 'test path',
+          flags, user_rating, popularity) VALUES ('test 1', '/db_images/test1.jpeg',
           100, 2, 30, 10, 0.2, 10, 30, 2, 'Test ingredients', 'Test method',
-          100, 4.1, 9.8)";
+          '0000100', 4.1, 9.8)";
+  if ($conn->query($sql)) {
+    echo "Recipe added successfully" . "<br />";
+  }
+  else {
+    echo "Error: " . $conn->error . "<br />";
+  }
+
+  //Inserting test2 recipe
+  $sql = "INSERT INTO recipes (recipe_name, image, calories, fat,
+          carbs, protein, salt, sugar, time, difficulty, ingredients, method,
+          flags, user_rating, popularity) VALUES ('test 2', '/db_images/test1.jpeg',
+          30, 20, 3, 100, 0.2, 10, 30, 2, 'Test ingredients', 'Test method',
+          '0001000', 4.1, 9.8)";
+  if ($conn->query($sql)) {
+    echo "Recipe added successfully" . "<br />";
+  }
+  else {
+    echo "Error: " . $conn->error . "<br />";
+  }
+  //Inserting a test recipe: doughnuts
+  $sql = "INSERT INTO recipes (recipe_name, image, calories, fat,
+          carbs, protein, salt, sugar, time, difficulty, ingredients, method,
+          flags, user_rating, popularity) VALUES ('doughnut', '/db_images/doughnut.jpeg',
+          1000, 2, 30, 140, 0.2, 10, 20, 2, 'Test ingredients', 'Test method',
+          '1100100', 4.1, 9.8)";
   if ($conn->query($sql)) {
     echo "Recipe added successfully" . "<br />";
   }

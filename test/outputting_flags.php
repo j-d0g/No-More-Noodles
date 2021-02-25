@@ -26,7 +26,7 @@
   }
 
   if(isset($_POST['user_id'])) {
-    echo $_POST['user_id'];
+    echo "User id: ". $_POST['user_id'] . "<br>";
 
     $sql = "SELECT flag_list FROM user WHERE userId=" . $_POST['user_id'];
     $records = $conn->query($sql);
@@ -35,25 +35,32 @@
       $flags = $row["flag_list"];
     }
 
+    $flags_array = str_split($flags);
+    $flag_names = array(
+                    0 => "Dairy free",
+                    1 => "Egg allergy",
+                    2 => "Gluten free",
+                    3 => "Halal",
+                    4 => "Nut allergy",
+                    5 => "Vegan",
+                    6 => "Vegatarian"
+    );
+
     $output = "<table border='2'>
-                <th>Flag 7</th>
-                <th>Flag 6</th>
-                <th>Flag 5</th>
-                <th>Flag 4</th>
-                <th>Flag 3</th>
-                <th>Flag 2</th>
-                <th>Flag 1</th>
-                <th>Flag 0</th>";
+                <th>Flags</th>
+                <th>Value</th>";
 
     $output .= "<tr>";
-    for ($i = 7; $i >= 0; $i--) {
-      if (intdiv($flags, pow(10, $i)) == 1) {
-        $flags = $flags % pow(10, $i);
-        $output .= "<td>1</td>";
+    for ($i = 0; $i <= 6; $i++) {
+      if ($flags_array[$i] == '0') {
+        $output .= "<td>" . $flag_names[$i] . "</td>";
+        $output .= "<td>False</td>";
       }
       else {
-        $output .= "<td>0</td>";
+        $output .= "<td>" . $flag_names[$i] . "</td>";
+        $output .= "<td>True</td>";
       }
+      $output .= "<tr>";
     }
 
     echo "<h1>User " . $_POST['user_id'] . " flags</h1>";

@@ -27,15 +27,18 @@
   }
 
   if(isset($_POST)) {
-    $flag_int = 0;
-    for ($i = 0; $i < 8; $i++) {
+    $flag_str = "";
+    for ($i = 0; $i < 7; $i++) {
       $flag_name = "flag" . strval($i);
       if (isset($_POST[$flag_name])) {
-        $flag_int += pow(10, $i);
+        $flag_str .= '1';
+      }
+      else {
+        $flag_str .= '0';
       }
     }
 
-    $sql = "INSERT INTO user (flag_list) VALUES ('$flag_int')";
+    $sql = "INSERT INTO user (flag_list) VALUES ('$flag_str')";
     if ($conn->query($sql)) {
       echo "User added successfully" . "<br />";
       header("Location: ../../index.php");
