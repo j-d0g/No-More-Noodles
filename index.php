@@ -15,7 +15,6 @@
 		session_start();
 		if (isset($_SESSION['user_id'])) {
 			$logged_in = True;
-			echo "<h1>" . $_SESSION['user_id'] . "</h1>";
 		}
 		else {
 			echo "<h1>Not logged in</h1>";
