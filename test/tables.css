@@ -1,0 +1,18 @@
+table {
+    margin-top: 3%;
+    margin-bottom: 3%;
+    font-size: x-small;
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 100%;
+}
+td, th {
+  border: 2px solid #000;
+  width: 60px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+tbody tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}

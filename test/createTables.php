@@ -1,3 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" type="text/css" href="tables.css">
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+  </body>
+</html>
+
 <?php
 
 // If local:
@@ -159,8 +171,21 @@
   //Inserting a test recipe: doughnuts
   $sql = "INSERT INTO recipes (recipe_name, image, calories, fat,
           carbs, protein, salt, sugar, time, difficulty, ingredients, method,
-          flags, user_rating, popularity) VALUES ('doughnut', 'db_images/doughnut.jpeg',
-          1000, 2, 30, 140, 0.2, 10, 20, 2, 'Test ingredients', 'Test method',
+          flags, user_rating, popularity) VALUES ('Jam doughnuts', 'db_images/doughnut.webp',
+          233, 9, 32, 5, 0.6, 13, 85, 3, '500g Strong white bread flour~ 60g Golden caster sugar~
+                                          15g Fresh yeast~ 4 Medium eggs~ 0.5 Lemon~ 2tsp Sea salt
+                                          125g Softened unsalted butter~ 2 litres Sunflower oil~
+                                          Caster sugar - for tossing~ 300g Jam\' ', 'Put 150g water and all the dough ingredients, apart from the butter, into the bowl of a mixer with a beater paddle. Mix on a medium speed for 8 mins or until the dough starts coming away from the sides and forms a ball. Turn off the mixer and let the dough rest for 1 min.~
+                                          Start the mixer up again on a medium speed and slowly add the butter to the dough – about 25g at a time. Once it\'s all incorporated, mix on high speed for 5 mins until the dough is glossy, smooth and very elastic when pulled.~
+                                          Cover the bowl with cling film or a clean tea towel and leave to prove until it\'s doubled in size. Knock back the dough in the bowl briefly, then re-cover and put in the fridge to chill overnight.~
+                                          The next day, take the dough out of the fridge and cut it into 50g pieces (you should get about 20).~
+                                          Roll the dough pieces into smooth, tight buns and place them on a floured baking tray, leaving plenty of room between them, as you don’t want them to stick together while they prove.~
+                                          Cover loosely with cling film and leave for 4 hrs or until doubled in size. Fill your deep-fat fryer or heavy-based saucepan halfway with oil. Heat the oil to 180C.~
+                                          When the oil is heated, carefully slide the doughnuts from the tray using a floured pastry scraper. Taking care not to deflate them, put them into the oil. Do 2-3 per batch, depending on the size of your fryer or pan.~
+                                          Fry for 2 mins each side until golden brown – they puff up and float, so you may need to gently push them down after about 1 min to help them colour evenly.~
+                                          Remove the doughnuts from the fryer and place them on kitchen paper.~
+                                          Toss the doughnuts in a bowl of caster sugar while still warm. Repeat the steps until all the doughnuts are fried, but keep checking the oil temperature is correct – if it\'s too high, they will burn and be raw in the middle; if it\'s too low, the oil will be absorbed into the doughnuts and they will become greasy. Set aside to cool before filling.~
+                                          To fill the doughnuts, make a hole with a small knife in the crease of each one, anywhere around the white line between the fried top and bottom.~',
           '1100100', 4.1, 9.8)";
   if ($conn->query($sql)) {
     echo "Recipe added successfully" . "<br />";
