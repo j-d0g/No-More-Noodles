@@ -9,10 +9,20 @@
 
 </head>
 <body>
+	<?php
+		session_start();
+		if(isset($_POST['user_id'])) {
+			$_SESSION['user_id_alter'] = $_POST['user_id'];
+		}
+		else {
+			header("Location: ../alter_user_flags.php");
+			die();
+		};
+	?>
 	<div class="form">
-		<h1>Account settings</h1>+
+		<h1>Account settings</h1>
 		<div class='flag_checklist'>
-			<form method='post' action='setting_flags.php'>
+			<form method='post' action='alter_flags.php'>
 				<span>Select your flags</span><br>
 				<input type='checkbox' name='flag0' value='flag0'>Dairy free<br>
 				<input type='checkbox' name='flag1' value='flag1'>Egg allergy<br>
