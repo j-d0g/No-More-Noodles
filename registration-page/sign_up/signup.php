@@ -10,8 +10,6 @@
 			$pw = $_POST['password'];
 			$cpw = $_POST['confirm-password'];
 
-			$query = "SELECT email FROM login WHERE email = '$em'";
-
 			if(!empty($s_name)&& !empty($f_name) && !is_numeric($em) && !empty($pw) && ($pw == $cpw))
 			{
 				//save to db
@@ -27,7 +25,7 @@
 					$sql = "SELECT userId FROM login WHERE email='$em'";
 					$records = $conn->query($sql);
 					while ($row = $records->fetch_assoc()) {
-				    $_SESSION['user_id'] = $row[userId];
+				    $_SESSION['user_id'] = $row['userId'];
 				  }
 					header("Location: registration-settings.php");
 					die();
