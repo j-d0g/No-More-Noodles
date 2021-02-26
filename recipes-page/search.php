@@ -1,3 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <style>
+    img {
+      max-width: 50px;
+      height: auto;
+    }
+  </style>
+    <title></title>
+  </head>
+<body>
+
 <?php
   session_start();
 
@@ -23,6 +37,8 @@
     //select their flags using userID
     $sql = "SELECT flag_list FROM user WHERE userId = '$userID'";
     $userFlags = $conn->query($sql);
+    $userFlags = $userFlags->fetch_assoc();
+    $userFlags = $userFlags['flag_list'];
   }
 
   //take user input as posted value 'search', then splits that input string into an array of words
@@ -52,8 +68,25 @@
       }
     } else {
       //the user is logged in, so search results must match flags
+
+      $userFlagList = str_split($userFlags);
+
       while ($row = $matches->fetch_assoc()) {
-        if ($row['flags'] == $userFlags) {
+
+        $recipeFlagList = str_split($row['flags']);
+        $matchesFlags = true;
+
+        for ($i = 0; $i < 7; $i++) {
+          if ($userFlagList[$i] == "1" and $recipeFlagList[$i] != "1") {
+            //if the user's flag is 1, the recipe's flag MUST also be 1
+            $matchesFlags = false;
+          } else {
+            //all other combinations of flags is okay
+            continue;
+          }
+        }
+
+        if ($matchesFlags) {
           $recipeData = [$row['recipeId'], $row['recipe_name'], $row['image']];
           array_push($searchResults, $recipeData);
         }
@@ -90,3 +123,5 @@
   echo $output;
 
 ?>
+</body>
+</html>

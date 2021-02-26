@@ -8,7 +8,7 @@
 ## Group members:
 * Lawrence Hunter: lawrence.hunter@student.manchester.ac.uk
 * Radu Nitu: radu.nitu@student.manchester.ac.uk
-* Luke Jackson: luke.jackson@student.manchester.ac.uk
+* Luke Jackson: luke.jackson-3@student.manchester.ac.uk
 * Sulaiman Alhmoudi: sulaiman.alhmoudi@student.manchester.ac.uk
 * Jordan Tran: jordan.tran@student.manchester.ac.uk
 * Hanbo Jiang: hanbo.jiang@student.manchester.ac.uk

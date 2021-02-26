@@ -1,3 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <style>
+    img {
+      max-width: 50px;
+      height: auto;
+    }
+  </style>
+    <title></title>
+  </head>
+<body>
+
 <?php
 
   $servername = "localhost";
@@ -64,3 +78,5 @@
   echo "<p>$records[method]</p>";
 
 ?>
+</body>
+</html>
