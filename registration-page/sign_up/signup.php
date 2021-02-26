@@ -19,13 +19,16 @@
 				$pw = password_hash($pw, PASSWORD_BCRYPT);
 				$query = "INSERT INTO login (surname, forename, email, password) VALUES ('$s_name','$f_name','$em','$pw')";
 
-
 				if(!mysqli_query($conn,$query))
 				{
 					echo "Error: "  . "<br>" . mysqli_error($conn);
 				}
 				else{
-					$_SESSION['user_id'] = $user_data['userId'];
+					$sql = "SELECT userId FROM login WHERE email='$em'";
+					$records = $conn->query($sql);
+					while ($row = $records->fetch_assoc()) {
+				    $_SESSION['user_id'] = $row[userId];
+				  }
 					header("Location: registration-settings.php");
 					die();
 				}
