@@ -142,11 +142,12 @@
     echo "Error: " . $conn->error . "<br />";
   }
 
+  // Ve V N H G E D
 
   //Inserting test1 recipe
   $sql = "INSERT INTO recipes (recipe_name, image, calories, fat,
           carbs, protein, salt, sugar, time, difficulty, ingredients, method,
-          flags, user_rating, popularity) VALUES ('test 1', 'db_images/test1.jpeg',
+          flags, user_rating, popularity) VALUES ('test gluten free', 'db_images/test1.jpeg',
           100, 2, 30, 10, 0.2, 10, 30, 2, 'Test ingredients', 'Test method',
           '0000100', 4.1, 9.8)";
   if ($conn->query($sql)) {
@@ -159,7 +160,7 @@
   //Inserting test2 recipe
   $sql = "INSERT INTO recipes (recipe_name, image, calories, fat,
           carbs, protein, salt, sugar, time, difficulty, ingredients, method,
-          flags, user_rating, popularity) VALUES ('test 2', 'db_images/test2.jpeg',
+          flags, user_rating, popularity) VALUES ('test halal', 'db_images/test2.jpeg',
           30, 20, 3, 100, 0.2, 10, 30, 2, 'Test ingredients', 'Test method',
           '0001000', 4.1, 9.8)";
   if ($conn->query($sql)) {
@@ -186,7 +187,7 @@
                                           Remove the doughnuts from the fryer and place them on kitchen paper.~
                                           Toss the doughnuts in a bowl of caster sugar while still warm. Repeat the steps until all the doughnuts are fried, but keep checking the oil temperature is correct – if it\'s too high, they will burn and be raw in the middle; if it\'s too low, the oil will be absorbed into the doughnuts and they will become greasy. Set aside to cool before filling.~
                                           To fill the doughnuts, make a hole with a small knife in the crease of each one, anywhere around the white line between the fried top and bottom.~',
-          '1100100', 4.1, 9.8)";
+          '0011000', 4.1, 9.8)";
   if ($conn->query($sql)) {
     echo "Recipe added successfully" . "<br />";
   }
