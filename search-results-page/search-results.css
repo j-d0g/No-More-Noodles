@@ -1,0 +1,139 @@
+html{
+	scroll-behavior: smooth;
+}
+
+
+
+
+
+body * {
+	font-family: 'Dancing Script', cursive;
+
+
+}
+
+
+
+body {
+	background-color: #212121;
+	margin: 0;
+	padding: 0;
+	color: rgb(252, 196, 45);
+
+}
+
+
+
+button {
+	cursor: pointer;
+}
+
+.form {
+	position: absolute;
+	width: 75%;
+	height: 85%;
+	background: #202004;
+	/*float: left;*/
+	/*position: absolute;*/
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border: 1px solid rgb(252, 196, 45);
+	border-radius: 25px;
+	transition: all 0.3s ease;
+	overflow: scroll;
+
+
+
+}
+
+h1 {
+	text-align: center;
+	border-bottom: 1px solid rgb(252, 196, 45);
+	padding-bottom: 15px;
+	color: rgb(252, 196, 45);
+	font-size: 1.5rem;
+}
+
+img {
+
+ 	width: 100%;
+  
+    border:1px solid;
+  	display: block;
+    margin-bottom: 2%;
+    border: 1px solid rgb(252, 196, 45);
+    transition: all 0.3s ease;
+
+
+}
+img:hover {
+	width: 101%;
+
+}
+
+.inside-form {
+	width: 60%;
+	margin-left: auto;
+    margin-right: auto; 
+
+}
+
+h2,p {
+	text-align: center;
+
+}
+p {
+	font-size: 1rem;
+}
+h2 {
+	font-size: 1.5rem;
+}
+#logo {
+	position: absolute;
+	width: 120px;
+	margin: 10px;
+	border: none;
+	transition: all 0.3s ease;
+}  
+
+#logo:hover {
+	margin-top: 7px; 
+}
+#searchbar {
+	position: absolute;
+	left: 79.6%;
+	top: 23px;
+	width: 20%;
+	height: 25px;
+	border: 1px solid rgb(252, 196, 45);
+	border-bottom-left-radius: 25px; 
+	border-top-left-radius: 25px; 
+	border-right: none;
+	background-color: #202004;
+	color: white;
+}
+
+
+@media screen and (max-width: 650px){
+	h1{
+		font-size: 0.8rem;
+	}
+	#logo {
+		width: 80px;
+	}
+	#searchbar {
+		width: 20%;
+		height: 2%;
+		top: 17px;
+	}
+	h2{
+		font-size: 1.3rem;
+	}
+	p{
+		font-size: 0.8rem;
+	}
+}
+
+
+
