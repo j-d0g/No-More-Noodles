@@ -1,0 +1,137 @@
+html{
+	scroll-behavior: smooth;
+}
+
+
+
+
+
+body * {
+	font-family: 'Dancing Script', cursive;
+
+
+}
+
+
+
+body {
+	background-color: #212121;
+	margin: 0;
+	padding: 0;
+	color: rgb(252, 196, 45);
+
+}
+
+
+
+button {
+	cursor: pointer;
+}
+
+.form {
+	width: 75%;
+	height: 500px;
+	background: #202004;
+	position: absolute;
+	top: 100px;
+	left: 50%;
+	transform: translate(-50%, 0);
+	border: 1px solid rgb(252, 196, 45);
+	border-radius: 25px;
+	transition: all 0.3s ease;
+
+
+
+}
+
+h1 {
+	text-align: center;
+	border-bottom: 1px solid rgb(252, 196, 45);
+	padding-bottom: 15px;
+	color: rgb(252, 196, 45);
+	font-size: 1.5rem;
+}
+
+img {
+	position: absolute;
+	top: 14%;
+	border-bottom: 1px solid rgb(252, 196, 45);
+	border-right: none;
+	border-top: none;
+	height: 43%;
+	width: 40%;
+	transition: all 0.3s ease;
+
+
+}
+img:hover {
+
+	
+}
+
+
+.nutritional-facts-container {
+	position: absolute;
+	top: 57%;
+	/*border: 1px solid rgb(252, 196, 45); */
+	/*delet border*/
+	width: 40%;
+	height: 43%;
+	overflow: scroll;
+	
+}
+.nutritional-facts-container > h2 {
+	text-align: center;
+	font-size: 1rem;
+}
+
+.ingredients-container {
+	position: absolute;
+	left: 40%;
+	top: 14%;
+	border-right: 1px solid rgb(252, 196, 45);
+	border-left: 1px solid rgb(252, 196, 45);
+	width: 30%;
+	height: 86%;
+	overflow: scroll;
+	
+}
+
+.ingredients-container > h2 {
+	text-align: center;
+	font-size: 1rem;
+}
+
+.steps-container {
+	position: absolute;
+	left: 70%;
+	top: 14%;
+	border-right: 1px solid rgb(252, 196, 45);
+	width: 30%;
+	height: 86%;
+	overflow: scroll;
+	
+}
+
+.steps-container > h2 {
+	text-align: center;
+	font-size: 1rem;
+}
+
+
+
+p {
+	margin-left: 5%; 
+}
+
+
+
+
+
+  
+
+
+
+
+
+
