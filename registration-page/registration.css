@@ -103,23 +103,23 @@ input:focus {
 }
 #forename{
 	position: absolute;
-	top: 22%;
+	top: 20%;
 }
 #surname {
 	position: absolute;
-	top: 33%;
+	top: 30%;
 }
 #email {
 	position: absolute;
-	top: 44%;
+	top: 40%;
 }
 #password {
 	position: absolute;
-	top: 55%;
+	top: 50%;
 }
 #confirm-password {
 	position: absolute;
-	top: 66%;
+	top: 60%;
 }
 
 .checkbox {
@@ -131,8 +131,8 @@ input:focus {
 }
 .remember-text {
 	position: absolute;
-	top: 45%;
-	left: 20%;
+	top: 45.3%;
+	left: 18%;
 	opacity: 0.8;
 }
 .line {
@@ -198,7 +198,7 @@ input:focus {
 	left: 12%;
 	top: 23%;
 	width: 75%;
-	height: 7%;
+	height: 6%;
 	margin-bottom: 5%;
 	transition: all 5s ease;
 }
@@ -221,7 +221,7 @@ input:focus {
 	font-size: 1rem;
 	opacity: 0.8;
 	position: absolute;
-	top: 66%;
+	top: 70%;
 	width: 76%;
 	cursor: pointer;
 }
