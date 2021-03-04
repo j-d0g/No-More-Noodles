@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <style>
-    img {
-      max-width: 50px;
-      height: auto;
-    }
-  </style>
-    <title></title>
-  </head>
+<head>
+  <title>Search recipes</title>
+  <link rel="stylesheet" type="text/css" href="search-results.css">
+  <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
+</head>
 <body>
+  <div class="form">
+    <a href="#"><img id="logo" src="../index-page/logo.png"></a>
 
 <?php
   session_start();
@@ -98,30 +95,32 @@
   //displaying this as a table (outputs image, recipe_name and recipeID in three columns):
 
   //if we decide to take out the column headings just change this to "<table>"; and comment out the next 5 lines
-  $output = "<table>
-              <tr>
-               <th>Recipe image</th>
-                <th>Recipe name</th>
-                <th>Recipe ID</th>
-              </tr>";
+  $output = "<table>";
+  //            <tr>
+  //             <th>Recipe image</th>
+  //              <th>Recipe name</th>
+  //              <th>Recipe ID</th>
+  //            </tr>";
 
   foreach ($searchResults as $x) {
     $output .= "<tr>
-                  <td><img src = '$x[2]'></td>
+                  <td><img src = '../recipes-page/$x[2]'></td>
                   <td><a href='method.php?recipeId=$x[0]'>$x[1]</a></td>
-                  <td>$x[0]</td>
                 </tr>";
+  //<td>$x[0]</td> to display recipe ID
   }
 
   $output .= "</table>";
 
-  //obviously in the final design of the website, the recipeID should not be displayed
-  //however, here it can be used to link each listed recipe to it's recipeID in method.php
-  //we can use CSS to just hide the third column of this table
+  //outputting data in formatted html
 
+  echo "<div class='inside-form'>";
   echo "<h1>Search results for " . $search . ":</h1>";
   echo $output;
+  echo "</div>";
 
 ?>
+
+</div>
 </body>
 </html>
