@@ -41,30 +41,25 @@
 			<span>!</span>
 		</p>
 		<p id="intro-text" class="sidepanel">Explore Easy and fast cooking recipes that are delicate<br>and exquisite. Search recipes, ingredients, and <br>cuisines below:<br><br>
-		<div class="searchbar">
-			<form method = "POST" action="search-results-page/search.php">
-		    	<input type="text" placeholder="Search recipes..." name="search" required>
+		<!-- <div class="searchbar"> -->
+			<form class="form" method = "POST" action="search-results-page/search.php">
+		    	<input class="searchbar" type="text" placeholder="Search recipes..." name="search" required>
 		    	<input type="submit" value="Search">
 		    </form>
-		</div>
+		<!-- </div> -->
 		</p>
 	</div>
 
  	<!-- NAVIGATION PANEL -->
 	<img src="index-page/black-img.jpg" id="black-img" class="opacify-animation">
 	<img src="index-page/logo.png" id="logo" class="opacify-animation">
-	<a href="index.php" id="Home" class="navigation opacify-animation">Home</a>
-	<a href="recipes-page/recipes.html" class="navigation opacify-animation" id="dropdown">Recipes</a>
-	<a onclick="openForm()" class="navigation opacify-animation">Faq</a>
 	<a href="registration-page/registration.php" class="navigation opacify-animation">Login/Register</a>
-	<div class="tag">
-		<a href="" class="dropdown-items" id="drop1">breakfast</a>
-		<a href="" class="dropdown-items" id ="drop2">lunch</a>
-		<a href="" class="dropdown-items" id="drop3">dinner</a>
-		<a href="" class="dropdown-items" id="drop4">recipe3</a>
-		<a href="" class="dropdown-items" id="drop5">recipe4</a>
-		<div id="symbol-dropdown" class="opacify-animation">&#8711;</div>
-	</div>
+	<a onclick="openForm()" class="navigation opacify-animation">Faq</a>
+	<a href="recipes-page/recipes.html" class="navigation opacify-animation" id="dropdown">Recipes</a>
+	<a href="index.php" id="Home" class="navigation opacify-animation">Home</a>
+
+
+	
 
 
 	<!-- SUGGESTED RECIPES HEADER -->
