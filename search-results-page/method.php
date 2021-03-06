@@ -7,6 +7,8 @@
   </head>
 <body>
   <div class="form">
+      <a href="#"><img id="logo" src="../index-page/logo.png"></a>
+
 
 <?php
 
@@ -37,7 +39,7 @@
   echo ("<h1>$records[recipe_name]</h1>");
 
   //--- DISPLAY RECIPE IMAGE ---
-  echo "<img src = ../recipes-page/$records[image]>";
+  echo "<img class='img' src = ../recipes-page/$records[image]>";
 
   //--- DISPLAY NUTRITIONAL INFORMATION SECTION ---
 

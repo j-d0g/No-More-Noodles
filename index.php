@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +8,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
 	<script src="index-page/index.js"></script>
 	<title>No more noodles</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body id="body">
@@ -17,7 +19,7 @@
 			$logged_in = True;
 		}
 		else {
-			echo "<h1>Not logged in</h1>";
+			// echo "<h1>Not logged in</h1>";
 		}
 	?>
 
@@ -44,7 +46,7 @@
 		<!-- <div class="searchbar"> -->
 			<form class="form" method = "POST" action="search-results-page/search.php">
 		    	<input class="searchbar" type="text" placeholder="Search recipes..." name="search" required>
-		    	<input type="submit" value="Search">
+		    	<button type="submit"><i class="fa fa-search"></i></button>
 		    </form>
 		<!-- </div> -->
 		</p>
@@ -63,22 +65,7 @@
 
 
 	<!-- SUGGESTED RECIPES HEADER -->
-	<p class = "suggested-recipes-text opacify-animation" id="title1">S</p>
-	<p class = "suggested-recipes-text opacify-animation" id="title2">u</p>
-	<p class = "suggested-recipes-text opacify-animation" id="title3">g</p>
-	<p class = "suggested-recipes-text opacify-animation" id="title4">g</p>
-	<p class = "suggested-recipes-text opacify-animation" id="title5">e</p>
-	<p class = "suggested-recipes-text opacify-animation" id="title6">s</p>
-	<p class = "suggested-recipes-text opacify-animation" id="title7">t</p>
-	<p class = "suggested-recipes-text opacify-animation" id="title8">e</p>
-	<p class = "suggested-recipes-text opacify-animation" id="title9">d</p>
-	<p class = "suggested-recipes-text opacify-animation" id="title10">R</p>
-	<p class = "suggested-recipes-text opacify-animation" id="title11">e</p>
-	<p class = "suggested-recipes-text opacify-animation" id="title12">c</p>
-	<p class = "suggested-recipes-text opacify-animation" id="title13">i</p>
-	<p class = "suggested-recipes-text opacify-animation" id="title14">p</p>
-	<p class = "suggested-recipes-text opacify-animation" id="title15">e</p>
-	<p class = "suggested-recipes-text opacify-animation" id="title16">s</p>
+	<p class = "suggested-recipes-text opacify-animation">Suggested Recipes</p>
 	<p class = "suggested-recipes-text opacify-animation" id="symbol">&#8711;</p>
 	<!-- FAQ -->
 	<div id="FAQ" class="FAQ">

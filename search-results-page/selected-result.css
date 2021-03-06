@@ -53,26 +53,24 @@ h1 {
 }
 
 
-img {
+.img {
 	position: absolute;
-	top: 9%;
+	top: 11%;
 	border-top: 1px solid rgb(252, 196, 45);
 	border-bottom: 1px solid rgb(252, 196, 45);
 	height: 43%;
 	width: 40%;
 	transition: all 0.3s ease;
+	object-fit: cover;
 
 
 }
-img:hover {
 
-	
-}
 
 
 .nutritional-facts-container {
 	position: absolute;
-	top: 52%;
+	top: 54%;
 	width: 40%;
 	height: 48%;
 	overflow: scroll;
@@ -82,11 +80,23 @@ img:hover {
 	text-align: center;
 	font-size: 1rem;
 }
+#logo {
+	position: absolute;
+	width: 120px;
+	margin: 10px;
+	border: none;
+	transition: all 0.3s ease;
+}  
+
+#logo:hover {
+	margin-top: 5px;
+	
+}
 
 .ingredients-container {
 	position: absolute;
 	left: 40%;
-	top: 9%;
+	top: 11%;
 	border-right: 1px solid rgb(252, 196, 45);
 	border-left: 1px solid rgb(252, 196, 45);
 	border-top: 1px solid rgb(252, 196, 45);
@@ -104,7 +114,7 @@ img:hover {
 .steps-container {
 	position: absolute;
 	left: 70%;
-	top: 9%;
+	top: 11%;
 	border-right: 1px solid rgb(252, 196, 45);
 	border-top: 1px solid rgb(252, 196, 45);
 
