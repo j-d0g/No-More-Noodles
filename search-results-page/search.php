@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -8,6 +9,7 @@
 <body>
   <div class="form">
     <a href="#"><img id="logo" src="../index-page/logo.png"></a>
+    <div class="line"></div>
 
 <?php
   session_start();
@@ -103,19 +105,18 @@
   //            </tr>";
 
   foreach ($searchResults as $x) {
-    $output .= "<tr>
-                  <td><img src = '../recipes-page/$x[2]'></td>
-                  <td><a href='method.php?recipeId=$x[0]'>$x[1]</a></td>
-                </tr>";
+    $output .= "<td>
+                  <tr><h3><a href='method.php?recipeId=$x[0]'>$x[1]</a></h3></td>
+                  <tr><img src = '../recipes-page/$x[2]'></td>
+                </td>";
   //<td>$x[0]</td> to display recipe ID
   }
 
   $output .= "</table>";
 
   //outputting data in formatted html
-
+  echo '<h1>Search results for ' . '“' . $search . '”' . '</h1>';
   echo "<div class='inside-form'>";
-  echo "<h1>Search results for " . $search . ":</h1>";
   echo $output;
   echo "</div>";
 
