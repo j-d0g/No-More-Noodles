@@ -11,7 +11,8 @@
     <a href="#"><img id="logo" src="../index-page/logo.png"></a>
     <div class="line"></div>
 
-<?php
+
+    <?php
   session_start();
 
   $servername = "localhost";
@@ -97,7 +98,7 @@
   //displaying this as a table (outputs image, recipe_name and recipeID in three columns):
 
   //if we decide to take out the column headings just change this to "<table>"; and comment out the next 5 lines
-  $output = "<table>";
+  $output = "";
   //            <tr>
   //             <th>Recipe image</th>
   //              <th>Recipe name</th>
@@ -105,23 +106,22 @@
   //            </tr>";
 
   foreach ($searchResults as $x) {
-    $output .= "<td>
-                  <tr><h3><a href='method.php?recipeId=$x[0]'>$x[1]</a></h3></td>
-                  <tr><img src = '../recipes-page/$x[2]'></td>
-                </td>";
-  //<td>$x[0]</td> to display recipe ID
+    $output .= "  <a href='method.php?recipeId=$x[0]'><div class='inside-form'>
+                   <img class='img' src = '../recipes-page/$x[2]'>
+                   <h2>$x[1]</h2>
+                  </div></a>";
+  // <td>$x[0]</td> to display recipe ID
   }
 
-  $output .= "</table>";
+
 
   //outputting data in formatted html
   echo '<h1>Search results for ' . '“' . $search . '”' . '</h1>';
-  echo "<div class='inside-form'>";
   echo $output;
-  echo "</div>";
-
 ?>
+
 
 </div>
 </body>
 </html>
+
