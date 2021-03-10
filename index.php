@@ -108,6 +108,8 @@
 			<span style="--i:8"><a href="#"><img class="opacify-animation" src="index-page/recipe-img2.jpg"></a></span>
 		</div>
 
+<!-- Calls a js function to change visibility if user is logged in -->
+
 		<?php
 			if (isset($_SESSION['user_id'])) {
 				$logged_in = True;

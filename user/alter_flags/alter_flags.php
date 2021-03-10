@@ -27,6 +27,7 @@
     echo("Error: " . $conn->error . "<br />");
   }
 
+  // Obtains the value of each checkbox
   if(isset($_POST)) {
     $flag_str = "";
     for ($i = 0; $i < 7; $i++) {
@@ -39,9 +40,9 @@
       }
     }
 
+    // Updates cell in table
     $sql = "UPDATE user SET flag_list='$flag_str' WHERE userId=". $_SESSION['user_id'];
     if ($conn->query($sql)) {
-      echo "User added successfully" . "<br />";
       header("Location: ../show_settings.php");
       die();
     }

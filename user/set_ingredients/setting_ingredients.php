@@ -31,6 +31,8 @@
       }
       $_SESSION['conn'] = $conn;
 
+      // Runs on page start calling appropriate function if a post request
+      // has been made
       if (isset($_POST['ingredient'])) {
         update_ingredients();
       }
@@ -44,6 +46,7 @@
 
     <?php
       function update_ingredients() {
+        // Selects current ingredient
         $sql = "SELECT owned_ingredients FROM user WHERE userId=". $_SESSION['user_id'];
         if ($_SESSION['conn']->query($sql)) {
           $records = $_SESSION['conn']->query($sql);
@@ -55,6 +58,7 @@
           echo "Error: " . $_SESSION['conn']->error . "<br />";
         }
 
+        // Uses Luke's code from search-results
         $ingArray = preg_split("/~/", $current_ingredients);
         $current_ingredients = "";
         $counter = 0;
@@ -68,6 +72,7 @@
           }
         }
 
+        // If ingredient not already added then add it
         if ($counter == 0) {
           $current_ingredients .= " " . $_POST['ingredient'] . "~";
         }
@@ -75,11 +80,14 @@
         $sql = "UPDATE user SET owned_ingredients='$current_ingredients' WHERE userId=". $_SESSION['user_id'];
         if ($_SESSION['conn']->query($sql)) {
           if ($counter > 0) {
+            // Indicates error as ingredient is a duplicate
             $_SESSION['prev_ingredient'] = "e";
           }
           else {
+            // For showing to the user
             $_SESSION['prev_ingredient'] = $_POST['ingredient'];
           }
+          // To prevent issue when page reloads
           unset($_SESSION['ingredient']);
           header("Location: setting_ingredients.php");
           die();
@@ -91,6 +99,7 @@
 
 
       function remove_ingredients() {
+        // Selects current ingredients from table
         $sql = "SELECT owned_ingredients FROM user WHERE userId=". $_SESSION['user_id'];
         if ($_SESSION['conn']->query($sql)) {
           $records = $_SESSION['conn']->query($sql);
@@ -102,6 +111,7 @@
           echo "Error: " . $_SESSION['conn']->error . "<br />";
         }
 
+        // Luke's code from search-results
         $ingArray = preg_split("/~/", $current_ingredients);
         $current_ingredients = "";
         $counter = 0;
@@ -116,15 +126,19 @@
             $counter += 1;
           }
         }
+        // Records if an item has been not added
 
         $sql = "UPDATE user SET owned_ingredients='$current_ingredients' WHERE userId=". $_SESSION['user_id'];
         if ($_SESSION['conn']->query($sql)) {
           if ($counter > 0) {
+              // Shows to user has been removed
               $_SESSION['prev_ingredient_r'] = $_POST['ingredient_r'];
           }
           else {
+            // Shows to user not in ingredients
             $_SESSION['prev_ingredient_r'] = "e";
           };
+          // To prevent error on redirect
           unset($_SESSION['ingredient_r']);
           header("Location: setting_ingredients.php");
           die();
@@ -141,7 +155,7 @@
     <div class="owned_ingredients">
       <h2>Your ingredients</h2>
       <?php
-
+        // Gets the current ingredients
         $sql = "SELECT owned_ingredients FROM user WHERE userId=". $_SESSION['user_id'];
         if ($_SESSION['conn']->query($sql)) {
           $records = $_SESSION['conn']->query($sql);
@@ -153,7 +167,7 @@
           echo "Error: " . $_SESSION['conn']->error . "<br />";
         }
 
-        //split $records[ingredients] by the regex /~/
+        // Uses Luke's code to split
         $ingArray = preg_split("/~/", $current_ingredients);
         echo "<ul>";
         foreach ($ingArray as $ing) {
@@ -165,6 +179,7 @@
         echo "</div>"; ?>
     </div>
 
+    <!-- Duplicate code for form to add ingredient -->
     <div class="form">
   		<div class='add_ingredient_form'>
         <h2>Add an ingredient</h2>
@@ -174,6 +189,7 @@
   			</form>
   		</div>
       <?php
+        // If set shows the previous ingredient or controlled error
         if (isset($_SESSION['prev_ingredient'])) {
           if ($_SESSION['prev_ingredient'] == 'e') {
             echo "<p>ingredient already exists.</p>";
@@ -185,7 +201,7 @@
         }
       ?>
   	</div>
-
+    <!-- Duplicate code for form to remove ingredient -->
     <div class="form">
       <div class='add_ingredient_form'>
         <h2>Remove ingredient</h2>
@@ -195,6 +211,7 @@
         </form>
       </div>
       <?php
+        // If set shows the previous ingredient or controlled error
         if (isset($_SESSION['prev_ingredient_r'])) {
           if ($_SESSION['prev_ingredient_r'] == 'e') {
             echo "<p>ingredient didn't exist.</p>";

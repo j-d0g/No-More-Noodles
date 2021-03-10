@@ -42,8 +42,11 @@
           while ($row = $records->fetch_assoc()) {
             echo "<h1>Hello, " . $row["forename"] . "!</h1>";
             echo "<h2>How can we help?</h2>";
+
+            // Two buttons with links to php scripts
             echo "<a href='alter_flags/registration-settings.php'><button>Change flags</button></a>";
             echo "<a href='set_ingredients/setting_ingredients.php'><button>Change ingredients</button></a>";
+
           }
         }
       }
