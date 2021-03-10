@@ -20,8 +20,6 @@ button {
 	width: 75%;
 	height: 85%;
 	background: #202004;
-	/*float: left;*/
-	/*position: absolute;*/
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
@@ -63,8 +61,6 @@ h1 {
 	width: 30%;
 	height: 50%;
 	position: relative;
-	left: 15%;
-	transform: translateX(-50%);
 	background: #262626;
 	border: 1px solid rgb(252, 196, 45);
 	margin-bottom: 30px;
@@ -122,22 +118,30 @@ h2 {
 	color: white;
 }
 
-/*
-@media screen and (max-width: 650px){
 
-	#searchbar {
-		width: 20%;
-		height: 2%;
-		top: 17px;
+@media screen and (max-width: 750px){
+	.form {
+		width: 100%;
+		height: 100%;
+		border-radius: 0px;
 	}
-	h2{
-		font-size: 1.3rem;
-		white-space: nowrap;
+	.inside-form {
+		margin-left: 0;
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%); 
+		width: 65%;
 	}
-	p{
-		font-size: 0.8rem;
+	h1{
+		font-size: 1.4rem;
 	}
-}*/
+	#logo{
+		width: 80px;
+		margin-top: 18px;
+	}
+	
+	
+}
 
 
 

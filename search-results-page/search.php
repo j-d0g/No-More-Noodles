@@ -10,6 +10,9 @@
   <div class="form">
     <a href="#"><img id="logo" src="../index-page/logo.png"></a>
     <div class="line"></div>
+    <form method = "POST" action="search.php">
+          <input id="searchbar" type="text" placeholder="Search recipes..." name="search" required>
+     </form>
 
 
     <?php
