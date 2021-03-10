@@ -9,4 +9,5 @@ function closeForm() {
 
 function logged_in() {
   document.getElementById("settings_button").style.visibility = "visible";
+  document.getElementById("login_button").style.visibility = "hidden";
 }

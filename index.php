@@ -47,7 +47,7 @@
 	<a href="index.php" id="Home" class="navigation opacify-animation">Home</a>
 	<a href="recipes-page/recipes.html" class="navigation opacify-animation" id="dropdown">Recipes</a>
 	<a onclick="openForm()" class="navigation opacify-animation">Faq</a>
-	<a href="registration-page/registration.php" class="navigation opacify-animation">Login/Register</a>
+	<a href="registration-page/registration.php" class="navigation opacify-animation" style="visibility: visible;" id="login_button">Login/Register</a>
 	<a href="user/show_settings.php" class="navigation opacify-animation" style="visibility: hidden;" id="settings_button">Settings</a>
 	<div class="tag">
 		<a href="" class="dropdown-items" id="drop1">breakfast</a>
