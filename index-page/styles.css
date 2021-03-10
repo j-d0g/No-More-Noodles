@@ -40,16 +40,16 @@ body a {
 	color: rgba(255,255,255,0.8);
 	text-decoration: none;
 	position: relative;
-	left: 60%;
-	top: 5px;
+	float: right;
+	top: 8px;
 	margin-right: 1.5em;
-	font-size: 2.5vw;
+	font-size: 1.5rem;
 	font-family: 'Dancing Script', cursive;
 	transition: all 0.3s ease;
 	}
 .navigation:hover {
 	opacity: 1;
-	top: 0px;
+	top: 3px;
 	color: rgb(252, 196, 45);
 	text-shadow: 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black;
 }
@@ -127,7 +127,7 @@ display: block;
 
 #logo {
 	opacity: 1;
-	height: 8%;
+	width: 120px;
 	position: absolute;
 	left: 15px;
 	top: 5px;
@@ -141,9 +141,23 @@ display: block;
 }
 button {
 
-	background: none;
-	border: none;
+	background-color: #202004;
+	color: rgba(255,255,255,0.7);
+	border: 1px solid rgb(252, 196, 45);
+	border-radius: 25px;
+	font-size: 1rem;
+	animation-name: opacify;
+	animation-direction: reverse;
+	animation-fill-mode: backwards;
+	animation-duration: 1s;  
+	animation-iteration-count: 1;
+	animation-delay: 2s;
 
+}
+button:active {
+	color: #202004;
+	background: rgb(252, 196, 45);
+	border: 1px solid black;
 }
 
 .FAQ {
@@ -251,7 +265,13 @@ animation-delay: 11s;
 	margin: 0;
 }
 
-
+.form{
+	position: absolute;
+	top: 80%;
+	/*background: red;*/
+	width: 100%;
+	height: 100%;
+}
 p > span {
 	opacity: 1;
 	color: rgb(252, 196, 45);
@@ -287,36 +307,36 @@ p >span:hover {
 
 .searchbar {
 	border-radius: 25px;
-	width: 80%;
+	width: 75%;
 	height: 25px;
+	margin-left: 10px; 
 	border: 1px solid rgb(252, 196, 45);;
 	background-color: #202004;
+	color: white;
 }
 
 
 .suggested-recipes-text{
 	color: black;
 	position: absolute;
-	font-size: 2em;
-	padding: 5px;
+	font-size: 2.5rem;
 	top: 101%;
 	left: 50%;
+	transform: translateX(-50%);
 	cursor: default;
 	font-family: 'Dancing Script', cursive;
 	color: rgb(252, 196, 45);
 	text-shadow: 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black;
-	transition: all 0.18s ease;
+
 
 }
-.suggested-recipes-text:hover {
-	transform: translateY(-12px);
-}
+
 
 #symbol {
 	font-size: 1.3em;
 	padding: 5px;
-	top: 110%;
-	left: 53.5%;
+	top: 112%;
+	left: 51.5%;
 
 }
 
@@ -382,7 +402,7 @@ position: absolute;
 }
 
 
-#title1 {
+/*#title1 {
 	left: 40%;
 
 }
@@ -443,7 +463,7 @@ position: absolute;
 #title16 {
 	left: 64%;
 	
-}
+}*/
 
 
 
@@ -532,6 +552,24 @@ position: absolute;
   p > span {
   	font-size: 2rem;
   }
+  .navigation {
+  	font-size: 0.6rem;
+  }
+  #black-img{
+  	height: 50px;
+  }
+  #logo {
+  	width: 90px;
+  }
+  .form {
+  	top: 70%;
+  }
+
+  button {
+  	font-size: 0.8rem;
+  }
+  
+
 }
 
 

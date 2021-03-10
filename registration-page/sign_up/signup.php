@@ -29,7 +29,7 @@
 					$sql = "SELECT userId FROM login WHERE email='$em'";
 					$records = $conn->query($sql);
 					while ($row = $records->fetch_assoc()) {
-				    $_SESSION['user_id'] = $row[userId];
+				    $_SESSION['user_id'] = $row['userId'];
 				  }
 					header("Location: registration-settings.php");
 					die();

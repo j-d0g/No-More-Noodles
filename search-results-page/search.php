@@ -1,4 +1,21 @@
-<?php
+<?php session_start(); ?>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <title>Search recipes</title>
+  <link rel="stylesheet" type="text/css" href="search-results.css">
+  <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="form">
+    <a href="#"><img id="logo" src="../index-page/logo.png"></a>
+    <div class="line"></div>
+    <form method = "POST" action="search.php">
+          <input id="searchbar" type="text" placeholder="Search recipes..." name="search" required>
+     </form>
+
+
+    <?php
   session_start();
 
   $servername = "localhost";
@@ -23,6 +40,8 @@
     //select their flags using userID
     $sql = "SELECT flag_list FROM user WHERE userId = '$userID'";
     $userFlags = $conn->query($sql);
+    $userFlags = $userFlags->fetch_assoc();
+    $userFlags = $userFlags['flag_list'];
   }
 
   //take user input as posted value 'search', then splits that input string into an array of words
@@ -52,8 +71,25 @@
       }
     } else {
       //the user is logged in, so search results must match flags
+
+      $userFlagList = str_split($userFlags);
+
       while ($row = $matches->fetch_assoc()) {
-        if ($row['flags'] == $userFlags) {
+
+        $recipeFlagList = str_split($row['flags']);
+        $matchesFlags = true;
+
+        for ($i = 0; $i < 7; $i++) {
+          if ($userFlagList[$i] == "1" and $recipeFlagList[$i] != "1") {
+            //if the user's flag is 1, the recipe's flag MUST also be 1
+            $matchesFlags = false;
+          } else {
+            //all other combinations of flags is okay
+            continue;
+          }
+        }
+
+        if ($matchesFlags) {
           $recipeData = [$row['recipeId'], $row['recipe_name'], $row['image']];
           array_push($searchResults, $recipeData);
         }
@@ -65,28 +101,30 @@
   //displaying this as a table (outputs image, recipe_name and recipeID in three columns):
 
   //if we decide to take out the column headings just change this to "<table>"; and comment out the next 5 lines
-  $output = "<table>
-              <tr>
-               <th>Recipe image</th>
-                <th>Recipe name</th>
-                <th>Recipe ID</th>
-              </tr>";
+  $output = "";
+  //            <tr>
+  //             <th>Recipe image</th>
+  //              <th>Recipe name</th>
+  //              <th>Recipe ID</th>
+  //            </tr>";
 
   foreach ($searchResults as $x) {
-    $output .= "<tr>
-                  <td><img src = '$x[2]'></td>
-                  <td><a href='method.php?recipeId=$x[0]'>$x[1]</a></td>
-                  <td>$x[0]</td>
-                </tr>";
+    $output .= "  <a href='method.php?recipeId=$x[0]'><div class='inside-form'>
+                   <img class='img' src = '../recipes-page/$x[2]'>
+                   <h2>$x[1]</h2>
+                  </div></a>";
+  // <td>$x[0]</td> to display recipe ID
   }
 
-  $output .= "</table>";
 
-  //obviously in the final design of the website, the recipeID should not be displayed
-  //however, here it can be used to link each listed recipe to it's recipeID in method.php
-  //we can use CSS to just hide the third column of this table
 
-  echo "<h1>Search results for " . $search . ":</h1>";
+  //outputting data in formatted html
+  echo '<h1>Search results for ' . '“' . $search . '”' . '</h1>';
   echo $output;
-
 ?>
+
+
+</div>
+</body>
+</html>
+
