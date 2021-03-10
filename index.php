@@ -33,7 +33,7 @@
 		</p>
 		<p id="intro-text" class="sidepanel">Explore Easy and fast cooking recipes that are delicate<br>and exquisite. Search recipes, ingredients, and <br>cuisines below:<br><br>
 		<div class="searchbar">
-			<form method = "POST" action="recipes-page/search.php">
+			<form method = "POST" action="search-results-page/search.php">
 		    	<input type="text" placeholder="Search recipes..." name="search" required>
 		    	<input type="submit" value="Search">
 		    </form>
