@@ -10,6 +10,10 @@
 			$pw = $_POST['password'];
 			$cpw = $_POST['confirm-password'];
 
+			// Hello
+
+			$query = "SELECT email FROM login WHERE email = '$em'";
+
 			if(!empty($s_name)&& !empty($f_name) && !is_numeric($em) && !empty($pw) && ($pw == $cpw))
 			{
 				//save to db
