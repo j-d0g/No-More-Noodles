@@ -79,8 +79,11 @@
   echo "<p>Difficulty rating: $records[difficulty]</p>";
 
 
-  echo "<form action='create_pdf.php' method = 'post'>";
+  echo "<form action='create_shopping_pdf.php' method = 'post'>";
   echo "<input type = 'submit' value = ' Get shopping list'>  ";
+  echo "</form>";
+  echo "<form action='create_method_pdf.php' method = 'post'>";
+  echo "<input type = 'submit' value = ' Get method'>  ";
   echo "</form>";
   //display difficulty (inside nutritional info container)
   echo "</div>"; //close nutritional info container
@@ -107,6 +110,7 @@
 
   //split $records[method] by the regex /~/
   $metArray = preg_split("/~/", $records['method']);
+  $_SESSION['method'] = $metArray;
   echo "<ol>";
   foreach ($metArray as $met) {
     echo "<li>$met</li>";
