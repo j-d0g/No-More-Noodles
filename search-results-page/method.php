@@ -154,8 +154,6 @@
   {
     $owned = 0;
     foreach($indexes as $index) {
-      echo $x;
-      echo $index;
       if ($x == $index) {
         $owned = 1;
       }
