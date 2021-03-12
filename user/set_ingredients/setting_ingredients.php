@@ -67,14 +67,14 @@
           if ($ing != "") {
               $current_ingredients .= " " . $ing . "~";
           }
-          if ($ing == $_POST['ingredient']) {
+          if ($ing == strtolower($_POST['ingredient'])) {
             $counter += 1;
           }
         }
 
         // If ingredient not already added then add it
         if ($counter == 0) {
-          $current_ingredients .= " " . $_POST['ingredient'] . "~";
+          $current_ingredients .= " " . strtolower($_POST['ingredient']) . "~";
         }
 
         $sql = "UPDATE user SET owned_ingredients='$current_ingredients' WHERE userId=". $_SESSION['user_id'];
