@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -8,7 +9,14 @@
 <body>
   <div class="form">
       <a href="#"><img id="logo" src="../index-page/logo.png"></a>
-
+      <script type="text/javascript">
+        function owned(x) {
+          document.getElementById(x).style.color = "green";
+        }
+        function unowned(x) {
+          document.getElementById(x).style.color = "blue";
+        }
+      </script>
 
 <?php
 
@@ -80,16 +88,18 @@
 
   //split $records[ingredients] by the regex /~/
   $ingArray = preg_split("/~/", $records['ingredients']);
+  $i = 0;
   echo "<ul>";
   foreach ($ingArray as $ing) {
-    echo "<li>$ing</li>";
+    echo "<li id=ig" . $i . ">" . str_replace("+", " ", $ing) . "</li>";
+    $i++;
   }
   echo "</ul>";
   echo "</div>";
 
   //--- DISPLAY METHOD SECTION ---
   //(much the same as ingredients)
-  echo "<div class='steps-container'>";#
+  echo "<div class='steps-container'>";
   echo "<h2>Method</h2>";
 
   //split $records[method] by the regex /~/
@@ -101,8 +111,67 @@
   echo "</ol>";
   echo "</div>";
 
-?>
 
+
+  // Selects owned ingredient
+  $sql = "SELECT owned_ingredients FROM user WHERE userId=". $_SESSION['user_id'];
+  if ($conn->query($sql)) {
+    $records = $conn->query($sql);
+    while ($row = $records->fetch_assoc()) {
+      $current_ingredients = $row['owned_ingredients'];
+    }
+  }
+  else {
+    echo "Error: " . $conn->error . "<br />";
+  }
+
+  // Uses Luke's code from search-results
+  $current_ingredientsArray = preg_split("/~/", $current_ingredients);
+  $counter = 0;
+  $owned_ingredients = array();
+  $unowned_ingredients = array();
+  $indexes = array();
+
+  foreach ($ingArray as $ing) {
+    $match = 0;
+    foreach ($current_ingredientsArray as $ingredient) {
+      $ingredient = trim($ingredient);
+      $processed_string = trim(strtolower($ing));
+      $temp = preg_split("/\+/", $processed_string);
+      $processed_string = $temp[1];
+      if ($ingredient == $processed_string) {
+        $match = 1;
+      }
+    }
+    if ($match == 1) {
+      array_push($owned_ingredients, str_replace("+", " ", $ing));
+      array_push($indexes, $counter);
+    }
+    else {
+      array_push($unowned_ingredients, str_replace("+", " ", $ing));
+    }
+    $counter++;
+  }
+
+  for ($x=0;$x<count($ingArray);$x++)
+  {
+    $owned = 0;
+    foreach($indexes as $index) {
+      if ($x == $index) {
+        $owned = 1;
+      }
+    }
+    if ($owned == 1) {
+        echo "<script type='text/javascript'>owned('ig" . $x . "');</script>";
+    }
+    else {
+      echo "<script type='text/javascript'>unowned('ig" . $x . "');</script>";
+    }
+    $owned = 0;
+  }
+
+
+?>
 </div>
 </body>
 </html>
