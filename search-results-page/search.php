@@ -16,8 +16,6 @@
 
 
     <?php
-  session_start();
-
   $servername = "localhost";
   $username = "root";
   $password = "root";
@@ -127,4 +125,3 @@
 </div>
 </body>
 </html>
-
