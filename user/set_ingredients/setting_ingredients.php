@@ -117,7 +117,7 @@
         $counter = 0;
         foreach ($ingArray as $ing) {
           $ing = trim($ing);
-          if ($ing != $_POST['ingredient_r']) {
+          if ($ing != strtolower($_POST['ingredient'])) {
             if ($ing != "") {
                 $current_ingredients .= " " . $ing . "~";
             }
