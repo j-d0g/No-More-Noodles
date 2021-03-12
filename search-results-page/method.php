@@ -77,8 +77,11 @@
   //display time (inside nutritional info container)
   echo "<p>Time: $records[time]</p>";
   echo "<p>Difficulty rating: $records[difficulty]</p>";
-  echo "<button onclick='create_pdf.php'>Get shopping list</button>  ";
-  echo "<button onclick='create_pdf.php'>Get method</button>  ";
+
+
+  echo "<form action='create_pdf.php' method = 'post'>";
+  echo "<input type = 'submit' value = ' Get shopping list'>  ";
+  echo "</form>";
   //display difficulty (inside nutritional info container)
   echo "</div>"; //close nutritional info container
 
