@@ -18,7 +18,7 @@
 		<img src="index-page/recipe-img.jpg" class="img" id="img1">
 		<img src="index-page/recipe-img2.jpg" class="img" id = "img2">
 	</div>
-	
+
 	<!-- THE SIDEPANEL -->
 
 	<div class="sidepanel-bg">

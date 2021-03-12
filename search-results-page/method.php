@@ -12,6 +12,8 @@
 
 <?php
 
+  require('fpdf181/fpdf.php');
+
   $servername = "localhost";
   $username = "root";
   $password = "root";
@@ -27,10 +29,10 @@
   //has to be get so it works as a link
   //not necessarily a bad thing as each recipe page has a unique URL
   $recipeID = $_GET['recipeId'];
-  
+
   //uses recipeID to fetch name, image, ingredients, nutritional info, time, difficulty, method
   //not fetched but could be: user rating, popularity, flags
-  $sql = "SELECT recipe_name, image, ingredients, calories, fat, carbs, salt, sugar, time, difficulty, method 
+  $sql = "SELECT recipe_name, image, ingredients, calories, fat, carbs, salt, sugar, time, difficulty, method
   FROM recipes WHERE recipeId = '$recipeID'";
   $records = $conn->query($sql);
   $records = $records->fetch_assoc();
@@ -66,9 +68,10 @@
 
   //display time (inside nutritional info container)
   echo "<p>Time: $records[time]</p>";
-
-  //display difficulty (inside nutritional info container)
   echo "<p>Difficulty rating: $records[difficulty]</p>";
+  echo "<button onclick='create_pdf.php'>Get shopping list</button>  ";
+  echo "<button onclick='create_pdf.php'>Get method</button>  ";
+  //display difficulty (inside nutritional info container)
   echo "</div>"; //close nutritional info container
 
   //--- DISPLAY INGREDIENTS SECTION ---
