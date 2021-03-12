@@ -12,8 +12,7 @@
 
 <?php
 
-  require('fpdf.php');
-  require("create_pdf.php");
+  require('fpdf181/fpdf.php');
 
   $servername = "localhost";
   $username = "root";
@@ -30,10 +29,10 @@
   //has to be get so it works as a link
   //not necessarily a bad thing as each recipe page has a unique URL
   $recipeID = $_GET['recipeId'];
-  
+
   //uses recipeID to fetch name, image, ingredients, nutritional info, time, difficulty, method
   //not fetched but could be: user rating, popularity, flags
-  $sql = "SELECT recipe_name, image, ingredients, calories, fat, carbs, salt, sugar, time, difficulty, method 
+  $sql = "SELECT recipe_name, image, ingredients, calories, fat, carbs, salt, sugar, time, difficulty, method
   FROM recipes WHERE recipeId = '$recipeID'";
   $records = $conn->query($sql);
   $records = $records->fetch_assoc();
