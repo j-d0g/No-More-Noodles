@@ -12,6 +12,9 @@
 
 <?php
 
+  require('fpdf.php');
+  require("create_pdf.php");
+
   $servername = "localhost";
   $username = "root";
   $password = "root";
@@ -66,9 +69,10 @@
 
   //display time (inside nutritional info container)
   echo "<p>Time: $records[time]</p>";
-
-  //display difficulty (inside nutritional info container)
   echo "<p>Difficulty rating: $records[difficulty]</p>";
+  echo "<button onclick='create_pdf.php'>Get shopping list</button>  ";
+  echo "<button onclick='create_pdf.php'>Get method</button>  ";
+  //display difficulty (inside nutritional info container)
   echo "</div>"; //close nutritional info container
 
   //--- DISPLAY INGREDIENTS SECTION ---
