@@ -153,6 +153,9 @@
     $counter++;
   }
 
+  $_SESSION['unowned_ingredients'] = $unowned_ingredients;
+  $_SESSION['owned_ingredients'] = $owned_ingredients;
+
   for ($x=0;$x<count($ingArray);$x++)
   {
     $owned = 0;

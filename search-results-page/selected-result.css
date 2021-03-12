@@ -74,11 +74,7 @@ h1 {
 	width: 40%;
 	height: 48%;
 	overflow: scroll;
-<<<<<<< HEAD
-	
-=======
 
->>>>>>> radu
 }
 .nutritional-facts-container > h2 {
 	text-align: center;
@@ -90,19 +86,11 @@ h1 {
 	margin: 10px;
 	border: none;
 	transition: all 0.3s ease;
-<<<<<<< HEAD
-}  
-
-#logo:hover {
-	margin-top: 5px;
-	
-=======
 }
 
 #logo:hover {
 	margin-top: 5px;
 
->>>>>>> radu
 }
 
 .ingredients-container {
@@ -115,11 +103,7 @@ h1 {
 	width: 30%;
 	height: 91%;
 	overflow: scroll;
-<<<<<<< HEAD
-	
-=======
 
->>>>>>> radu
 }
 
 .ingredients-container > h2 {
@@ -137,11 +121,7 @@ h1 {
 	width: 30%;
 	height: 91%;
 	overflow: scroll;
-<<<<<<< HEAD
-	
-=======
 
->>>>>>> radu
 }
 
 .steps-container > h2 {
@@ -152,11 +132,7 @@ h1 {
 
 
 p {
-<<<<<<< HEAD
-	margin-left: 5%; 
-=======
 	margin-left: 5%;
->>>>>>> radu
 }
 
 th, td {
@@ -164,11 +140,7 @@ th, td {
   font-size: 1rem;
 }
 td {
-<<<<<<< HEAD
-	border-top: none; 
-=======
 	border-top: none;
->>>>>>> radu
 }
 
 table {
@@ -177,14 +149,3 @@ table {
 	transform: translateX(-50%);
 
 }
-<<<<<<< HEAD
-
-  
-
-
-
-
-
-
-=======
->>>>>>> radu

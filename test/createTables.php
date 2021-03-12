@@ -274,7 +274,7 @@
           flags, user_rating, popularity) VALUES ('Vegan chilli', 'db_images/vegan-chilli.webp',
           367, 10, 48, 12, 0.6, 22, 60, 1, '3 tbsp+olive oil~ 2+sweet potatoes~
                                           2 tsp+smoked paprika~ 2 tsp+ground cumin~ 1+onion~ 2+carrots~ 2 +celery sticks~
-                                          2+garlic cloves~ 1-2 tsp+chilli powder~ 1 tsp+dried oregano~ 1 tbsp+tomato purée~ 1+red pepper~
+                                          2+garlic cloves~ 1-2 tsp+chilli powder~ 1 tsp+dried oregano~ 1 tbsp+tomato puree~ 1+red pepper~
                                           2 x 400g cans+chopped tomatoes~ 400g can+black beans~ 400g can+kidney beans~ +lime wedges~+guacamole~+rice~+coriander',
                                           'Heat the oven to 200C/180C fan/gas 6. Put the sweet potato in a roasting tin and drizzle over 1½ tbsp oil, 1 tsp smoked paprika and 1 tsp ground cumin. Give everything a good mix so that all the chunks are coated in spices, season with salt and pepper, then roast for 25 mins until cooked.~
                                           Meanwhile, heat the remaining oil in a large saucepan over a medium heat. Add the onion, carrot and celery. Cook for 8-10 mins, stirring occasionally until soft, then crush in the garlic and cook for 1 min more. Add the remaining dried spices and tomato purée. Give everything a good mix and cook for 1 min more.~
