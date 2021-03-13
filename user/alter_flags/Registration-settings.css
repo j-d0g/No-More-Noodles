@@ -9,6 +9,7 @@ html{
 body * {
 	font-family: 'Dancing Script', cursive;
 
+
 }
 
 
@@ -17,8 +18,7 @@ body {
 	background-color: #212121;
 	margin: 0;
 	padding: 0;
-	font-size: 1rem;
-	color: white;
+	color: rgb(252, 196, 45);
 }
 
 
@@ -28,13 +28,13 @@ button {
 }
 
 .form {
-	width: 1000px;
+	width: 75%;
 	height: 500px;
 	background: #202004;
 	position: absolute;
-	top: 50%;
+	top: 100px;
 	left: 50%;
-	transform: translate(-50%, -50%);
+	transform: translate(-50%, 0);
 	border: 1px solid rgb(252, 196, 45);
 	border-radius: 25px;
 	transition: all 0.3s ease;
@@ -54,14 +54,13 @@ h1 {
 
 .save-button {
 	position: absolute;
-	left: 50%;
 	transform: translate(-50%,0);
-	top: 90%;
+	top: 105%;
 	width: 20%;
-	height: 7%;
+	height: 12%;
 	border-radius: 5px;
 	background: #2e2d2d;
-	font-size: 1rem;
+	font-size: 1.5vw;
 	opacity: 0.8;
 	color: white;
 	border: 1px solid rgb(252, 196, 45);
@@ -86,21 +85,65 @@ h1 {
 
 }
 
+#divider2{
+	position: absolute;
+	top: 14%;
+	left: 50%;
+	height: 71%;
+	border-left: 1px solid rgb(252, 196, 45);
+	width: 100%;
+
+}
+
+
+#allergies-header {
+	position: absolute;
+	top: 0;
+	left: -25%;
+	transform: translateX(-50%); 
+
+
+}
+
+#cuisines-header {
+	position: absolute;
+	top: 0;
+	left: 25%;
+	transform: translateX(-50%); 
+
+}
 
 
 
 
 
+.allergies-checkbox {
+	position: relative;
+	left: -45%;
+	top: 15%;
+	margin-bottom: 20px;
+
+}
 
 
+.cuisines-checkbox{
+	position: relative;
+	top: -30%;
+	left: 5%;
+	margin-bottom: 20px;
+}
+
+img {
+	position: absolute;
+	width: 120px;
+	margin: 12px;
+	transition: all 0.3s ease;
+}
 
 
-
-
-  
-
-
-
+img:hover {
+	margin-top: 7px;
+}
 
 
 
