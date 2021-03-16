@@ -12,7 +12,7 @@ $pdf->Cell(40,15, $_SESSION['name']);
 $pdf->Line(10, 30, 200, 30);
 $pdf->Ln();
 
-$pdf->SetXY (10,40);
+$pdf->SetXY (10,30);
 $pdf->SetFont('Arial','B',16);
 $pdf->Cell(40,15,'Method');
 $pdf->SetFont('Arial','', 10);
