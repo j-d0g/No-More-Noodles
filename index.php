@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +8,7 @@
 	<script src="index-page/index.js"></script>
 	<title>No more noodles</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+	<?php session_start(); ?>
 </head>
 
 <body id="body">
@@ -47,14 +46,11 @@
  	<!-- NAVIGATION PANEL -->
 	<img src="index-page/black-img.jpg" id="black-img" class="opacify-animation">
 	<img src="index-page/logo.png" id="logo" class="opacify-animation">
-	<a href="registration-page/registration.php" class="navigation opacify-animation" style="display: inline-block;" id="login_button">Login/Register</a>
-	<a href="user/show_settings.php" class="navigation opacify-animation" style="display: none;" id="settings_button">Settings</a>
-	<a onclick="openForm()" class="navigation opacify-animation">Faq</a>
-	<a href="recipes-page/recipes.html" class="navigation opacify-animation" id="dropdown">Recipes</a>
 	<a href="index.php" id="Home" class="navigation opacify-animation">Home</a>
-
-
-	
+	<a href="recipes-page/recipes.html" class="navigation opacify-animation" id="dropdown">Recipes</a>
+	<a onclick="openForm()" class="navigation opacify-animation">Faq</a>
+	<a href="registration-page/registration.php" class="navigation opacify-animation" style="visibility: visible;" id="login_button">Login/Register</a>
+	<a href="user/show_settings.php" class="navigation opacify-animation" style="visibility: hidden;" id="settings_button">Settings</a>
 
 
 	<!-- SUGGESTED RECIPES HEADER -->
