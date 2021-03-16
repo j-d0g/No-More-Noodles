@@ -295,10 +295,10 @@ p >span:hover {
 
 #intro-text {
 	position: absolute;
-	font-family: 'Dancing Script', cursive;
+	font-family: 'Times New Roman', cursive;
 	color: white;
 	padding-right: 370px; 
-	font-size: 1.3rem;
+	font-size: 1.2rem;
 	top: 30%;
 	left: 3%;
 	white-space: nowrap;
