@@ -12,6 +12,7 @@ $pdf->Ln();
 foreach ($_SESSION['unowned_ingredients'] as $ingredient) {
     $pdf->Cell(5, 5, trim($ingredient));
     $pdf->Ln();
+    $pdf->Cell(5,5,trim($ingredient));
 }
 $pdf->Output();
 
