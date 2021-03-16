@@ -6,26 +6,35 @@
 	<title>Account settings</title>
 	<link rel="stylesheet" type="text/css" href="registration-settings.css">
 	<link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
-	<?php session_start(); ?>
+
 </head>
 <body>
 	<div class="form">
+		<a href=""><img src="../../index-page/logo.png"></a>
 		<h1>Account settings</h1>
-		<div class='flag_checklist'>
-			<form method='post' action='alter_flags.php'>
-				<span>Select your new flags</span><br>
-				<input type='checkbox' name='flag0' value='flag0'>Dairy free<br>
-				<input type='checkbox' name='flag1' value='flag1'>Egg allergy<br>
-				<input type='checkbox' name='flag2' value='flag2'>Gluten free<br>
-				<input type='checkbox' name='flag3' value='flag3'>Halal<br>
-				<input type='checkbox' name='flag4' value='flag4'>Nut allergy<br>
-				<input type='checkbox' name='flag5' value='flag5'>Vegan<br>
-				<input type='checkbox' name='flag6' value='flag6'>Vegatarian<br>
-				<input type='submit' value='Submit' name='submit'>
-			</form>
-		</div>
-		<input  class="save-button" type="submit" name="login" value="Save and exit">
 		<hr id="divider1">
+		<form method='post' action="alter_flags.php" id ="divider2">
+			<h2 id="allergies-header">Allergies</h2>
+			<input class="allergies-checkbox" type="checkbox" name="flag0">
+			<label class="allergies-checkbox" for="flag0">Dairy free</label><br>
+			<input class="allergies-checkbox" type="checkbox" name="flag1">
+			<label class="allergies-checkbox" for="flag1">Eggs allergy</label><br>
+			<input class="allergies-checkbox" type="checkbox" name="flag2">
+			<label class="allergies-checkbox" for="flag2">Gluten free</label><br>
+			<input class="cuisines-checkbox" type="checkbox" name="flag4">
+			<label class="cuisines-checkbox" for="flag4">Nuts allergy</label><br>
+
+			<h2 id="cuisines-header">Cuisines</h2>
+			<input class="cuisines-checkbox" type="checkbox" name="flag3">
+			<label class="cuisines-checkbox" for="flag3">Halal</label><br>
+			<input class="cuisines-checkbox" type="checkbox" name="flag5">
+			<label class="cuisines-checkbox" for="flag5">Vegan</label><br>
+			<input class="cuisines-checkbox" type="checkbox" name="flag6">
+			<label class="cuisines-checkbox" for="flag6">Vegetarian</label><br>
+			<input  class="save-button" type="submit" name="login" value="Save and exit">
+
+		</form>
+	</div>
 
 </body>
 </html>

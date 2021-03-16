@@ -47,6 +47,7 @@
 
   //--- DISPLAY RECIPE NAME ---
   echo ("<h1>$records[recipe_name]</h1>");
+  $_SESSION['name'] = $records['recipe_name'];
 
   //--- DISPLAY RECIPE IMAGE ---
   echo "<img class='img' src = ../recipes-page/$records[image]>";
