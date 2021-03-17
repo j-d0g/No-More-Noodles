@@ -21,7 +21,7 @@
 			<span class="remember-text login-form">remember password</span>
 			<input  class="login-button login-form" type="submit" name="login" value="login">
 		</form>
-		<p class="login-form text">If you are new make sure to sign up below!</p>
+		<p class="login-form text">New here? Click below to sign up!</p>
 		<button onclick="swapToRegister()" class="login-form sign-up-button">Sign up</button>
 
 		<!-- REGISTER FORM -->

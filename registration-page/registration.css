@@ -282,10 +282,11 @@ input:focus {
 	transition: all 0.3s ease;
 }
 .text {
+	font-family: 'Times New Roman';
 	text-align: center;
 	position: relative;
 	top: 65%;
-	font-size: 1.2rem;
+	font-size: 1.1rem;
 	opacity: 0.9;
 }
 .register-form {
