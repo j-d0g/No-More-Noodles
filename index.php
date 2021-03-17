@@ -55,8 +55,7 @@
 
 
 	<!-- SUGGESTED RECIPES HEADER -->
-	<p class = "suggested-recipes-text opacify-animation">Suggested Recipes</p>
-	<p class = "suggested-recipes-text opacify-animation" id="symbol">&#8711;</p>
+
 	<!-- FAQ -->
 	<div id="FAQ" class="FAQ">
 		<div>
@@ -75,18 +74,7 @@
 		<p class="question">4. bla bla bla bla? bla bla bla bla? bla bla bla bla? bla bla bla bla? bla bla bla bla?</p>
 		<p class="answer">bla bla bla bla?</p>
 
-	</div>
-		<div class="rotating-images-bg opacify-animation"></div>
-		<div id="rotating-images" class="rotating-images opacify-animation">
-			<span style="--i:1"><a href="#"><img class="opacify-animation" src="index-page/recipe-img.jpg"></a></span>
-			<span style="--i:2"><a href="#"><img class="opacify-animation" src="index-page/recipe-img2.jpg"></a></span>
-			<span style="--i:3"><a href="#"><img class="opacify-animation" src="index-page/recipe-img.jpg"></a></span>
-			<span style="--i:4"><a href="#"><img class="opacify-animation" src="index-page/recipe-img2.jpg"></a></span>
-			<span style="--i:5"><a href="#"><img class="opacify-animation" src="index-page/recipe-img.jpg"></a></span>
-			<span style="--i:6"><a href="#"><img class="opacify-animation" src="index-page/recipe-img2.jpg"></a></span>
-			<span style="--i:7"><a href="#"><img class="opacify-animation" src="index-page/recipe-img.jpg"></a></span>
-			<span style="--i:8"><a href="#"><img class="opacify-animation" src="index-page/recipe-img2.jpg"></a></span>
-		</div>
+
 
 <!-- Calls a js function to change visibility if user is logged in -->
 
