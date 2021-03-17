@@ -147,7 +147,7 @@
   //Inserting test1 recipe
   $sql = "INSERT INTO recipes (recipe_name, image, calories, fat,
           carbs, protein, salt, sugar, time, difficulty, ingredients, method,
-          flags, user_rating, popularity) VALUES ('test gluten free', 'db_images/1.jpeg',
+          flags, user_rating, popularity) VALUES ('test gluten free', 'db_images/1.jpg',
           100, 2, 30, 10, 0.2, 10, 30, 2, 'Test ingredients', 'Test method',
           '0000100', '4.1~0', '9.8~0')";
   if ($conn->query($sql)) {
@@ -160,7 +160,7 @@
   //Inserting test2 recipe
   $sql = "INSERT INTO recipes (recipe_name, image, calories, fat,
           carbs, protein, salt, sugar, time, difficulty, ingredients, method,
-          flags, user_rating, popularity) VALUES ('test halal', 'db_images/2.jpeg',
+          flags, user_rating, popularity) VALUES ('test halal', 'db_images/2.jpg',
           30, 20, 3, 100, 0.2, 10, 30, 2, 'Test ingredients', 'Test method',
           '0001000', '4.1~0', '9.8~0')";
   if ($conn->query($sql)) {
