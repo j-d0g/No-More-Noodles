@@ -147,7 +147,7 @@
   //Inserting test1 recipe
   $sql = "INSERT INTO recipes (recipe_name, image, calories, fat,
           carbs, protein, salt, sugar, time, difficulty, ingredients, method,
-          flags, user_rating, popularity) VALUES ('test gluten free', 'db_images/test1.jpeg',
+          flags, user_rating, popularity) VALUES ('test gluten free', 'db_images/1.jpeg',
           100, 2, 30, 10, 0.2, 10, 30, 2, 'Test ingredients', 'Test method',
           '0000100', '4.1~0', '9.8~0')";
   if ($conn->query($sql)) {
@@ -160,7 +160,7 @@
   //Inserting test2 recipe
   $sql = "INSERT INTO recipes (recipe_name, image, calories, fat,
           carbs, protein, salt, sugar, time, difficulty, ingredients, method,
-          flags, user_rating, popularity) VALUES ('test halal', 'db_images/test2.jpeg',
+          flags, user_rating, popularity) VALUES ('test halal', 'db_images/2.jpeg',
           30, 20, 3, 100, 0.2, 10, 30, 2, 'Test ingredients', 'Test method',
           '0001000', '4.1~0', '9.8~0')";
   if ($conn->query($sql)) {
@@ -172,7 +172,7 @@
   //Inserting a test recipe: doughnuts
   $sql = "INSERT INTO recipes (recipe_name, image, calories, fat,
           carbs, protein, salt, sugar, time, difficulty, ingredients, method,
-          flags, user_rating, popularity) VALUES ('Jam doughnuts', 'db_images/doughnut.webp',
+          flags, user_rating, popularity) VALUES ('Jam doughnuts', 'db_images/3.webp',
           233, 9, 32, 5, 0.6, 13, 85, 3, '500g+Strong white bread flour~ 60g+Golden caster sugar~
                                           15g+Fresh yeast~ 4+Medium eggs~ 0.5+Lemon~ 2tsp+Sea salt
                                           125g Softened+unsalted butter~ 2 litres+Sunflower oil~
@@ -198,7 +198,7 @@
   //Inserting a test recipe: Sticky Chinese chicken traybake
   $sql = "INSERT INTO recipes (recipe_name, image, calories, fat,
           carbs, protein, salt, sugar, time, difficulty, ingredients, method,
-          flags, user_rating, popularity) VALUES ('Sticky Chinese chicken traybake', 'db_images/sticky-chinese-chicken-traybake.webp',
+          flags, user_rating, popularity) VALUES ('Sticky Chinese chicken traybake', 'db_images/4.webp',
           450, 27, 19, 32, 1, 14, 50, 1, '8+Chicken thighs~ 4tbsp+Hoisin sauce~
                                           2tsp+Sesame oil~ 2tbsp+Clear honey~ 1.5tsp+Chinese five-spice powder~ Thumb size piece of+ginger~
                                           2+Garlic cloves~ Bunch of+spring onions~
@@ -215,7 +215,7 @@
   //Inserting a test recipe: Sausage ragu
   $sql = "INSERT INTO recipes (recipe_name, image, calories, fat,
           carbs, protein, salt, sugar, time, difficulty, ingredients, method,
-          flags, user_rating, popularity) VALUES ('Sausage ragu', 'db_images/sausage-ragu.webp',
+          flags, user_rating, popularity) VALUES ('Sausage ragu', 'db_images/5.webp',
           589, 18, 83, 19, 0.5, 18, 50, 1, '3 tbsp+olive oil~ 1+onion~
                                           2 large+Garlic cloves~ 0.25 tsp+Chilli flakes~ 2+rosemary sprigs~ 2 x 400g cans+Chopped tomatoes~
                                           1 tbsp+brown sugar~ 6+pork sausages~
@@ -233,7 +233,7 @@
   //Inserting a test recipe: Rice paper wraps
   $sql = "INSERT INTO recipes (recipe_name, image, calories, fat,
           carbs, protein, salt, sugar, time, difficulty, ingredients, method,
-          flags, user_rating, popularity) VALUES ('Rice paper wraps', 'db_images/rice-paper-wraps.webp',
+          flags, user_rating, popularity) VALUES ('Rice paper wraps', 'db_images/6.webp',
           125, 5, 15, 5, 0.2, 1, 20, 1, '50g+rice vermicelli noodles~ 1+carrot~
                                           1+avocado~ 0.25+cucumber~ 8+rice paper wraps~ 8+king prawns~
                                           8+mint leaves~ 0.5+chicken breast~
@@ -252,7 +252,7 @@
   //Inserting a test recipe: Nutty chicken satay strips
   $sql = "INSERT INTO recipes (recipe_name, image, calories, fat,
           carbs, protein, salt, sugar, time, difficulty, ingredients, method,
-          flags, user_rating, popularity) VALUES ('Nutty chicken satay strips', 'db_images/nutty-chicken-sate-strips.webp',
+          flags, user_rating, popularity) VALUES ('Nutty chicken satay strips', 'db_images/7.webp',
           276, 10, 3, 41, 0.7, 2, 20, 1, '2 tbsp+chunky peanut butter~ 1+garlic clove~
                                           1 tsp+Madras curry powder~ 1 tbsp+soy sauce~ 2 tsp+lime juice~ 2 skinless, +chicken breast fillets~
                                           About 10cm+Cucumber~
@@ -271,7 +271,7 @@
   //Inserting a test recipe: Vegan chilli
   $sql = "INSERT INTO recipes (recipe_name, image, calories, fat,
           carbs, protein, salt, sugar, time, difficulty, ingredients, method,
-          flags, user_rating, popularity) VALUES ('Vegan chilli', 'db_images/vegan-chilli.webp',
+          flags, user_rating, popularity) VALUES ('Vegan chilli', 'db_images/8.webp',
           367, 10, 48, 12, 0.6, 22, 60, 1, '3 tbsp+olive oil~ 2+sweet potatoes~
                                           2 tsp+smoked paprika~ 2 tsp+ground cumin~ 1+onion~ 2+carrots~ 2 +celery sticks~
                                           2+garlic cloves~ 1-2 tsp+chilli powder~ 1 tsp+dried oregano~ 1 tbsp+tomato puree~ 1+red pepper~
@@ -291,7 +291,7 @@
   //Inserting a test recipe: Spiced halloumi & pineapple burger with zingy slaw
   $sql = "INSERT INTO recipes (recipe_name, image, calories, fat,
           carbs, protein, salt, sugar, time, difficulty, ingredients, method,
-          flags, user_rating, popularity) VALUES ('Spiced halloumi & pineapple burger with zingy slaw', 'db_images/halloumi-burger.webp',
+          flags, user_rating, popularity) VALUES ('Spiced halloumi & pineapple burger with zingy slaw', 'db_images/9.webp',
           264, 14, 19, 11, 1.2, 18, 25, 1, '0.5+red cabbage~ 2+carrots~
                                           100g+radishes~ 1 small pack+coriander~ 2+limes~ 1 tbsp+cold-pressed rapeseed oil~ big pinch of+chilli flakes~
                                           1 tbsp+chipotle paste~ 60g+halloumi~ 2 small slices of fresh+pineapple~ 2 small+seeded burger buns',
@@ -309,7 +309,7 @@
   //Inserting a test recipe: Vegan lemon cake
   $sql = "INSERT INTO recipes (recipe_name, image, calories, fat,
           carbs, protein, salt, sugar, time, difficulty, ingredients, method,
-          flags, user_rating, popularity) VALUES ('Vegan lemon cake', 'db_images/vegan-lemon-cake.webp',
+          flags, user_rating, popularity) VALUES ('Vegan lemon cake', 'db_images/10.webp',
           276, 9, 47, 2, 0.3, 29, 45, 1, '100ml+vegetable oil~ 275g+self-raising flour~
                                           200g+golden caster sugar~ 1 tsp+baking powder~ 1+lemon~ 150g+icing sugar',
                                           'Heat oven to 200C/180C fan/gas 6. Oil a 1lb loaf tin and line it with baking parchment. Mix the flour, sugar, baking powder and lemon zest in a bowl. Add the oil, lemon juice and 170ml cold water, then mix until smooth.~
@@ -326,7 +326,7 @@
   //Inserting a test recipe: Sausage, kale & gnocchi one-pot
   $sql = "INSERT INTO recipes (recipe_name, image, calories, fat,
           carbs, protein, salt, sugar, time, difficulty, ingredients, method,
-          flags, user_rating, popularity) VALUES ('Sausage, kale & gnocchi one-pot', 'db_images/sausage-kale-gnocchi-one-pot.webp',
+          flags, user_rating, popularity) VALUES ('Sausage, kale & gnocchi one-pot', 'db_images/11.webp',
           516, 27, 44, 21, 2.5, 3, 20, 1, '1 tbsp+olive oil~ 6+pork sausages~
                                           1 tsp+chilli flakes~ 1 tsp+fennel seeds~ 500g+fresh gnocchi~ 500ml+chicken stock~ 100g+chopped kale~ 40g+parmesan',
                                           'Heat the oil in a large high-sided frying pan over a medium heat. Squeeze the sausages straight from their skins into the pan, then use the back of a wooden spoon to break the meat up. Sprinkle in the chilli flakes and fennel seeds, if using, then fry until the sausagemeat is crisp around the edges. Remove from the pan with a slotted spoon.~
@@ -343,7 +343,7 @@
   //Inserting a test recipe: Sausage, kale & gnocchi one-pot
   $sql = "INSERT INTO recipes (recipe_name, image, calories, fat,
           carbs, protein, salt, sugar, time, difficulty, ingredients, method,
-          flags, user_rating, popularity) VALUES ('Breakfast burrito', 'db_images/breakfast-burrito.webp',
+          flags, user_rating, popularity) VALUES ('Breakfast burrito', 'db_images/12.webp',
           366, 21, 26, 16, 0.9, 4, 15, 1, '1 tsp+chipotle paste~ 1+egg~ 1 tsp+rapeseed oil~
                                           50g+kale~ 7+cherry tomatoes~ 0.5+small avocado~ 1 +wholemeal tortilla wrap',
                                           'Whisk the chipotle paste with the egg and some seasoning in a jug. Heat the oil in a large frying pan, add the kale and tomatoes.~
