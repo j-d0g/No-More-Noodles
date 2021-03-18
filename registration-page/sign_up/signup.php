@@ -11,6 +11,11 @@
 			$cpw = $_POST['confirm-password'];
 
 			// Hello
+			if(!filter_var($em, FILTER_VALIDATE_EMAIL)) {
+     		echo "Email not valid!";
+     		die();
+
+			}
 
 			$query = "SELECT email FROM login WHERE email = '$em'";
 
