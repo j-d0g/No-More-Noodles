@@ -6,6 +6,6 @@ if(isset($_SESSION['user_id']))
 	unset($_SESSION['user_id']);
 }
 
-header("Location: registration.php");
+header("Location: /GitRepos/first_group_project/registration-page/registration.php");
 die;
  ?>
