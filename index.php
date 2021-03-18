@@ -17,9 +17,15 @@
 
 	<!-- RECIPE IMAGES -->
 	<div>
-		<img src="index-page/recipe-img.jpg" class="img" id="img1">
-		<img src="index-page/recipe-img2.jpg" class="img" id = "img2">
+        <!-- Links homepage image 1 to recipe index 1 -->
+        <a href='search-results-page/method.php?recipeid=1'>
+            <img src="recipes-page/db_images/1.jpg" class="img" id="img1">
+        </a>
 
+        <!-- Link homepage image 2 to recipe index 2 -->
+        <a href='search-results-page/method.php?recipeid=2'>
+            <img src="recipes-page/db_images/2.jpg" class="img" id = "img2">
+        </a>
 	</div>
 
 	<!-- THE SIDEPANEL -->
