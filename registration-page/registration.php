@@ -31,14 +31,32 @@
 		  </div>
 		</div>
 
+		<div id="invalid_modal" class="modal">
+		  <div class="modal-content">
+		    <span class="close">&times;</span>
+		    <h1>Email or password is invalud</h1>
+		  </div>
+		</div>
+
+		<div id="de_modal" class="modal">
+		  <div class="modal-content">
+		    <span class="close">&times;</span>
+		    <h1>A user with these credentials does not exist</h1>
+		  </div>
+		</div>
+
 		<script type="text/javascript">
 			var email_modal = document.getElementById("email_modal");
 			var password_modal = document.getElementById("password_modal");
 			var field_modal = document.getElementById("field_modal");
+			var invalid_modal = document.getElementById("invalid_modal");
+			var de_modal = document.getElementById("de_modal");
 
 			var email_span = document.getElementsByClassName("close")[0];
 			var password_span = document.getElementsByClassName("close")[1];
 			var field_span = document.getElementsByClassName("close")[2];
+			var invalid_span = document.getElementsByClassName("close")[3];
+			var de_span = document.getElementsByClassName("close")[4];
 
 			function email_error() {
 				email_modal.style.display = "block";
@@ -50,6 +68,14 @@
 
 			function field_error() {
 				field_modal.style.display = "block";
+			}
+
+			function invalid_error() {
+				invalid_modal.style.display = "block";
+			}
+
+			function de_error() {
+				de_modal.style.display = "block";
 			}
 
 			email_span.onclick = function() {
@@ -64,6 +90,14 @@
 				field_modal.style.display = "none";
 			}
 
+			invalid_span.onclick = function() {
+				invalid_modal.style.display = "none";
+			}
+
+			de_span.onclick = function() {
+				de_modal.style.display = "none";
+			}
+
 			window.onclick = function(event) {
 				if (event.target == email_modal) {
 					email_modal.style.display = "none";
@@ -73,6 +107,12 @@
 				}
 				else if (event.target == field_modal) {
 					field_modal.style.display = "none";
+				}
+				else if (event.target == invalid_modal) {
+					invalid_modal.style.display = "none";
+				}
+				else if (event.target == de_modal) {
+					de_modal.style.display = "none";
 				}
 			}
 		</script>
@@ -87,6 +127,12 @@
 			}
 			else if ($_SESSION['a_error'] == 'f') {
 				echo "<script type='text/javascript'>field_error();</script>";
+			}
+			else if ($_SESSION['a_error'] == 'i') {
+				echo "<script type='text/javascript'>invalid_error();</script>";
+			}
+			else if ($_SESSION['a_error'] == 'd') {
+				echo "<script type='text/javascript'>de_error();</script>";
 			}
 		}
 		?>

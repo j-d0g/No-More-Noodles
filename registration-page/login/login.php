@@ -23,17 +23,20 @@
 
 						if(password_verify($pw, $user_data['password']))
 						{
+							unset($_SESSION['a_error']);
 							$_SESSION['user_id'] = $user_data['userId'];
 							header("Location: ../../index.php");
 							die();
 						}
 					}
 				}
+				$_SESSION['a_error'] = 'd';
 				header("Location: ../registration.php");
 				die();
 			}
 			else
 			{
+				$_SESSION['a_error'] = 'i';
 				header("Location: ../registration.php");
 				die();
 			}
