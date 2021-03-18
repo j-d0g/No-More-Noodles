@@ -34,7 +34,8 @@
 						$query = "INSERT INTO login (surname, forename, email, password) VALUES ('$s_name','$f_name','$em','$pw')";
 				}
 				else {
-					header("Location: ../registrationerror.php");
+					$_SESSION['a_error'] = 'e';
+					header("Location: ../registration.php");
 					die();
 				}
 				if(!mysqli_query($conn,$query))
@@ -46,6 +47,7 @@
 					$records = $conn->query($sql);
 					while ($row = $records->fetch_assoc()) {
 				    $_SESSION['user_id'] = $row['userId'];
+						unset($_SESSION['a_error']);
 				  }
 					header("Location: registration-settings.php");
 					die();
@@ -53,7 +55,13 @@
 			}
 			else
 			{
-				header("Location: ../registrationerror.php");
+				if ($pw != $cpw) {
+					$_SESSION['a_error'] = 'e';
+				}
+				else {
+					$_SESSION['a_error'] = 'f';
+				}
+				header("Location: ../registration.php");
 				die();
 			}
 		}
