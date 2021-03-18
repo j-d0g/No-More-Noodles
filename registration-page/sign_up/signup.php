@@ -11,15 +11,15 @@
 			$cpw = $_POST['confirm-password'];
 
 			// Hello
-			if(!filter_var($em, FILTER_VALIDATE_EMAIL)) {
-     		echo "Email not valid!";
-     		die();
+			//if(!filter_var($em, FILTER_VALIDATE_EMAIL)) {
+     		//echo "Email not valid!";
+     		//die();
 
-			}
+			//}
 
 			$query = "SELECT email FROM login WHERE email = '$em'";
 
-			if(!empty($s_name)&& !empty($f_name) && !is_numeric($em) && !empty($pw) && ($pw == $cpw))
+			if(!empty($s_name)&& !empty($f_name) && !is_numeric($em) && !empty($pw) && ($pw == $cpw) && filter_var($em, FILTER_VALIDATE_EMAIL))
 			{
 				//save to db
 
@@ -34,7 +34,7 @@
 						$query = "INSERT INTO login (surname, forename, email, password) VALUES ('$s_name','$f_name','$em','$pw')";
 				}
 				else {
-					header("Location: ../registration.php");
+					header("Location: ../registrationerror.php");
 					die();
 				}
 				if(!mysqli_query($conn,$query))
@@ -53,7 +53,7 @@
 			}
 			else
 			{
-				header("Location: ../registration.php");
+				header("Location: ../registrationerror.php");
 				die();
 			}
 		}
