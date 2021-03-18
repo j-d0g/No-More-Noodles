@@ -47,6 +47,7 @@
     <?php
       function update_ingredients() {
         // Selects current ingredient
+        $current_ingredients = "";
         $sql = "SELECT owned_ingredients FROM user WHERE userId=". $_SESSION['user_id'];
         if ($_SESSION['conn']->query($sql)) {
           $records = $_SESSION['conn']->query($sql);
@@ -57,7 +58,8 @@
         else {
           echo "Error: " . $_SESSION['conn']->error . "<br />";
         }
-
+        $_POST['ingredient'] = mysqli_real_escape_string($_SESSION['conn'], $_POST['ingredient']);
+        $_POST['ingredient'] = trim($_POST['ingredient']);
         // Uses Luke's code from search-results
         $ingArray = preg_split("/~/", $current_ingredients);
         $current_ingredients = "";
@@ -65,18 +67,16 @@
         foreach ($ingArray as $ing) {
           $ing = trim($ing);
           if ($ing != "") {
-              $current_ingredients .= " " . $ing . "~";
+            $current_ingredients .= " " . $ing . "~";
           }
           if ($ing == strtolower($_POST['ingredient'])) {
             $counter += 1;
           }
         }
-
         // If ingredient not already added then add it
         if ($counter == 0) {
           $current_ingredients .= " " . strtolower($_POST['ingredient']) . "~";
         }
-
         $sql = "UPDATE user SET owned_ingredients='$current_ingredients' WHERE userId=". $_SESSION['user_id'];
         if ($_SESSION['conn']->query($sql)) {
           if ($counter > 0) {
@@ -89,8 +89,8 @@
           }
           // To prevent issue when page reloads
           unset($_SESSION['ingredient']);
-          header("Location: setting_ingredients.php");
-          die();
+          // header("Location: setting_ingredients.php");
+          // die();
         }
         else {
           echo "Error: " . $_SESSION['conn']->error . "<br />";
@@ -101,6 +101,7 @@
       function remove_ingredients() {
         // Selects current ingredients from table
         $sql = "SELECT owned_ingredients FROM user WHERE userId=". $_SESSION['user_id'];
+        $_POST['ingredient'] = mysqli_real_escape_string($_SESSION['conn'], $_POST['ingredient']);
         if ($_SESSION['conn']->query($sql)) {
           $records = $_SESSION['conn']->query($sql);
           while ($row = $records->fetch_assoc()) {
@@ -140,8 +141,8 @@
           };
           // To prevent error on redirect
           unset($_SESSION['ingredient_r']);
-          header("Location: setting_ingredients.php");
-          die();
+          // header("Location: setting_ingredients.php");
+          // die();
         }
         else {
           echo "Error: " . $_SESSION['conn']->error . "<br />";
@@ -155,28 +156,33 @@
     <div class="owned_ingredients">
       <h2>Your ingredients</h2>
       <?php
-        // Gets the current ingredients
-        $sql = "SELECT owned_ingredients FROM user WHERE userId=". $_SESSION['user_id'];
-        if ($_SESSION['conn']->query($sql)) {
-          $records = $_SESSION['conn']->query($sql);
-          while ($row = $records->fetch_assoc()) {
-            $current_ingredients = $row['owned_ingredients'];
+        if (isset($_SESSION['user_id'])) {
+          // Gets the current ingredients
+          $sql = "SELECT owned_ingredients FROM user WHERE userId=". $_SESSION['user_id'];
+          if ($_SESSION['conn']->query($sql)) {
+            $records = $_SESSION['conn']->query($sql);
+            while ($row = $records->fetch_assoc()) {
+              $current_ingredients = $row['owned_ingredients'];
+            }
           }
-        }
-        else {
-          echo "Error: " . $_SESSION['conn']->error . "<br />";
-        }
+          else {
+            echo "Error: " . $_SESSION['conn']->error . "<br />";
+          }
 
-        // Uses Luke's code to split
-        $ingArray = preg_split("/~/", $current_ingredients);
-        echo "<ul>";
-        foreach ($ingArray as $ing) {
-          if ($ing != "") {
-            echo "<li>$ing</li>";
+          if (isset($current_ingredients)) {
+            // Uses Luke's code to split
+            $ingArray = preg_split("/~/", $current_ingredients);
+            echo "<ul>";
+            foreach ($ingArray as $ing) {
+              if ($ing != "") {
+                echo "<li>$ing</li>";
+              }
+            }
           }
+          echo "</ul>";
+          echo "</div>";
         }
-        echo "</ul>";
-        echo "</div>"; ?>
+        ?>
     </div>
 
     <!-- Duplicate code for form to add ingredient -->
