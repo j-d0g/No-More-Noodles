@@ -56,7 +56,10 @@
 			else
 			{
 				if ($pw != $cpw) {
-					$_SESSION['a_error'] = 'e';
+					$_SESSION['a_error'] = 'p';
+				}
+				else if (!filter_var($em, FILTER_VALIDATE_EMAIL)){
+					$_SESSION['a_error'] = 'ev';
 				}
 				else {
 					$_SESSION['a_error'] = 'f';

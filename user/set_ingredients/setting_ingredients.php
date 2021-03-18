@@ -38,8 +38,10 @@
       }
 
       if (isset($_POST['ingredient_r'])) {
-        echo "Got ingredient " . $_POST['ingredient_r'];
-        remove_ingredients();
+        if (trim($_POST['ingredient_r']) != "") {
+          echo "Got ingredient " . $_POST['ingredient_r'];
+          remove_ingredients();
+        }
       }
 
     ?>
@@ -60,40 +62,42 @@
         }
         $_POST['ingredient'] = mysqli_real_escape_string($_SESSION['conn'], $_POST['ingredient']);
         $_POST['ingredient'] = trim($_POST['ingredient']);
-        // Uses Luke's code from search-results
-        $ingArray = preg_split("/~/", $current_ingredients);
-        $current_ingredients = "";
-        $counter = 0;
-        foreach ($ingArray as $ing) {
-          $ing = trim($ing);
-          if ($ing != "") {
-            $current_ingredients .= " " . $ing . "~";
+        if($_POST['ingredient'] != "") {
+          // Uses Luke's code from search-results
+          $ingArray = preg_split("/~/", $current_ingredients);
+          $current_ingredients = "";
+          $counter = 0;
+          foreach ($ingArray as $ing) {
+            $ing = trim($ing);
+            if ($ing != "") {
+              $current_ingredients .= " " . $ing . "~";
+            }
+            if ($ing == strtolower($_POST['ingredient'])) {
+              $counter += 1;
+            }
           }
-          if ($ing == strtolower($_POST['ingredient'])) {
-            $counter += 1;
+          // If ingredient not already added then add it
+          if ($counter == 0) {
+            $current_ingredients .= " " . strtolower($_POST['ingredient']) . "~";
           }
-        }
-        // If ingredient not already added then add it
-        if ($counter == 0) {
-          $current_ingredients .= " " . strtolower($_POST['ingredient']) . "~";
-        }
-        $sql = "UPDATE user SET owned_ingredients='$current_ingredients' WHERE userId=". $_SESSION['user_id'];
-        if ($_SESSION['conn']->query($sql)) {
-          if ($counter > 0) {
-            // Indicates error as ingredient is a duplicate
-            $_SESSION['prev_ingredient'] = "e";
+          $sql = "UPDATE user SET owned_ingredients='$current_ingredients' WHERE userId=". $_SESSION['user_id'];
+          if ($_SESSION['conn']->query($sql)) {
+            if ($counter > 0) {
+              // Indicates error as ingredient is a duplicate
+              $_SESSION['prev_ingredient'] = "e";
+            }
+            else {
+              // For showing to the user
+              $_SESSION['prev_ingredient'] = $_POST['ingredient'];
+            }
+            // To prevent issue when page reloads
+            unset($_SESSION['ingredient']);
+            // header("Location: setting_ingredients.php");
+            // die();
           }
           else {
-            // For showing to the user
-            $_SESSION['prev_ingredient'] = $_POST['ingredient'];
+            echo "Error: " . $_SESSION['conn']->error . "<br />";
           }
-          // To prevent issue when page reloads
-          unset($_SESSION['ingredient']);
-          // header("Location: setting_ingredients.php");
-          // die();
-        }
-        else {
-          echo "Error: " . $_SESSION['conn']->error . "<br />";
         }
       }
 
@@ -101,51 +105,53 @@
       function remove_ingredients() {
         // Selects current ingredients from table
         $sql = "SELECT owned_ingredients FROM user WHERE userId=". $_SESSION['user_id'];
-        $_POST['ingredient'] = mysqli_real_escape_string($_SESSION['conn'], $_POST['ingredient']);
-        if ($_SESSION['conn']->query($sql)) {
-          $records = $_SESSION['conn']->query($sql);
-          while ($row = $records->fetch_assoc()) {
-            $current_ingredients = $row['owned_ingredients'];
-          }
-        }
-        else {
-          echo "Error: " . $_SESSION['conn']->error . "<br />";
-        }
-
-        // Luke's code from search-results
-        $ingArray = preg_split("/~/", $current_ingredients);
-        $current_ingredients = "";
-        $counter = 0;
-        foreach ($ingArray as $ing) {
-          $ing = trim($ing);
-          if ($ing != strtolower($_POST['ingredient'])) {
-            if ($ing != "") {
-                $current_ingredients .= " " . $ing . "~";
+        $_POST['ingredient_r'] = trim(mysqli_real_escape_string($_SESSION['conn'], $_POST['ingredient_r']));
+        if ($_POST['ingredient_r'] != "") {
+          if ($_SESSION['conn']->query($sql)) {
+            $records = $_SESSION['conn']->query($sql);
+            while ($row = $records->fetch_assoc()) {
+              $current_ingredients = $row['owned_ingredients'];
             }
           }
           else {
-            $counter += 1;
+            echo "Error: " . $_SESSION['conn']->error . "<br />";
           }
-        }
-        // Records if an item has been not added
 
-        $sql = "UPDATE user SET owned_ingredients='$current_ingredients' WHERE userId=". $_SESSION['user_id'];
-        if ($_SESSION['conn']->query($sql)) {
-          if ($counter > 0) {
-              // Shows to user has been removed
-              $_SESSION['prev_ingredient_r'] = $_POST['ingredient_r'];
+          // Luke's code from search-results
+          $ingArray = preg_split("/~/", $current_ingredients);
+          $current_ingredients = "";
+          $counter = 0;
+          foreach ($ingArray as $ing) {
+            $ing = trim($ing);
+            if ($ing != strtolower($_POST['ingredient_r'])) {
+              if ($ing != "") {
+                  $current_ingredients .= " " . $ing . "~";
+              }
+            }
+            else {
+              $counter += 1;
+            }
+          }
+          // Records if an item has been not added
+
+          $sql = "UPDATE user SET owned_ingredients='$current_ingredients' WHERE userId=". $_SESSION['user_id'];
+          if ($_SESSION['conn']->query($sql)) {
+            if ($counter > 0) {
+                // Shows to user has been removed
+                $_SESSION['prev_ingredient_r'] = $_POST['ingredient_r'];
+            }
+            else {
+              // Shows to user not in ingredients
+              $_SESSION['prev_ingredient_r'] = "e";
+            };
+            // To prevent error on redirect
+            unset($_SESSION['ingredient_r']);
+            // header("Location: setting_ingredients.php");
+            // die();
           }
           else {
-            // Shows to user not in ingredients
-            $_SESSION['prev_ingredient_r'] = "e";
-          };
-          // To prevent error on redirect
-          unset($_SESSION['ingredient_r']);
-          // header("Location: setting_ingredients.php");
-          // die();
-        }
-        else {
-          echo "Error: " . $_SESSION['conn']->error . "<br />";
+            echo "Error: " . $_SESSION['conn']->error . "<br />";
+          }
         }
       }
     ?>

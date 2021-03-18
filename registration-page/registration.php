@@ -45,18 +45,27 @@
 		  </div>
 		</div>
 
+		<div id="ev_modal" class="modal">
+		  <div class="modal-content">
+		    <span class="close">&times;</span>
+		    <h1>Email is not valid</h1>
+		  </div>
+		</div>
+
 		<script type="text/javascript">
 			var email_modal = document.getElementById("email_modal");
 			var password_modal = document.getElementById("password_modal");
 			var field_modal = document.getElementById("field_modal");
 			var invalid_modal = document.getElementById("invalid_modal");
 			var de_modal = document.getElementById("de_modal");
+			var ev_modal = document.getElementById("ev_modal");
 
 			var email_span = document.getElementsByClassName("close")[0];
 			var password_span = document.getElementsByClassName("close")[1];
 			var field_span = document.getElementsByClassName("close")[2];
 			var invalid_span = document.getElementsByClassName("close")[3];
 			var de_span = document.getElementsByClassName("close")[4];
+			var ev_span = document.getElementsByClassName("close")[5];
 
 			function email_error() {
 				email_modal.style.display = "block";
@@ -76,6 +85,10 @@
 
 			function de_error() {
 				de_modal.style.display = "block";
+			}
+
+			function ev_error() {
+				ev_modal.style.display = "block";
 			}
 
 			email_span.onclick = function() {
@@ -98,6 +111,10 @@
 				de_modal.style.display = "none";
 			}
 
+			ev_span.onclick = function() {
+				ev_modal.style.display = "none";
+			}
+
 			window.onclick = function(event) {
 				if (event.target == email_modal) {
 					email_modal.style.display = "none";
@@ -113,6 +130,9 @@
 				}
 				else if (event.target == de_modal) {
 					de_modal.style.display = "none";
+				}
+				else if (event.target == ev_modal) {
+					ev_modal.style.display = "none";
 				}
 			}
 		</script>
@@ -133,6 +153,9 @@
 			}
 			else if ($_SESSION['a_error'] == 'd') {
 				echo "<script type='text/javascript'>de_error();</script>";
+			}
+			else if ($_SESSION['a_error'] == 'ev') {
+				echo "<script type='text/javascript'>ev_error();</script>";
 			}
 		}
 		?>

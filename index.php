@@ -8,7 +8,9 @@
 	<script src="index-page/index.js"></script>
 	<title>No more noodles</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<?php session_start(); ?>
+	<?php session_start();
+		unset($_SESSION['a_error']);
+	?>
 </head>
 
 <body id="body">
