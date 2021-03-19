@@ -16,7 +16,7 @@ body a {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: black; 
+  background: black;
   border-radius: 10px;
   border: 0.1px solid rgb(252, 196, 45);
 }
@@ -85,7 +85,7 @@ body a {
 	font-size: 1.6vw;
 	text-shadow: 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black;
 	font-family: 'Dancing Script', cursive;
-	
+
 }
 .dropdown-items:hover  {
 	position: absolute;
@@ -130,28 +130,28 @@ display: block;
 	width: 120px;
 	position: absolute;
 	left: 15px;
-	top: 5px;
+	top: 10px;
 }
 
 
 
 #logo:hover {
-	transform: translateY(-5px);
 	transition-duration: 0.3s;
 }
 button {
-
 	background-color: #202004;
 	color: rgba(255,255,255,0.7);
 	border: 1px solid rgb(252, 196, 45);
 	border-radius: 25px;
-	font-size: 1rem;
+	font-size: 1.4rem;
 	animation-name: opacify;
 	animation-direction: reverse;
 	animation-fill-mode: backwards;
-	animation-duration: 1s;  
+	animation-duration: 0.5s;
 	animation-iteration-count: 1;
-	animation-delay: 2s;
+	animation-delay: 1s;
+	text-align: center;
+	padding-bottom: 2px;
 
 }
 button:active {
@@ -207,8 +207,8 @@ button:active {
 	top: 0;
 	left: 0;
 	opacity:0;
-	animation-name: opacify;
-	animation-duration: 30s;
+	animation-name: opacify_img;
+	animation-duration: 15s;
 	animation-iteration-count: infinite;
 	object-fit: cover;
 	border-bottom: 0.1px solid rgb(252, 196, 45);
@@ -216,11 +216,12 @@ button:active {
 
 #img1 {
 	animation-delay: 0s;
+	z-index: 0;
 }
 
 #img2 {
-animation-delay: 11s;
-
+	animation-delay: 8s;
+	z-index: -1;
 }
 
 .sidepanel {
@@ -228,9 +229,9 @@ animation-delay: 11s;
 	animation-name: opacify;
 	animation-direction: reverse;
 	animation-fill-mode: backwards;
-	animation-duration: 2s;  
+	animation-duration: 1s;
 	animation-iteration-count: 1;
-	animation-delay: 2.5s;
+	animation-delay: 1s;
 }
 
 
@@ -244,8 +245,8 @@ animation-delay: 11s;
 	left: 0;
 	transform: translate(0,-50%);
 	animation-name: slide-img, slide-img-2;
-	animation-delay: 2s, 0s;
-	animation-duration: 2s, 2s; 
+	animation-delay: 1s, 0s;
+	animation-duration: 1s, 1s;
 	animation-iteration-count: 1;
 	border: 1px solid rgb(252, 196, 45);
 	border-left: none;
@@ -297,7 +298,7 @@ p >span:hover {
 	position: absolute;
 	font-family: 'Times New Roman', cursive;
 	color: white;
-	padding-right: 370px; 
+	padding-right: 370px;
 	font-size: 1.1rem;
 	top: 30%;
 	left: 3%;
@@ -309,7 +310,8 @@ p >span:hover {
 	border-radius: 25px;
 	width: 75%;
 	height: 25px;
-	margin-left: 10px; 
+	margin-left: 10px;
+	padding-left: 10px;
 	border: 1px solid rgb(252, 196, 45);;
 	background-color: #202004;
 	color: white;
@@ -408,7 +410,7 @@ position: absolute;
 }
 #title2 {
 	left: 41.5%;
-	
+
 }
 #title3 {
 	left: 43%;
@@ -419,7 +421,7 @@ position: absolute;
 }
 #title5 {
 	left: 46%;
-	
+
 }
 
 
@@ -428,7 +430,7 @@ position: absolute;
 }
 #title7 {
 	left: 49%;
-	
+
 }
 #title8 {
 	left: 50.5%;
@@ -446,23 +448,23 @@ position: absolute;
 }
 #title12 {
 	left: 58%;
-	
+
 }
 #title13 {
 	left: 59.5%;
-	
+
 }
 #title14 {
 	left: 61%;
-	
+
 }
 #title15 {
 	left: 62.5%;
-	
+
 }
 #title16 {
 	left: 64%;
-	
+
 }*/
 
 
@@ -472,7 +474,16 @@ position: absolute;
 	animation-name: opacify;
 	animation-direction: reverse;
 	animation-fill-mode: backwards;
-	animation-duration: 2s;  
+	animation-duration: 1s;
+	animation-iteration-count: 1;
+	animation-delay: 0s;
+}
+
+.opacify-image-animation {
+	animation-name: opacify_img;
+	animation-direction: reverse;
+	animation-fill-mode: backwards;
+	animation-duration: 1s;
 	animation-iteration-count: 1;
 	animation-delay: 0s;
 }
@@ -520,6 +531,17 @@ position: absolute;
 		opacity: 0;
 	}
 }
+@keyframes opacify_img {
+	25% {
+		opacity: 1;
+		z-index: 0;
+	}
+
+	100% {
+		opacity: 0;
+		z-index: -1;
+	}
+}
 
 
 
@@ -531,7 +553,7 @@ position: absolute;
 	100% {
 		transform: translateY(-10px);
 	}
-	
+
 }
 
 
@@ -539,7 +561,7 @@ position: absolute;
   .sidepanel-bg {
   	width: 330px;
     height: 200px;
- 
+
   }
 
   .nomore-text{
@@ -568,7 +590,7 @@ position: absolute;
   button {
   	font-size: 0.8rem;
   }
-  
+
 
 }
 
@@ -651,7 +673,3 @@ position: absolute;
 .rotating-images img:hover {
 	transform: translateY(-15px);
 }
-
-
-
-
