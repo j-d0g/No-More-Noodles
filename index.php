@@ -55,12 +55,15 @@
  	<!-- NAVIGATION PANEL -->
 	<img src="index-page/black-img.jpg" id="black-img" class="opacify-animation">
 	<img src="index-page/logo.png" id="logo" class="opacify-animation">
-	<a href="index.php" id="Home" class="navigation opacify-animation">Home</a>
-	<a href="recipes-page/recipes.html" class="navigation opacify-animation" id="dropdown">Recipes</a>
+	<a href="registration-page/login/logout.php" class="navigation opacify-animation" style="display: none" id="logout_button">Logout</a>
+	<a href="user/show_settings.php" class="navigation opacify-animation" style="display: none;" id="settings_button">Settings</a>
+	<a href="registration-page/registration.php" class="navigation opacify-animation" style="display: inline-block;" id="login_button">Login/Register</a>
 	<a onclick="openForm()" class="navigation opacify-animation">Faq</a>
-	<a href="registration-page/registration.php" class="navigation opacify-animation" style="visibility: visible;" id="login_button">Login/Register</a>
-	<a href="registration-page/login/logout.php" class="navigation opacify-animation" style="visibility: hidden" id="logout_button">Logout</a>
-	<a href="user/show_settings.php" class="navigation opacify-animation" style="visibility: hidden;" id="settings_button">Settings</a>
+	<a href="recipes-page/recipes.html" class="navigation opacify-animation" id="dropdown">Recipes</a>
+	<a href="index.php" id="Home" class="navigation opacify-animation">Home</a>
+
+
+
 
 
 	<!-- SUGGESTED RECIPES HEADER -->

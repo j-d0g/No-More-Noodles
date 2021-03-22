@@ -8,7 +8,7 @@ function closeForm() {
 }
 
 function logged_in() {
-  document.getElementById("settings_button").style.visibility = "visible";
-  document.getElementById("login_button").style.visibility = "hidden";
-  document.getElementById("logout_button").style.visibility = "visible";
+  document.getElementById("settings_button").style.display = "inline-block";
+  document.getElementById("login_button").style.display = "none";
+  document.getElementById("logout_button").style.display = "inline-block";
 }
