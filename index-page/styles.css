@@ -700,3 +700,8 @@ p>span:hover {
 .question {
 	font-weight: bold;
 }
+
+.question,
+.answer {
+	padding-left: 2%;
+}
