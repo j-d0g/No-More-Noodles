@@ -13,11 +13,11 @@
     <a href="#"><img id="logo" src="../index-page/logo.png"></a>
     <script type="text/javascript">
       function owned(x) {
-        document.getElementById(x).style.color = "green";
+        document.getElementById(x).style.color = "rgb(150, 150, 150)";
       }
 
       function unowned(x) {
-        document.getElementById(x).style.color = "blue";
+        document.getElementById(x).style.color = "rgb(255, 255, 255)";
       }
     </script>
 
