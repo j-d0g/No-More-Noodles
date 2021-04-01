@@ -1,4 +1,4 @@
-html{
+html {
 	scroll-behavior: smooth;
 }
 
@@ -7,7 +7,7 @@ html{
 
 
 body * {
-	font-family: 'Dancing Script', cursive;
+	font-family: 'Times';
 
 
 
@@ -19,7 +19,7 @@ body {
 	background-color: #212121;
 	margin: 0;
 	padding: 0;
-	color: rgb(252, 196, 45);
+	color: rgb(255, 255, 255);
 
 
 }
@@ -76,10 +76,12 @@ h1 {
 	overflow: scroll;
 
 }
-.nutritional-facts-container > h2 {
+
+.nutritional-facts-container>h2 {
 	text-align: center;
 	font-size: 1rem;
 }
+
 #logo {
 	position: absolute;
 	width: 120px;
@@ -106,7 +108,7 @@ h1 {
 
 }
 
-.ingredients-container > h2 {
+.ingredients-container>h2 {
 	text-align: center;
 	font-size: 1rem;
 }
@@ -124,7 +126,7 @@ h1 {
 
 }
 
-.steps-container > h2 {
+.steps-container>h2 {
 	text-align: center;
 	font-size: 1rem;
 }
@@ -135,10 +137,12 @@ p {
 	margin-left: 5%;
 }
 
-th, td {
-  border: 1px solid white;
-  font-size: 1rem;
+th,
+td {
+	border: 1px solid white;
+	font-size: 1rem;
 }
+
 td {
 	border-top: none;
 }
