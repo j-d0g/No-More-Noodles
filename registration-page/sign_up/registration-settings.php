@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
 
@@ -8,12 +9,12 @@
 	<link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
 
 </head>
+
 <body>
+	<img src="reg-background.jpg" id="bg">
 	<div class="form">
 		<a href=""><img src="../../index-page/logo.png"></a>
-		<h1>Account settings</h1>
-		<hr id="divider1">
-		<form method='post'  action="setting_flags.php" id ="divider2">
+		<form method='post' action="setting_flags.php" id="divider2">
 			<h2 id="allergies-header">Allergies</h2>
 			<input class="allergies-checkbox" type="checkbox" name="flag0">
 			<label class="allergies-checkbox" for="flag0">Dairy free</label><br>
@@ -31,10 +32,11 @@
 			<label class="cuisines-checkbox" for="flag5">Vegan</label><br>
 			<input class="cuisines-checkbox" type="checkbox" name="flag6">
 			<label class="cuisines-checkbox" for="flag6">Vegetarian</label><br>
-			<input  class="save-button" type="submit" name="login" value="Save and exit">
+			<input class="save-button" type="submit" name="login" value="Save and exit">
 
 		</form>
 	</div>
 
 </body>
+
 </html>

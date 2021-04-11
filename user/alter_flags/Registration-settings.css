@@ -1,15 +1,20 @@
-html{
+html {
 	scroll-behavior: smooth;
 }
 
 
-
+body #bg {
+	z-index: -1;
+	width: auto;
+	height: 100%;
+	opacity: 0.6;
+}
 
 
 body * {
-	font-family: 'Dancing Script', cursive;
-
-
+	font-family: "Times New Roman",
+		Times,
+		serif;
 }
 
 
@@ -28,42 +33,53 @@ button {
 }
 
 .form {
-	width: 75%;
-	height: 500px;
-	background: #202004;
+	width: 50%;
+	height: 400px;
+	background: #fdc500;
 	position: absolute;
 	top: 100px;
 	left: 50%;
 	transform: translate(-50%, 0);
-	border: 1px solid rgb(252, 196, 45);
 	border-radius: 25px;
 	transition: all 0.3s ease;
 	z-index: -1;
+}
 
-
+.form img {
+	align-items: center;
+	align-self: center;
+	padding-left: 37%;
 }
 
 h1 {
 	text-align: center;
 	border-bottom: 1px solid rgb(252, 196, 45);
-	padding-bottom: 15px;
-	color: rgb(252, 196, 45);
+	padding-bottom: 10%;
+	color: black;
 	font-size: 1.5rem;
+	padding-top: 30%;
 }
 
+h2 {
+	padding-top: 2%;
+	padding-bottom: 2%;
+}
+
+.form form {
+	padding-top: 5%;
+}
 
 .save-button {
 	position: absolute;
-	transform: translate(-50%,0);
-	top: 105%;
+	transform: translate(-50%, 0);
+	top: 90%;
 	width: 20%;
 	height: 12%;
 	border-radius: 5px;
 	background: #2e2d2d;
+	border: 1px solid black;
 	font-size: 1.5vw;
-	opacity: 0.8;
 	color: white;
-	border: 1px solid rgb(252, 196, 45);
 	transition: all 0.5s ease;
 	cursor: pointer;
 
@@ -74,6 +90,7 @@ h1 {
 	background-color: rgb(252, 196, 45);
 	color: black;
 	border: 1px solid black;
+	box-shadow: 3px 6px;
 }
 
 #divider1 {
@@ -81,35 +98,34 @@ h1 {
 	border-right: none;
 	border-left: none;
 	height: 68%;
-	border-bottom: 1px solid rgb(252, 196, 45);  
-
 }
 
-#divider2{
+#divider2 {
 	position: absolute;
 	top: 14%;
 	left: 50%;
 	height: 71%;
-	border-left: 1px solid rgb(252, 196, 45);
 	width: 100%;
 
 }
 
 
 #allergies-header {
+	color: black;
 	position: absolute;
 	top: 0;
 	left: -25%;
-	transform: translateX(-50%); 
+	transform: translateX(-50%);
 
 
 }
 
 #cuisines-header {
 	position: absolute;
+	color: black;
 	top: 0;
 	left: 25%;
-	transform: translateX(-50%); 
+	transform: translateX(-50%);
 
 }
 
@@ -118,6 +134,7 @@ h1 {
 
 
 .allergies-checkbox {
+	color: black;
 	position: relative;
 	left: -45%;
 	top: 15%;
@@ -126,11 +143,16 @@ h1 {
 }
 
 
-.cuisines-checkbox{
+.cuisines-checkbox {
+	color: black;
 	position: relative;
 	top: -30%;
 	left: 5%;
 	margin-bottom: 20px;
+}
+
+.cuisines-checkbox>input:checked {
+	background-color: black;
 }
 
 img {
@@ -144,6 +166,3 @@ img {
 img:hover {
 	margin-top: 7px;
 }
-
-
-
