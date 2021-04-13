@@ -98,6 +98,7 @@
 
     //split $records[ingredients] by the regex /~/
     $ingArray = preg_split("/~/", $records['ingredients']);
+    $_SESSION['ingredients'] = $ingArray;
     $i = 0;
     echo "<ul>";
     foreach ($ingArray as $ing) {
