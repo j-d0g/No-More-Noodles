@@ -67,6 +67,7 @@ h2 {
 
 .form form {
 	padding-top: 5%;
+	align-items: baseline;
 }
 
 .save-button {
@@ -146,7 +147,7 @@ h2 {
 .cuisines-checkbox {
 	color: black;
 	position: relative;
-	top: -30%;
+	top: -39%;
 	left: 5%;
 	margin-bottom: 20px;
 }

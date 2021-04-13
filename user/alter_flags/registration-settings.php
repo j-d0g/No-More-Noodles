@@ -11,7 +11,7 @@
 </head>
 
 <body>
-	<img src="reg-background.jpg" id="bg">
+	<!-- <img src="reg-background.jpg" id="bg"> -->
 	<div class="form">
 		<a href=""><img src="../../index-page/logo.png"></a>
 		<form method='post' action="setting_flags.php" id="divider2">
