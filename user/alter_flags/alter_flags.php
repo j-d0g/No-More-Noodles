@@ -43,7 +43,7 @@
     // Updates cell in table
     $sql = "UPDATE user SET flag_list='$flag_str' WHERE userId=". $_SESSION['user_id'];
     if ($conn->query($sql)) {
-      header("Location: ../show_settings.php");
+      header("Location: ../../index.php");
       die();
     }
     else {
@@ -51,7 +51,3 @@
     }
 
   }
-
-
-
-?>

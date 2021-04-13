@@ -14,7 +14,7 @@
 	<!-- <img src="reg-background.jpg" id="bg"> -->
 	<div class="form">
 		<a href=""><img src="../../index-page/logo.png"></a>
-		<form method='post' action="setting_flags.php" id="divider2">
+		<form method='post' action="alter_flags.php" id="divider2">
 			<h2 id="allergies-header">Allergies</h2>
 			<input class="allergies-checkbox" type="checkbox" name="flag0">
 			<label class="allergies-checkbox" for="flag0">Dairy free</label><br>
