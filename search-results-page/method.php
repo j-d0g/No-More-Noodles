@@ -72,7 +72,7 @@
   	            <td>$records[fat]</td>
   	            <td>$records[carbs]</td>
   	            <td>$records[salt]</td>
-  	            <td>$records[sugar]r</td>
+  	            <td>$records[sugar]</td>
   	           </tr>
   	          </table>";
 
