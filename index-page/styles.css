@@ -173,7 +173,7 @@ button:active {
 	width: 400px;
 	height: 375px;
 	background: Black;
-	opacity: 75%;
+	opacity: 85%;
 	position: absolute;
 	top: -24%;
 	left: 84.5%;
@@ -183,6 +183,10 @@ button:active {
 	transition: all 0.5s ease;
 }
 
+.question {
+	color: rgb(252, 196, 45);
+	opacity: 1;
+}
 
 
 
