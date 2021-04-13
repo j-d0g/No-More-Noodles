@@ -11,6 +11,7 @@
 </head>
 
 <body>
+
 	<!-- <img src="reg-background.jpg" id="bg"> -->
 	<div class="form">
 		<a href=""><img src="../../index-page/logo.png"></a>
