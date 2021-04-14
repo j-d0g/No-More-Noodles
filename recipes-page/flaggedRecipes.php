@@ -59,10 +59,10 @@
 //output different heading depending on flags
   switch ($inputFlags) {
     case "1000000":
-      echo "<h1>Egg free recipes:</h1>";
+      echo "<h1>Dairy free recipes:</h1>";
       break;
     case "0100000":
-      echo "<h1>Dairy free recipes:</h1>";
+      echo "<h1>Egg free recipes:</h1>";
       break;
     case "0010000":
       echo "<h1>Gluten free recipes:</h1>";

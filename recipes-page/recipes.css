@@ -17,6 +17,18 @@ p,h2,ul,a {
 	text-decoration: none;
 }
 
+
+button {
+	background-color: #202004;
+	color: rgba(255, 255, 255, 0.7);
+	border: 1px solid rgb(252, 196, 45);
+	border-radius: 25px;
+	font-size: 1rem;
+	text-align: center;
+	padding-bottom: 2px;
+
+}
+
 #next-recipe,#previous-recipe {
 	position: absolute;
 	z-index: 1;
