@@ -56,7 +56,33 @@
                   </div></a>";
   }
 
-  echo "<h1>Results:</h1>";
+//output different heading depending on flags
+  switch ($inputFlags) {
+    case "1000000":
+      echo "<h1>Egg free recipes:</h1>";
+      break;
+    case "0100000":
+      echo "<h1>Dairy free recipes:</h1>";
+      break;
+    case "0010000":
+      echo "<h1>Gluten free recipes:</h1>";
+      break;
+    case "0001000":
+      echo "<h1>Halal recipes:</h1>";
+      break;
+    case "0000100":
+      echo "<h1>Nut free recipes:</h1>";
+      break;
+    case "0000010":
+      echo "<h1>Vegan recipes:</h1>";
+      break;
+    case "0000001":
+      echo "<h1>Vegetarian recipes:</h1>";
+      break;
+    default:
+    echo "<h1>Results:</h1>";
+  }
+
   echo $output;
 
   ?>
