@@ -5,10 +5,31 @@
 <head>
   <title>Method</title>
   <link rel="stylesheet" type="text/css" href="selected-result.css">
-  <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <style>
+    hr {
+      height: 1px;
+      background-color: grey;
+      border: none;
+    }
+  </style>
 </head>
 
 <body>
+  <div class="header">
+    <!-- NAVIGATION PANEL -->
+    <img src="../index-page/black-img.jpg" id="black-img" class="opacify-animation">
+    <img src="../index-page/logo.png" id="logo" class="opacify-animation">
+    <a href="../registration-page/login/logout.php" class="navigation opacify-animation" style="display: none" id="logout_button">Logout</a>
+
+    <a href="../user/set_ingredients/setting_ingredients.php" class="navigation opacify-animation" style="display: none;" id="settings_button1">Ingredients</a>
+    <a href="../user/alter_flags/registration-settings.php" class="navigation opacify-animation" style="display: none;" id="settings_button2">Flags</a>
+
+    <a href="../registration-page/registration.php" class="navigation opacify-animation" style="display: inline-block;" id="login_button">Login/Register</a>
+    <a onclick="openForm()" class="navigation opacify-animation">Faq</a>
+    <a href="../recipes-page/recipes.html" class="navigation opacify-animation" id="dropdown">Recipes</a>
+    <a href="../index.php" id="Home" class="navigation opacify-animation">Home</a>
+  </div>
   <script type="text/javascript">
     function owned(x) {
       document.getElementById(x).style.color = "rgb(150, 150, 150)";
@@ -95,10 +116,10 @@
   }
 
 
-  echo "<form action='create_shopping_pdf.php' method = 'post'>";
+  echo "<form action='create_shopping_pdf.php' class='button1' method = 'post'>";
   echo "<input type = 'submit' value = ' Get shopping list'>  ";
   echo "</form>";
-  echo "<form action='create_method_pdf.php' method = 'post'>";
+  echo "<form action='create_method_pdf.php' class='button2' method = 'post'>";
   echo "<input type = 'submit' value = ' Get method'>  ";
   echo "</form>";
   //display difficulty (inside nutritional info container)
@@ -128,9 +149,9 @@
   //split $records[method] by the regex /~/
   $metArray = preg_split("/~/", $records['method']);
   $_SESSION['method'] = $metArray;
-  echo "<ol>";
+  echo "<ol class='meth'>";
   foreach ($metArray as $met) {
-    echo "<li>$met</li>";
+    echo "<li>$met<hr></li>";
   }
   echo "</ol>";
   echo "</div>";

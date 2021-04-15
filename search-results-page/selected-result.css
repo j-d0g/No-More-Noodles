@@ -39,7 +39,7 @@ button {
 }
 
 .form {
-	width: 60%;
+	width: 80%;
 	height: 80%;
 	background: black;
 	position: absolute;
@@ -310,7 +310,7 @@ table {
 	text-decoration: none;
 	position: relative;
 	float: right;
-	top: 8px;
+	top: 20px;
 	margin-right: 1.5em;
 	font-size: 1.5rem;
 	font-family: 'Dancing Script', cursive;
@@ -402,7 +402,7 @@ table {
 	width: 120px;
 	position: absolute;
 	left: 15px;
-	top: 10px;
+	top: 0;
 }
 
 
