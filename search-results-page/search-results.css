@@ -59,12 +59,12 @@ h1 {
 .inside-form {
 	display: inline-block;
 	width: 30%;
-	height: 50%;
+	height: 30em;
 	position: relative;
 	background: #262626;
 	border: white 2px solid;
 	margin-bottom: 30px;
-	margin-left: 15px;
+	margin-left: 2%;
 	overflow: hidden;
 	transition: all 0.3s ease;
 	/*! opacity: 0.8; */
@@ -98,8 +98,9 @@ h2 {
 	top: -35px;
 	width: 100%;
 	text-align: center;
-	padding-top: 50%;
+	padding-top: 45%;
 	/*! opacity: 0.6; */
+	padding-bottom: 10%;
 }
 
 #logo {

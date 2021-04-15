@@ -15,14 +15,6 @@
 	<!-- NAVIGATION PANEL -->
 	<img src="../../index-page/black-img.jpg" id="black-img" class="opacify-animation">
 	<img src="../../index-page/logo.png" id="logo" class="opacify-animation">
-	<a href="../../registration-page/login/logout.php" class="navigation opacify-animation" style="display: none" id="logout_button">Logout</a>
-
-	<a href="../../user/set_ingredients/setting_ingredients.php" class="navigation opacify-animation" style="display: none;" id="settings_button1">Ingredients</a>
-	<a href="../../user/alter_flags/registration-settings.php" class="navigation opacify-animation" style="display: none;" id="settings_button2">Flags</a>
-
-	<a href="../../registration-page/registration.php" class="navigation opacify-animation" style="display: inline-block;" id="login_button">Login/Register</a>
-	<a onclick="openForm()" class="navigation opacify-animation">Faq</a>
-	<a href="../../recipes-page/recipes.html" class="navigation opacify-animation" id="dropdown">Recipes</a>
 	<a href="../../index.php" id="Home" class="navigation opacify-animation">Home</a>
 
 	<div class="php">
@@ -40,7 +32,7 @@
 				<input class="allergies-checkbox" type="checkbox" name="flag4">
 				<label class="allergies-checkbox" for="flag4">Nuts allergy</label><br>
 
-				<h2 id="cuisines-header">Cuisines</h2>
+				<h2 id="cuisines-header">Dietary requirements</h2>
 				<input class="cuisines-checkbox" type="checkbox" name="flag3">
 				<label class="cuisines-checkbox" for="flag3">Halal</label><br>
 				<input class="cuisines-checkbox" type="checkbox" name="flag5">

@@ -48,7 +48,7 @@ button {
 .form img {
 	align-items: center;
 	align-self: center;
-	padding-left: 37%;
+	padding-left: 3%;
 }
 
 h1 {
@@ -72,8 +72,8 @@ h2 {
 
 .save-button {
 	position: absolute;
-	transform: translate(-50%, 0);
-	top: 90%;
+	/*! transform: translate(-50%, 0); */
+	top: 85%;
 	width: 20%;
 	height: 12%;
 	border-radius: 5px;
@@ -85,6 +85,7 @@ h2 {
 	cursor: pointer;
 
 
+	left: -45%;
 }
 
 .save-button:hover {
@@ -108,6 +109,7 @@ h2 {
 	height: 71%;
 	width: 100%;
 
+	border-left: 2px solid black;
 }
 
 
@@ -119,6 +121,10 @@ h2 {
 	transform: translateX(-50%);
 
 
+	width: 50%;
+	text-align: center;
+	border-bottom: 2px solid black;
+	/*! padding-bottom: -1%; */
 }
 
 #cuisines-header {
@@ -128,6 +134,9 @@ h2 {
 	left: 25%;
 	transform: translateX(-50%);
 
+	text-align: center;
+	width: 50%;
+	border-bottom: 2px solid black;
 }
 
 
@@ -141,6 +150,7 @@ h2 {
 	top: 15%;
 	margin-bottom: 20px;
 
+	font-size: 1.3rem;
 }
 
 
@@ -150,6 +160,7 @@ h2 {
 	top: -39%;
 	left: 5%;
 	margin-bottom: 20px;
+	font-size: 1.3rem;
 }
 
 .cuisines-checkbox>input:checked {
@@ -158,7 +169,7 @@ h2 {
 
 img {
 	position: absolute;
-	width: 120px;
+	width: 160px;
 	margin: 12px;
 	transition: all 0.3s ease;
 }

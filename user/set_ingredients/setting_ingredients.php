@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
   <title>Change ingredients</title>
   <?php
   session_start();
@@ -158,20 +159,14 @@
   <!-- NAVIGATION PANEL -->
   <img src="../../index-page/black-img.jpg" id="black-img" class="opacify-animation">
   <img src="../../index-page/logo.png" id="logo" class="opacify-animation">
-  <a href="../../registration-page/login/logout.php" class="navigation opacify-animation" style="display: none" id="logout_button">Logout</a>
-
-  <a href="../../user/set_ingredients/setting_ingredients.php" class="navigation opacify-animation" style="display: none;" id="settings_button1">Ingredients</a>
-  <a href="../../user/alter_flags/registration-settings.php" class="navigation opacify-animation" style="display: none;" id="settings_button2">Flags</a>
-
-  <a href="../../registration-page/registration.php" class="navigation opacify-animation" style="display: inline-block;" id="login_button">Login/Register</a>
-  <a onclick="openForm()" class="navigation opacify-animation">Faq</a>
-  <a href="../../recipes-page/recipes.html" class="navigation opacify-animation" id="dropdown">Recipes</a>
   <a href="../../index.php" id="Home" class="navigation opacify-animation">Home</a>
 
   <div class="php">
     <div class="oi_container">
       <div class="owned_ingredients">
-        <h2 class="header">Your ingredients</h2>
+        <h2 class="header">Your ingredients
+          <hr>
+        </h2>
         <?php
         if (isset($_SESSION['user_id'])) {
           // Gets the current ingredients
@@ -211,7 +206,9 @@
         <!-- Duplicate code for form to add ingredient -->
         <div class="form">
           <div class='add_ingredient_form'>
-            <h2>Add an ingredient</h2>
+            <h2>Add an ingredient
+              <hr>
+            </h2>
             <form method='post' action='setting_ingredients.php'>
               <input type='text' name='ingredient'>
               <input type='submit' value='Submit' name='submit'>
@@ -232,7 +229,9 @@
         <!-- Duplicate code for form to remove ingredient -->
         <div class="form">
           <div class='add_ingredient_form'>
-            <h2>Remove ingredient</h2>
+            <h2>Remove ingredient
+              <hr>
+            </h2>
             <form method='post' action='setting_ingredients.php'>
               <input type='text' name='ingredient_r'>
               <input type='submit' value='Submit' name='submit'>

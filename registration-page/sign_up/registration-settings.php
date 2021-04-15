@@ -16,6 +16,7 @@
 		<a href=""><img src="../../index-page/logo.png"></a>
 		<form method='post' action="setting_flags.php" id="divider2">
 			<h2 id="allergies-header">Allergies</h2>
+			<br>
 			<input class="allergies-checkbox" type="checkbox" name="flag0">
 			<label class="allergies-checkbox" for="flag0">Dairy free</label><br>
 			<input class="allergies-checkbox" type="checkbox" name="flag1">
@@ -25,7 +26,8 @@
 			<input class="allergies-checkbox" type="checkbox" name="flag4">
 			<label class="allergies-checkbox" for="flag4">Nuts allergy</label><br>
 
-			<h2 id="cuisines-header">Cuisines</h2>
+			<h2 id="cuisines-header">Dietary requirements</h2>
+			<br>
 			<input class="cuisines-checkbox" type="checkbox" name="flag3">
 			<label class="cuisines-checkbox" for="flag3">Halal</label><br>
 			<input class="cuisines-checkbox" type="checkbox" name="flag5">

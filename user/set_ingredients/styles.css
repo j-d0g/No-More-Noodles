@@ -31,6 +31,13 @@ button {
     border-radius: 25px;
     min-height: 20%;
     padding-bottom: 5%;
+    /*! font-family: 'Dancing Script', cursive; */
+}
+
+.owned_ingredients h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    padding-top: 5%;
 }
 
 .oi_container {
@@ -41,7 +48,7 @@ button {
     width: 50%;
     padding-bottom: 5%;
     padding-left: 25%;
-    margin-bottom: 5%;
+    /*! margin-bottom: 5%; */
 }
 
 .page-forms {
@@ -56,10 +63,21 @@ button {
     z-index: -1;
 }
 
+hr {
+    color: black;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
 .form {
     text-align: center;
     align-items: center;
     padding: 3%;
+}
+
+.form h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
 }
 
 @keyframes animate {
@@ -182,7 +200,7 @@ button {
     text-decoration: none;
     position: relative;
     float: right;
-    top: 20px;
+    top: 12px;
     margin-right: 1.5em;
     font-size: 1.5rem;
     font-family: 'Dancing Script', cursive;
@@ -274,7 +292,7 @@ button {
     width: 120px;
     position: absolute;
     left: 15px;
-    top: 0px;
+    top: 8px;
     /*! padding-top: 0; */
 }
 

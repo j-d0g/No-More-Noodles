@@ -1,183 +1,74 @@
-html {
-	scroll-behavior: smooth;
+html 
+
+	<!-- NAVIGATION PANEL -->
+	<img src="index-page/black-img.jpg" id="black-img" class="opacify-animation">
+	<img src="index-page/logo.png" id="logo" class="opacify-animation">
+	<a href="registration-page/login/logout.php" class="navigation opacify-animation" style="display: none" id="logout_button">Logout</a>
+
+	<a href="user/set_ingredients/setting_ingredients.php" class="navigation opacify-animation" style="display: none;" id="settings_button1">Ingredients</a>
+	<a href="user/alter_flags/registration-settings.php" class="navigation opacify-animation" style="display: none;" id="settings_button2">Flags</a>
+
+	<a href="registration-page/registration.php" class="navigation opacify-animation" style="display: inline-block;" id="login_button">Login/Register</a>
+	<a onclick="openForm()" class="navigation opacify-animation">Faq</a>
+	<a href="recipes-page/recipes.html" class="navigation opacify-animation" id="dropdown">Recipes</a>
+	<a href="index.php" id="Home" class="navigation opacify-animation">Home</a>
+
+css 
+
+@keyframes animate {
+	0% {
+		transform: perspective(0px) rotateY(0deg);
+
+	}
+
+	100% {
+		transform: perspective(0px) rotateY(360deg);
+	}
 }
 
+@media only screen and (max-width: 750px) {
+	.sidepanel-bg {
+		width: 330px;
+		height: 200px;
 
-body #bg {
-	z-index: -1;
-	width: auto;
-	height: 100%;
-	opacity: 0.6;
+	}
+
+	.nomore-text {
+		font-size: 1.5rem;
+
+	}
+
+	#intro-text {
+		font-size: 0.8rem;
+	}
+
+	p>span {
+		font-size: 2rem;
+	}
+
+	.navigation {
+		font-size: 0.6rem;
+	}
+
+	#black-img {
+		height: 50px;
+	}
+
+	#logo {
+		width: 90px;
+	}
+
+	.form {
+		top: 70%;
+	}
+
+	button {
+		font-size: 0.8rem;
+	}
+
+
 }
 
-
-body * {
-	font-family: "Times New Roman",
-		Times,
-		serif;
-}
-
-
-
-body {
-	background-color: #212121;
-	margin: 0;
-	padding: 0;
-	color: rgb(252, 196, 45);
-}
-
-
-
-button {
-	cursor: pointer;
-}
-
-.form {
-	width: 50%;
-	height: 400px;
-	background: #fdc500;
-	position: absolute;
-	top: 100px;
-	left: 50%;
-	transform: translate(-50%, 0);
-	border-radius: 25px;
-	transition: all 0.3s ease;
-	z-index: -1;
-}
-
-.form img {
-	align-items: center;
-	align-self: center;
-	padding-left: 3%;
-}
-
-h1 {
-	text-align: center;
-	border-bottom: 1px solid rgb(252, 196, 45);
-	padding-bottom: 10%;
-	color: black;
-	font-size: 1.5rem;
-	padding-top: 30%;
-}
-
-h2 {
-	padding-top: 2%;
-	padding-bottom: 2%;
-}
-
-.form form {
-	padding-top: 5%;
-	align-items: baseline;
-}
-
-.save-button {
-	position: absolute;
-	/*! transform: translate(-50%, 0); */
-	top: 85%;
-	width: 20%;
-	height: 12%;
-	border-radius: 5px;
-	background: #2e2d2d;
-	border: 1px solid black;
-	font-size: 1.5vw;
-	color: white;
-	transition: all 0.5s ease;
-	cursor: pointer;
-
-
-	left: -45%;
-}
-
-.save-button:hover {
-	background-color: rgb(252, 196, 45);
-	color: black;
-	border: 1px solid black;
-	box-shadow: 3px 6px;
-}
-
-#divider1 {
-	border-top: none;
-	border-right: none;
-	border-left: none;
-	height: 68%;
-}
-
-#divider2 {
-	position: absolute;
-	top: 14%;
-	left: 50%;
-	height: 71%;
-	width: 100%;
-
-	border-left: 2px solid black;
-}
-
-
-#allergies-header {
-	color: black;
-	position: absolute;
-	top: 0;
-	left: -25%;
-	transform: translateX(-50%);
-
-
-	width: 50%;
-	text-align: center;
-	border-bottom: 2px solid black;
-	/*! padding-bottom: -1%; */
-}
-
-#cuisines-header {
-	position: absolute;
-	color: black;
-	top: 0;
-	left: 25%;
-	transform: translateX(-50%);
-
-	text-align: center;
-	width: 50%;
-	border-bottom: 2px solid black;
-}
-
-
-
-
-
-.allergies-checkbox {
-	color: black;
-	position: relative;
-	left: -45%;
-	top: 15%;
-	margin-bottom: 20px;
-
-	font-size: 1.3rem;
-}
-
-
-.cuisines-checkbox {
-	color: black;
-	position: relative;
-	top: -39%;
-	left: 5%;
-	margin-bottom: 20px;
-	font-size: 1.3rem;
-}
-
-.cuisines-checkbox>input:checked {
-	background-color: black;
-}
-
-img {
-	position: absolute;
-	width: 160px;
-	margin: 12px;
-	transition: all 0.3s ease;
-}
-
-
-img:hover {
-	margin-top: 7px;
-}
 
 @keyframes opacify {
 	25% {
@@ -244,7 +135,7 @@ img:hover {
 	text-decoration: none;
 	position: relative;
 	float: right;
-	top: 20px;
+	top: 8px;
 	margin-right: 1.5em;
 	font-size: 1.5rem;
 	font-family: 'Dancing Script', cursive;
@@ -336,8 +227,7 @@ img:hover {
 	width: 120px;
 	position: absolute;
 	left: 15px;
-	top: 0;
-	/*! padding-top: 0; */
+	top: 10px;
 }
 
 
@@ -406,8 +296,4 @@ button:active {
 	background-color: rgb(252, 196, 45);
 	color: black;
 	border: 1px solid black;
-}
-
-.php {
-	padding-top: 5%;
 }
