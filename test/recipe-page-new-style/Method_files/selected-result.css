@@ -7,7 +7,7 @@ html {
 
 
 body * {
-	font-family: 'Times';
+	font-family: 'Times New Roman';
 
 
 
@@ -433,6 +433,6 @@ button:active {
 
 .header {
 	display: absolute;
-	padding-bottom: 10%;
+	padding-bottom: 0%;
 	top: 0%;
 }
