@@ -57,10 +57,7 @@
 	<img src="index-page/black-img.jpg" id="black-img" class="opacify-animation">
 	<img src="index-page/logo.png" id="logo" class="opacify-animation">
 	<a href="registration-page/login/logout.php" class="navigation opacify-animation" style="display: none" id="logout_button">Logout</a>
-
-	<a href="user/set_ingredients/setting_ingredients.php" class="navigation opacify-animation" style="display: none;" id="settings_button1">Ingredients</a>
-	<a href="user/alter_flags/registration-settings.php" class="navigation opacify-animation" style="display: none;" id="settings_button2">Flags</a>
-
+	<a href="user/show_settings.php" class="navigation opacify-animation" style="display: none;" id="settings_button">Settings</a>
 	<a href="registration-page/registration.php" class="navigation opacify-animation" style="display: inline-block;" id="login_button">Login/Register</a>
 	<a onclick="openForm()" class="navigation opacify-animation">Faq</a>
 	<a href="recipes-page/recipes.html" class="navigation opacify-animation" id="dropdown">Recipes</a>
