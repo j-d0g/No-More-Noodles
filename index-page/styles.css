@@ -293,14 +293,13 @@ p>span {
 	top: 0;
 	font-size: 3rem;
 	letter-spacing: -7px;
-	transition: all 0.2s ease;
+	transition: all 0.1s ease;
 
 }
 
 p>span:hover {
 	position: relative;
-	top: -13px;
-
+	top: -10px;
 }
 
 #intro-text {
