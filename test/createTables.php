@@ -1,64 +1,65 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <link rel="stylesheet" type="text/css" href="tables.css">
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
 
-  </body>
+<head>
+  <link rel="stylesheet" type="text/css" href="tables.css">
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+
+</body>
+
 </html>
 
 <?php
 
 // If local:
-  $servername = "localhost";
-  $username = "root";
-  $password = "root";
+$servername = "localhost";
+$username = "root";
+$password = "root";
 
 /* If on UoM
   $servername = "dbhost.cs.man.ac.uk";
   $username = "m37064lh";
   $password = "SQLDatabaseP";
 */
-  // Create connection
-  $conn = mysqli_connect($servername, $username, $password);
+// Create connection
+$conn = mysqli_connect($servername, $username, $password);
 
-  // Check connection
-  if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-  }
-  echo "Connected successfully" . "<br />";
+// Check connection
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
+}
+echo "Connected successfully" . "<br />";
 
 // -- Only on local
-  $sql = "DROP DATABASE Y1";
-  if ($conn->query($sql)) {
-    echo "DATABASE reset" . "<br />";
-  }
-  else {
-    echo("Error: " . $conn->error . "<br />");
-  }
+$sql = "DROP DATABASE Y1";
+if ($conn->query($sql)) {
+  echo "DATABASE reset" . "<br />";
+} else {
+  echo ("Error: " . $conn->error . "<br />");
+}
 
-  // Creates the db
-  $sql = "CREATE DATABASE Y1";
+// Creates the db
+$sql = "CREATE DATABASE Y1";
 
-  if ($conn->query($sql)) {
-    echo("Database created successfully" . "<br />");
-  }
-  else {
-    echo("Error: " . $conn->error . "<br />");
-  }
+if ($conn->query($sql)) {
+  echo ("Database created successfully" . "<br />");
+} else {
+  echo ("Error: " . $conn->error . "<br />");
+}
 //
 
-  $conn->select_db("Y1");
-  // if UoM $conn->select_db("2020_comp10120_y1");
-  if (!$conn) {
-    echo("Error: " . $conn->error . "<br />");
-  }
+$conn->select_db("Y1");
+// if UoM $conn->select_db("2020_comp10120_y1");
+if (!$conn) {
+  echo ("Error: " . $conn->error . "<br />");
+}
 
-  // Creates login table
-  $sql = "
+// Creates login table
+$sql = "
           CREATE TABLE login (
             userId INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
             forename VARCHAR(30) NOT NULL,
@@ -68,15 +69,14 @@
             )
   ";
 
-  if ($conn->query($sql)) {
-    echo "Login table created successfully" . "<br />";
-  }
-  else {
-    echo "Error: " . $conn->error . "<br />";
-  }
+if ($conn->query($sql)) {
+  echo "Login table created successfully" . "<br />";
+} else {
+  echo "Error: " . $conn->error . "<br />";
+}
 
-  // Creates user table
-  $sql = "
+// Creates user table
+$sql = "
           CREATE TABLE user (
             userId INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY REFERENCES login(userId),
             favourite_recipes TEXT,
@@ -85,15 +85,14 @@
             )
   ";
 
-  if ($conn->query($sql)) {
-    echo "User table created successfully" . "<br />";
-  }
-  else {
-    echo "Error: " . $conn->error . "<br />";
-  }
+if ($conn->query($sql)) {
+  echo "User table created successfully" . "<br />";
+} else {
+  echo "Error: " . $conn->error . "<br />";
+}
 
-  // Creates recipe table
-  $sql = "
+// Creates recipe table
+$sql = "
           CREATE TABLE recipes (
             recipeId INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
             recipe_name VARCHAR(60) NOT NULL,
@@ -114,63 +113,58 @@
             )
   ";
 
-  if ($conn->query($sql)) {
-    echo "Recipe table created successfully" . "<br />";
-  }
-  else {
-    echo "Error: " . $conn->error . "<br />";
-  }
+if ($conn->query($sql)) {
+  echo "Recipe table created successfully" . "<br />";
+} else {
+  echo "Error: " . $conn->error . "<br />";
+}
 
-  // Inserting a test user
-  $password = password_hash('test', PASSWORD_BCRYPT);
-  $sql = "INSERT INTO login (forename, surname, email, password)
+// Inserting a test user
+$password = password_hash('test', PASSWORD_BCRYPT);
+$sql = "INSERT INTO login (forename, surname, email, password)
             VALUES ('Lawrence', 'Hunter', 'lh@lh.com', '$password')";
-  if ($conn->query($sql)) {
-    echo "Login added successfully" . "<br />";
-  }
-  else {
-    echo "Error: " . $conn->error . "<br />";
-  }
+if ($conn->query($sql)) {
+  echo "Login added successfully" . "<br />";
+} else {
+  echo "Error: " . $conn->error . "<br />";
+}
 
-  // Inserting a test user
-  $sql = "INSERT INTO user (favourite_recipes, owned_ingredients, flag_list)
+// Inserting a test user
+$sql = "INSERT INTO user (favourite_recipes, owned_ingredients, flag_list)
             VALUES ('Test: favourite_recipes', 'Test: owned_ingredients', '0000100')";
-  if ($conn->query($sql)) {
-    echo "User added successfully" . "<br />";
-  }
-  else {
-    echo "Error: " . $conn->error . "<br />";
-  }
+if ($conn->query($sql)) {
+  echo "User added successfully" . "<br />";
+} else {
+  echo "Error: " . $conn->error . "<br />";
+}
 
-  // Ve V N H G E D
+// Ve V N H G E D
 
-  //Inserting test1 recipe
-  $sql = "INSERT INTO recipes (recipe_name, image, calories, fat,
+//Inserting test1 recipe
+$sql = "INSERT INTO recipes (recipe_name, image, calories, fat,
           carbs, protein, salt, sugar, time, difficulty, ingredients, method,
           flags, user_rating, popularity) VALUES ('test gluten free', 'db_images/1.jpg',
           100, 2, 30, 10, 0.2, 10, 30, 2, 'Test ingredients', 'Test method',
           '0000100', '4.1~0', '9.8~0')";
-  if ($conn->query($sql)) {
-    echo "Recipe added successfully" . "<br />";
-  }
-  else {
-    echo "Error: " . $conn->error . "<br />";
-  }
+if ($conn->query($sql)) {
+  echo "Recipe added successfully" . "<br />";
+} else {
+  echo "Error: " . $conn->error . "<br />";
+}
 
-  //Inserting test2 recipe
-  $sql = "INSERT INTO recipes (recipe_name, image, calories, fat,
+//Inserting test2 recipe
+$sql = "INSERT INTO recipes (recipe_name, image, calories, fat,
           carbs, protein, salt, sugar, time, difficulty, ingredients, method,
           flags, user_rating, popularity) VALUES ('test halal', 'db_images/2.jpg',
           30, 20, 3, 100, 0.2, 10, 30, 2, 'Test ingredients', 'Test method',
           '0001000', '4.1~0', '9.8~0')";
-  if ($conn->query($sql)) {
-    echo "Recipe added successfully" . "<br />";
-  }
-  else {
-    echo "Error: " . $conn->error . "<br />";
-  }
-  //Inserting a test recipe: doughnuts
-  $sql = "INSERT INTO recipes (recipe_name, image, calories, fat,
+if ($conn->query($sql)) {
+  echo "Recipe added successfully" . "<br />";
+} else {
+  echo "Error: " . $conn->error . "<br />";
+}
+//Inserting a test recipe: doughnuts
+$sql = "INSERT INTO recipes (recipe_name, image, calories, fat,
           carbs, protein, salt, sugar, time, difficulty, ingredients, method,
           flags, user_rating, popularity) VALUES ('Jam doughnuts', 'db_images/3.webp',
           233, 9, 32, 5, 0.6, 13, 85, 3, '500g+Strong white bread flour~ 60g+Golden caster sugar~
@@ -186,17 +180,16 @@
                                           Fry for 2 mins each side until golden brown – they puff up and float, so you may need to gently push them down after about 1 min to help them colour evenly.~
                                           Remove the doughnuts from the fryer and place them on kitchen paper.~
                                           Toss the doughnuts in a bowl of caster sugar while still warm. Repeat the steps until all the doughnuts are fried, but keep checking the oil temperature is correct – if it\'s too high, they will burn and be raw in the middle; if it\'s too low, the oil will be absorbed into the doughnuts and they will become greasy. Set aside to cool before filling.~
-                                          To fill the doughnuts, make a hole with a small knife in the crease of each one, anywhere around the white line between the fried top and bottom.~',
+                                          To fill the doughnuts, make a hole with a small knife in the crease of each one, anywhere around the white line between the fried top and bottom',
           '0011000', '0~0', '0~0')";
-  if ($conn->query($sql)) {
-    echo "Recipe added successfully" . "<br />";
-  }
-  else {
-    echo "Error: " . $conn->error . "<br />";
-  }
+if ($conn->query($sql)) {
+  echo "Recipe added successfully" . "<br />";
+} else {
+  echo "Error: " . $conn->error . "<br />";
+}
 
-  //Inserting a test recipe: Sticky Chinese chicken traybake
-  $sql = "INSERT INTO recipes (recipe_name, image, calories, fat,
+//Inserting a test recipe: Sticky Chinese chicken traybake
+$sql = "INSERT INTO recipes (recipe_name, image, calories, fat,
           carbs, protein, salt, sugar, time, difficulty, ingredients, method,
           flags, user_rating, popularity) VALUES ('Sticky Chinese chicken traybake', 'db_images/4.webp',
           450, 27, 19, 32, 1, 14, 50, 1, '8+Chicken thighs~ 4tbsp+Hoisin sauce~
@@ -205,15 +198,14 @@
                                           50g+Cashew nuts~ Cooked+brown rice', 'Heat oven to 200C/180C fan/gas 6. Arrange the chicken thighs in a large roasting tin and slash the skin 2-3 times on each thigh. Mix together the hoisin, sesame oil, honey, five-spice, ginger, garlic and some seasoning. Pour over the chicken and toss to coat – you could now marinate the chicken for 2 hrs, or overnight if you have time. Roast, skin-side up, for 35 mins, basting at least once.~
                                           Stir through the cashew nuts and sprinkle the spring onions over the chicken. Return to the oven for 5 mins, then serve with brown rice.',
           '0000011', '0~0', '0~0')";
-  if ($conn->query($sql)) {
-    echo "Recipe added successfully" . "<br />";
-  }
-  else {
-    echo "Error: " . $conn->error . "<br />";
-  }
+if ($conn->query($sql)) {
+  echo "Recipe added successfully" . "<br />";
+} else {
+  echo "Error: " . $conn->error . "<br />";
+}
 
-  //Inserting a test recipe: Sausage ragu
-  $sql = "INSERT INTO recipes (recipe_name, image, calories, fat,
+//Inserting a test recipe: Sausage ragu
+$sql = "INSERT INTO recipes (recipe_name, image, calories, fat,
           carbs, protein, salt, sugar, time, difficulty, ingredients, method,
           flags, user_rating, popularity) VALUES ('Sausage ragu', 'db_images/5.webp',
           589, 18, 83, 19, 0.5, 18, 50, 1, '3 tbsp+olive oil~ 1+onion~
@@ -223,15 +215,14 @@
                                           Heat the remaining oil in a medium frying pan over a medium heat. Squeeze the sausagemeat from the skins and fry, breaking it up with a wooden spoon, for 5-7 mins until golden. Add to the sauce with the milk and lemon zest, then simmer for a further 5 mins.~
                                           Cook the pasta following pack instructions. Drain and toss with the sauce. Scatter over the parmesan and parsley leaves to serve.',
           '0010000', '0~0', '0~0')";
-  if ($conn->query($sql)) {
-    echo "Recipe added successfully" . "<br />";
-  }
-  else {
-    echo "Error: " . $conn->error . "<br />";
-  }
+if ($conn->query($sql)) {
+  echo "Recipe added successfully" . "<br />";
+} else {
+  echo "Error: " . $conn->error . "<br />";
+}
 
-  //Inserting a test recipe: Rice paper wraps
-  $sql = "INSERT INTO recipes (recipe_name, image, calories, fat,
+//Inserting a test recipe: Rice paper wraps
+$sql = "INSERT INTO recipes (recipe_name, image, calories, fat,
           carbs, protein, salt, sugar, time, difficulty, ingredients, method,
           flags, user_rating, popularity) VALUES ('Rice paper wraps', 'db_images/6.webp',
           125, 5, 15, 5, 0.2, 1, 20, 1, '50g+rice vermicelli noodles~ 1+carrot~
@@ -242,15 +233,14 @@
                                           Lift 1 sheet of rice paper out of the water, shake gently, then lay it carefully on a board. Place 2 prawns in the centre, with a mint leaf between them. Add a strip of avocado, pile some noodles on top, then add a layer of carrot and cucumber. Fold the bottom half of the rice paper over, then fold the sides in and tightly roll it up. Repeat using the second wrapper and soak 2 more to make 2 more rolls.~
                                           Make the rest of the rolls up using the remaining 4 wraps and the shredded chicken instead of prawns. Serve the rolls with the sweet chilli sauce for dipping.',
           '0010011', '0~0', '0~0')";
-  if ($conn->query($sql)) {
-    echo "Recipe added successfully" . "<br />";
-  }
-  else {
-    echo "Error: " . $conn->error . "<br />";
-  }
+if ($conn->query($sql)) {
+  echo "Recipe added successfully" . "<br />";
+} else {
+  echo "Error: " . $conn->error . "<br />";
+}
 
-  //Inserting a test recipe: Nutty chicken satay strips
-  $sql = "INSERT INTO recipes (recipe_name, image, calories, fat,
+//Inserting a test recipe: Nutty chicken satay strips
+$sql = "INSERT INTO recipes (recipe_name, image, calories, fat,
           carbs, protein, salt, sugar, time, difficulty, ingredients, method,
           flags, user_rating, popularity) VALUES ('Nutty chicken satay strips', 'db_images/7.webp',
           276, 10, 3, 41, 0.7, 2, 20, 1, '2 tbsp+chunky peanut butter~ 1+garlic clove~
@@ -261,15 +251,14 @@
                                           Add 2 skinless chicken breast fillets, cut into strips, and mix well. Arrange on the baking sheet, spaced apart, and bake in the oven for 8-10 mins until cooked, but still juicy.~
                                           Eat warm with roughly 10cm cucumber, cut into fingers, and sweet chilli sauce. Alternatively, leave to cool and keep in the fridge for up to 2 days.',
           '0000011', '0~0', '0~0')";
-  if ($conn->query($sql)) {
-    echo "Recipe added successfully" . "<br />";
-  }
-  else {
-    echo "Error: " . $conn->error . "<br />";
-  }
+if ($conn->query($sql)) {
+  echo "Recipe added successfully" . "<br />";
+} else {
+  echo "Error: " . $conn->error . "<br />";
+}
 
-  //Inserting a test recipe: Vegan chilli
-  $sql = "INSERT INTO recipes (recipe_name, image, calories, fat,
+//Inserting a test recipe: Vegan chilli
+$sql = "INSERT INTO recipes (recipe_name, image, calories, fat,
           carbs, protein, salt, sugar, time, difficulty, ingredients, method,
           flags, user_rating, popularity) VALUES ('Vegan chilli', 'db_images/8.webp',
           367, 10, 48, 12, 0.6, 22, 60, 1, '3 tbsp+olive oil~ 2+sweet potatoes~
@@ -280,16 +269,15 @@
                                           Meanwhile, heat the remaining oil in a large saucepan over a medium heat. Add the onion, carrot and celery. Cook for 8-10 mins, stirring occasionally until soft, then crush in the garlic and cook for 1 min more. Add the remaining dried spices and tomato puree. Give everything a good mix and cook for 1 min more.~
                                           Add the red pepper, chopped tomatoes and 200ml water. Bring the chilli to a boil, then simmer for 20 mins. Tip in the beans and cook for another 10 mins before adding the sweet potato. Season to taste then serve with lime wedges, guacamole, rice and coriander.',
           '1111111', '0~0', '0~0')";
-  if ($conn->query($sql)) {
-    echo "Recipe added successfully" . "<br />";
-  }
-  else {
-    echo "Error: " . $conn->error . "<br />";
-  }
+if ($conn->query($sql)) {
+  echo "Recipe added successfully" . "<br />";
+} else {
+  echo "Error: " . $conn->error . "<br />";
+}
 
 
-  //Inserting a test recipe: Spiced halloumi & pineapple burger with zingy slaw
-  $sql = "INSERT INTO recipes (recipe_name, image, calories, fat,
+//Inserting a test recipe: Spiced halloumi & pineapple burger with zingy slaw
+$sql = "INSERT INTO recipes (recipe_name, image, calories, fat,
           carbs, protein, salt, sugar, time, difficulty, ingredients, method,
           flags, user_rating, popularity) VALUES ('Spiced halloumi & pineapple burger with zingy slaw', 'db_images/9.webp',
           264, 14, 19, 11, 1.2, 18, 25, 1, '0.5+red cabbage~ 2+carrots~
@@ -299,15 +287,14 @@
                                           Mix the remaining oil with the chipotle paste then coat the halloumi slices in the mixture. Put the halloumi slices on a sheet of foil and put on the barbecue with the pineapple (or use a searing hot griddle pan if cooking inside). Cook for 2 mins on each side until the cheese is golden, and the pineapple is beginning to caramelise. Brush the buns with the remaining chipotle oil, then put your burger buns, if using, cut-side down, on the barbecue for the last 30 seconds of cooking to toast.~
                                           Assemble your burgers with the lettuce or buns. Start with a handful of the slaw, then add halloumi and pineapple. Serve with the remaining slaw.',
           '0111010', '0~0', '0~0')";
-  if ($conn->query($sql)) {
-    echo "Recipe added successfully" . "<br />";
-  }
-  else {
-    echo "Error: " . $conn->error . "<br />";
-  }
+if ($conn->query($sql)) {
+  echo "Recipe added successfully" . "<br />";
+} else {
+  echo "Error: " . $conn->error . "<br />";
+}
 
-  //Inserting a test recipe: Vegan lemon cake
-  $sql = "INSERT INTO recipes (recipe_name, image, calories, fat,
+//Inserting a test recipe: Vegan lemon cake
+$sql = "INSERT INTO recipes (recipe_name, image, calories, fat,
           carbs, protein, salt, sugar, time, difficulty, ingredients, method,
           flags, user_rating, popularity) VALUES ('Vegan lemon cake', 'db_images/10.webp',
           276, 9, 47, 2, 0.3, 29, 45, 1, '100ml+vegetable oil~ 275g+self-raising flour~
@@ -316,15 +303,14 @@
                                           Pour the mixture into the tin. Bake for 30 mins or until a skewer comes out clean. Cool in the tin for 10 mins, then remove and transfer the cake to a wire rack to cool fully.~
                                           For the icing, sieve the icing sugar into a bowl. Mix in just enough lemon juice to make an icing thick enough to pour over the loaf (if you make the icing too thin, it will just run off the cake).',
           '1111011', '0~0', '0~0')";
-  if ($conn->query($sql)) {
-    echo "Recipe added successfully" . "<br />";
-  }
-  else {
-    echo "Error: " . $conn->error . "<br />";
-  }
+if ($conn->query($sql)) {
+  echo "Recipe added successfully" . "<br />";
+} else {
+  echo "Error: " . $conn->error . "<br />";
+}
 
-  //Inserting a test recipe: Sausage, kale & gnocchi one-pot
-  $sql = "INSERT INTO recipes (recipe_name, image, calories, fat,
+//Inserting a test recipe: Sausage, kale & gnocchi one-pot
+$sql = "INSERT INTO recipes (recipe_name, image, calories, fat,
           carbs, protein, salt, sugar, time, difficulty, ingredients, method,
           flags, user_rating, popularity) VALUES ('Sausage, kale & gnocchi one-pot', 'db_images/11.webp',
           516, 27, 44, 21, 2.5, 3, 20, 1, '1 tbsp+olive oil~ 6+pork sausages~
@@ -332,16 +318,15 @@
                                           'Heat the oil in a large high-sided frying pan over a medium heat. Squeeze the sausages straight from their skins into the pan, then use the back of a wooden spoon to break the meat up. Sprinkle in the chilli flakes and fennel seeds, if using, then fry until the sausagemeat is crisp around the edges. Remove from the pan with a slotted spoon.~
                                           Tip the gnocchi into the pan, fry for a minute or so, then pour in the chicken stock. Once bubbling, cover the pan with a lid and cook for 3 mins, then stir in the kale. Cook for 2 mins more or until the gnocchi is tender and the kale has wilted. Stir in the parmesan, then season with black pepper and scatter the crisp sausagemeat over the top.',
           '0011000', '0~0', '0~0')";
-  if ($conn->query($sql)) {
-    echo "Recipe added successfully" . "<br />";
-  }
-  else {
-    echo "Error: " . $conn->error . "<br />";
-  }
+if ($conn->query($sql)) {
+  echo "Recipe added successfully" . "<br />";
+} else {
+  echo "Error: " . $conn->error . "<br />";
+}
 
 
-  //Inserting a test recipe: Sausage, kale & gnocchi one-pot
-  $sql = "INSERT INTO recipes (recipe_name, image, calories, fat,
+//Inserting a test recipe: Sausage, kale & gnocchi one-pot
+$sql = "INSERT INTO recipes (recipe_name, image, calories, fat,
           carbs, protein, salt, sugar, time, difficulty, ingredients, method,
           flags, user_rating, popularity) VALUES ('Breakfast burrito', 'db_images/12.webp',
           366, 21, 26, 16, 0.9, 4, 15, 1, '1 tsp+chipotle paste~ 1+egg~ 1 tsp+rapeseed oil~
@@ -349,58 +334,57 @@
                                           'Whisk the chipotle paste with the egg and some seasoning in a jug. Heat the oil in a large frying pan, add the kale and tomatoes.~
                                           Cook until the kale is wilted and the tomatoes have softened, then push everything to the side of the pan. Pour the beaten egg into the cleared half of the pan and scramble. Layer everything into the centre of your wrap, topping with the avocado, then wrap up and eat immediately.',
           '0111001', '0~0', '0~0')";
-  if ($conn->query($sql)) {
-    echo "Recipe added successfully" . "<br />";
-  }
-  else {
-    echo "Error: " . $conn->error . "<br />";
-  }
+if ($conn->query($sql)) {
+  echo "Recipe added successfully" . "<br />";
+} else {
+  echo "Error: " . $conn->error . "<br />";
+}
 
 
-  $sql = "SELECT * FROM login";
-  $records = $conn->query($sql);
+$sql = "SELECT * FROM login";
+$records = $conn->query($sql);
 
-  $output = "<table border='2'>
+$output = "<table border='2'>
               <th>User ID</th>
               <th>Forename</th>
               <th>Surname</th>
               <th>Email</th>
               <th>Password</th>";
 
-  while ($row = $records->fetch_assoc()) {
-    $output .= "<tr>
+while ($row = $records->fetch_assoc()) {
+  $output .= "<tr>
                   <td>$row[userId]</td>
                   <td>$row[forename]</td>
                   <td>$row[surname]</td>
                   <td>$row[email]</td>
                   <td>$row[password]</td>";
-  }
-  echo "<h1>Login table</h1>";
-  echo $output;
+}
+echo "<h1>Login table</h1>";
+echo $output;
 
-  $sql = "SELECT * FROM user";
-  $records = $conn->query($sql);
+$sql = "SELECT * FROM user";
+$records = $conn->query($sql);
 
-  $output = "<table border='2'>
+$output = "<table border='2'>
               <th>User ID</th>
               <th>Favourite recipes</th>
               <th>Owned ingredients</th>
               <th>Flag list</th>";
 
-  while ($row = $records->fetch_assoc()) {
-    $output .= "<tr>
+while ($row = $records->fetch_assoc()) {
+  $output .= "<tr>
                   <td>$row[userId]</td>
                   <td>$row[favourite_recipes]</td>
                   <td>$row[owned_ingredients]</td>
                   <td>$row[flag_list]</td>";
-  }
-  echo "<h1>User table</h1>";
-  echo $output;
+}
+echo "<h1>User table</h1>";
+echo $output;
 
 
-  $sql = "SELECT * FROM recipes";
-  $records = $conn->query($sql);
-  $output = "<table border='2'>
+$sql = "SELECT * FROM recipes";
+$records = $conn->query($sql);
+$output = "<table border='2'>
               <th>Recipe ID</th>
               <th>Recipe name</th>
               <th>Image</th>
@@ -418,8 +402,8 @@
               <th>User rating</th>
               <th>Popularity</th>";
 
-  while ($row = $records->fetch_assoc()) {
-    $output .= "<tr>
+while ($row = $records->fetch_assoc()) {
+  $output .= "<tr>
                   <td>$row[recipeId]</td>
                   <td>$row[recipe_name]</td>
                   <td>$row[image]</td>
@@ -436,8 +420,8 @@
                   <td>$row[flags]</td>
                   <td>$row[user_rating]</td>
                   <td>$row[popularity]</td>";
-  }
-  echo "<h1>Recipe table</h1>";
-  echo $output;
+}
+echo "<h1>Recipe table</h1>";
+echo $output;
 
 ?>
