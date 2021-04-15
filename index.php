@@ -42,7 +42,7 @@
 			<span>s</span>
 			<span>!</span>
 		</p>
-		<p id="intro-text" class="sidepanel">Explore Easy and fast cooking recipes that are delicate and exquisite. Search recipes, ingredients, and cuisines below:<br><br>
+		<p id="intro-text" class="sidepanel">Explore Easy and fast cooking recipes that are delicate<br>and exquisite. Search recipes, ingredients, and <br>cuisines below:<br><br>
 			<!-- <div class="searchbar"> -->
 		<form class="form" method="POST" action="search-results-page/search.php">
 			<input class="searchbar" type="text" placeholder="Search recipes..." name="search" required>
@@ -57,7 +57,10 @@
 	<img src="index-page/black-img.jpg" id="black-img" class="opacify-animation">
 	<img src="index-page/logo.png" id="logo" class="opacify-animation">
 	<a href="registration-page/login/logout.php" class="navigation opacify-animation" style="display: none" id="logout_button">Logout</a>
-	<a href="user/show_settings.php" class="navigation opacify-animation" style="display: none;" id="settings_button">Settings</a>
+
+	<a href="user/set_ingredients/setting_ingredients.php" class="navigation opacify-animation" style="display: none;" id="settings_button1">Ingredients</a>
+	<a href="user/alter_flags/registration-settings.php" class="navigation opacify-animation" style="display: none;" id="settings_button2">Flags</a>
+
 	<a href="registration-page/registration.php" class="navigation opacify-animation" style="display: inline-block;" id="login_button">Login/Register</a>
 	<a onclick="openForm()" class="navigation opacify-animation">Faq</a>
 	<a href="recipes-page/recipes.html" class="navigation opacify-animation" id="dropdown">Recipes</a>
@@ -78,14 +81,12 @@
 			<a onclick="closeForm()" id="x-button">X</a>
 		</div>
 		<br>
-		<p class="question">1. bla bla bla bla?</p>
-		<p class="answer">bla bla bla bla?</p>
-		<p class="question">2.bla bla bla bla? bla bla bla bla?</p>
-		<p class="answer">bla bla bla bla?</p>
-		<p class="question">3. bla bla bla bla? bla bla bla bla?</p>
-		<p class="answer">bla bla bla bla?</p>
-		<p class="question">4. bla bla bla bla? bla bla bla bla? bla bla bla bla? bla bla bla bla? bla bla bla bla?</p>
-		<p class="answer">bla bla bla bla?</p>
+		<p class="question">1. Do I have to register/sign up in order to use your website?</p>
+		<p class="answer">Nope, just extra features if you do!</p>
+		<p class="question">2. I have a dietary requirement, how do I find recipes that are suitable?</p>
+		<p class="answer">You can select and save filters by signing up with us and logging into your account.</p>
+		<p class="question">3. How do I edit my filters?</p>
+		<p class="answer">Hover over settings and a dropdown will appear.</p>
 
 
 
