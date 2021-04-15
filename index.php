@@ -46,7 +46,7 @@
 			<!-- <div class="searchbar"> -->
 		<form class="form" method="POST" action="search-results-page/search.php">
 			<input class="searchbar" type="text" placeholder="Search recipes..." name="search" required>
-			<button type="submit"><i class="fa fa-search"></i></button>
+			<button type="submit"><i class="fa fa-search"></i>Search</button>
 		</form>
 		<!-- </div> -->
 		</p>
