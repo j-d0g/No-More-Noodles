@@ -300,13 +300,14 @@ p > span {
 	top: 0;
 	font-size: 3rem;
 	letter-spacing: -7px;
-	transition: all 0.1s ease;
+	transition: all 0.2s ease;
 
 }
 
 p >span:hover {
 	position: relative;
-	top: -10px;
+	top: -13px;
+
 }
 
 #intro-text {
