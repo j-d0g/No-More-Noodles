@@ -42,7 +42,7 @@
 			<span>s</span>
 			<span>!</span>
 		</p>
-		<p id="intro-text" class="sidepanel">Explore Easy and fast cooking recipes that are delicate<br>and exquisite. Search recipes, ingredients, and <br>cuisines below:<br><br>
+		<p id="intro-text" class="sidepanel">Explore Easy and fast cooking recipes that are delicate and exquisite. Search recipes, ingredients, and cuisines below:<br><br>
 			<!-- <div class="searchbar"> -->
 		<form class="form" method="POST" action="search-results-page/search.php">
 			<input class="searchbar" type="text" placeholder="Search recipes..." name="search" required>
