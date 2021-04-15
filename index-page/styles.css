@@ -1,6 +1,6 @@
 body {
-	background: #202004;
-	color: white;
+background: #202004;
+color: white;
 }
 
 body a {
@@ -8,17 +8,17 @@ body a {
 }
 
 ::-webkit-scrollbar {
-	width: 7px;
+  width: 7px;
 }
 
 ::-webkit-scrollbar-track {
-	border-radius: 10px;
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-	background: black;
-	border-radius: 10px;
-	border: 0.1px solid rgb(252, 196, 45);
+  background: black;
+  border-radius: 10px;
+  border: 0.1px solid rgb(252, 196, 45);
 }
 
 #black-img {
@@ -26,18 +26,18 @@ body a {
 	position: absolute;
 	top: 0;
 	left: 0;
-	margin: 0;
+	margin:0;
 	height: 65px;
 	width: 100%;
 	border-bottom: 1px solid rgb(252, 196, 45);
 
 
-}
+	}
 
 .navigation {
 	display: inline-block;
 	opacity: 1;
-	color: rgba(255, 255, 255, 0.8);
+	color: rgba(255,255,255,0.8);
 	text-decoration: none;
 	position: relative;
 	float: right;
@@ -47,8 +47,7 @@ body a {
 	font-family: 'Dancing Script', cursive;
 	font-family: 'Dancing Script', cursive;
 	transition: all 0.3s ease;
-}
-
+	}
 .navigation:hover {
 	opacity: 1;
 	top: 3px;
@@ -59,7 +58,6 @@ body a {
 #Home:active {
 	background: red;
 }
-
 #symbol-dropdown {
 	padding: 15px;
 	color: white;
@@ -78,7 +76,7 @@ body a {
 .dropdown-items {
 	display: none;
 	padding: 15px;
-	color: rgba(255, 255, 255, 0.8);
+	color: rgba(255,255,255,0.8);
 	text-decoration: none;
 	position: absolute;
 	padding-top: 24px;
@@ -90,8 +88,7 @@ body a {
 	font-family: 'Dancing Script', cursive;
 
 }
-
-.dropdown-items:hover {
+.dropdown-items:hover  {
 	position: absolute;
 	display: block;
 	opacity: 1;
@@ -101,26 +98,26 @@ body a {
 	transition-duration: 0.3s;
 }
 
-.tag:hover .dropdown-items {
+.tag:hover .dropdown-items{
 	display: block;
 
 }
 
 
-.tag:hover #symbol-dropdown {
+.tag:hover #symbol-dropdown{
 	position: absolute;
 	top: 35%;
 }
 
-#dropdown:hover~.tag div {
+#dropdown:hover ~ .tag div{
 	position: absolute;
 	top: 35%;
 }
 
 
 
-#dropdown:hover~.tag a {
-	display: block;
+#dropdown:hover ~ .tag a {
+display: block;
 
 }
 
@@ -142,10 +139,9 @@ body a {
 #logo:hover {
 	transition-duration: 0.3s;
 }
-
 button {
 	background-color: #202004;
-	color: rgba(255, 255, 255, 0.7);
+	color: rgba(255,255,255,0.7);
 	border: 1px solid rgb(252, 196, 45);
 	border-radius: 25px;
 	font-size: 1rem;
@@ -160,7 +156,6 @@ button {
 	padding-bottom: 2px;
 
 }
-
 button:active {
 	color: #202004;
 	background: rgb(252, 196, 45);
@@ -208,7 +203,6 @@ button:active {
 	font-family: 'Yusei Magic', sans-serif;
 	transition: all 0.5s ease;
 }
-
 #x-button:hover {
 	background-color: rgb(252, 196, 45);
 	color: black;
@@ -223,7 +217,7 @@ button:active {
 	width: 100%;
 	top: 0;
 	left: 0;
-	opacity: 0;
+	opacity:0;
 	animation-name: opacify_img;
 	animation-duration: 15s;
 	animation-iteration-count: infinite;
@@ -243,12 +237,12 @@ button:active {
 
 .sidepanel {
 	position: absolute;
-	/* animation-name: opacify;
+	animation-name: opacify;
 	animation-direction: reverse;
 	animation-fill-mode: backwards;
 	animation-duration: 1s;
 	animation-iteration-count: 1;
-	animation-delay: 1s; */
+	animation-delay: 1s;
 }
 
 
@@ -258,24 +252,24 @@ button:active {
 	width: 750px;
 	height: 350px;
 	position: absolute;
-	top: 30%;
+	top: 50%;
 	left: 29%;
-	/* transform: translate(0%,-50%); */
-	/* animation-name: slide-img, slide-img-2;
+	transform: translate(0%,-50%);
+	animation-name: slide-img, slide-img-2;
 	animation-delay: 1s, 0s;
 	animation-duration: 1s, 1s;
-	animation-iteration-count: 1; */
+	animation-iteration-count: 1;
 	border: 1px solid rgb(252, 196, 45);
+	border-left: none;
 
 }
 
 .sidepanel-bg123 {
-	text-align: center;
-	padding: 125px
+    text-align: center;
+		padding: 125px
 }
-
 .nomore-text {
-	color: rgba(255, 255, 255, 0.9);
+	color: rgba(255,255,255,0.9);
 	position: absolute;
 	border-bottom: 2px solid white;
 	line-height: 40px;
@@ -288,15 +282,14 @@ button:active {
 	margin: 0;
 }
 
-.form {
+.form{
 	position: absolute;
 	top: 80%;
 	/*background: red;*/
 	width: 100%;
 	height: 100%;
 }
-
-p>span {
+p > span {
 	opacity: 1;
 	color: rgb(252, 196, 45);
 	text-decoration: none;
@@ -311,7 +304,7 @@ p>span {
 
 }
 
-p>span:hover {
+p >span:hover {
 	position: relative;
 	top: -10px;
 }
@@ -320,11 +313,11 @@ p>span:hover {
 	position: absolute;
 	font-family: 'Times New Roman', cursive;
 	color: white;
-	padding-right: 100px;
+	padding-right: 370px;
 	font-size: 1.1rem;
 	top: 30%;
 	left: 3%;
-	white-space: normal;
+	white-space: nowrap;
 }
 
 
@@ -334,14 +327,13 @@ p>span:hover {
 	height: 35px;
 	margin-left: 10px;
 	padding-left: 10px;
-	border: 1px solid rgb(252, 196, 45);
-	;
+	border: 1px solid rgb(252, 196, 45);;
 	background-color: #202004;
 	color: white;
 }
 
 
-.suggested-recipes-text {
+.suggested-recipes-text{
 	color: black;
 	position: absolute;
 	font-size: 2.5rem;
@@ -367,7 +359,7 @@ p>span:hover {
 
 
 #drop1 {
-	top: 6%;
+	top:6%;
 	padding-right: 0;
 	position: absolute;
 	opacity: 1;
@@ -378,11 +370,10 @@ p>span:hover {
 	animation-fill-mode: backwards;
 
 }
-
 #drop2 {
 	top: 12%;
 	padding-right: 35px;
-	position: absolute;
+position: absolute;
 	opacity: 1;
 	animation-name: opacify;
 	animation-duration: 0.1s;
@@ -391,9 +382,8 @@ p>span:hover {
 	animation-fill-mode: backwards;
 	animation-delay: 0.1s;
 }
-
 #drop3 {
-	top: 17%;
+	top:17%;
 	opacity: 1;
 	padding-right: 26px;
 	position: absolute;
@@ -405,9 +395,8 @@ p>span:hover {
 	animation-fill-mode: backwards;
 	animation-delay: 0.2s;
 }
-
 #drop4 {
-	top: 22%;
+	top:22%;
 	position: absolute;
 	opacity: 1;
 	animation-name: opacify;
@@ -417,9 +406,8 @@ p>span:hover {
 	animation-fill-mode: backwards;
 	animation-delay: 0.3s;
 }
-
 #drop5 {
-	top: 27%;
+	top:27%;
 	position: absolute;
 	opacity: 1;
 	animation-name: opacify;
@@ -558,7 +546,6 @@ p>span:hover {
 		opacity: 0;
 	}
 }
-
 @keyframes opacify_img {
 	25% {
 		opacity: 1;
@@ -576,9 +563,8 @@ p>span:hover {
 
 @keyframes bounce {
 	0% {
-		transform: translateY(0px);
-	}
-
+	transform: translateY(0px);
+}
 	100% {
 		transform: translateY(-10px);
 	}
@@ -587,44 +573,38 @@ p>span:hover {
 
 
 @media only screen and (max-width: 750px) {
-	.sidepanel-bg {
-		width: 330px;
-		height: 200px;
+  .sidepanel-bg {
+  	width: 330px;
+    height: 200px;
 
-	}
+  }
 
-	.nomore-text {
-		font-size: 1.5rem;
+  .nomore-text{
+  	font-size: 1.5rem;
 
-	}
+  }
+  #intro-text{
+  	font-size: 0.8rem;
+  }
+  p > span {
+  	font-size: 2rem;
+  }
+  .navigation {
+  	font-size: 0.6rem;
+  }
+  #black-img{
+  	height: 50px;
+  }
+  #logo {
+  	width: 90px;
+  }
+  .form {
+  	top: 70%;
+  }
 
-	#intro-text {
-		font-size: 0.8rem;
-	}
-
-	p>span {
-		font-size: 2rem;
-	}
-
-	.navigation {
-		font-size: 0.6rem;
-	}
-
-	#black-img {
-		height: 50px;
-	}
-
-	#logo {
-		width: 90px;
-	}
-
-	.form {
-		top: 70%;
-	}
-
-	button {
-		font-size: 0.8rem;
-	}
+  button {
+  	font-size: 0.8rem;
+  }
 
 
 }
@@ -656,15 +636,13 @@ p>span:hover {
 
 
 }
-
 @keyframes animate {
 	0% {
-		transform: perspective(0px) rotateY(0deg);
+		transform: perspective(0px)  rotateY(0deg);
 
 	}
-
 	100% {
-		transform: perspective(0px) rotateY(360deg);
+		transform: perspective(0px)  rotateY(360deg);
 	}
 }
 
@@ -697,7 +675,7 @@ p>span:hover {
 
 }
 
-.rotating-images-bg {
+.rotating-images-bg{
 	background: #2e2e06;
 	width: 99.7%;
 	height: 380px;
