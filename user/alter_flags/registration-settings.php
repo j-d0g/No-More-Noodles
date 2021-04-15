@@ -12,32 +12,46 @@
 
 <body>
 
-	<!-- <img src="reg-background.jpg" id="bg"> -->
-	<div class="form">
-		<a href=""><img src="../../index-page/logo.png"></a>
-		<form method='post' action="alter_flags.php" id="divider2">
-			<h2 id="allergies-header">Allergies</h2>
-			<input class="allergies-checkbox" type="checkbox" name="flag0">
-			<label class="allergies-checkbox" for="flag0">Dairy free</label><br>
-			<input class="allergies-checkbox" type="checkbox" name="flag1">
-			<label class="allergies-checkbox" for="flag1">Eggs allergy</label><br>
-			<input class="allergies-checkbox" type="checkbox" name="flag2">
-			<label class="allergies-checkbox" for="flag2">Gluten free</label><br>
-			<input class="allergies-checkbox" type="checkbox" name="flag4">
-			<label class="allergies-checkbox" for="flag4">Nuts allergy</label><br>
+	<!-- NAVIGATION PANEL -->
+	<img src="../../index-page/black-img.jpg" id="black-img" class="opacify-animation">
+	<img src="../../index-page/logo.png" id="logo" class="opacify-animation">
+	<a href="../../registration-page/login/logout.php" class="navigation opacify-animation" style="display: none" id="logout_button">Logout</a>
 
-			<h2 id="cuisines-header">Cuisines</h2>
-			<input class="cuisines-checkbox" type="checkbox" name="flag3">
-			<label class="cuisines-checkbox" for="flag3">Halal</label><br>
-			<input class="cuisines-checkbox" type="checkbox" name="flag5">
-			<label class="cuisines-checkbox" for="flag5">Vegan</label><br>
-			<input class="cuisines-checkbox" type="checkbox" name="flag6">
-			<label class="cuisines-checkbox" for="flag6">Vegetarian</label><br>
-			<input class="save-button" type="submit" name="login" value="Save and exit">
+	<a href="../../user/set_ingredients/setting_ingredients.php" class="navigation opacify-animation" style="display: none;" id="settings_button1">Ingredients</a>
+	<a href="../../user/alter_flags/registration-settings.php" class="navigation opacify-animation" style="display: none;" id="settings_button2">Flags</a>
 
-		</form>
+	<a href="../../registration-page/registration.php" class="navigation opacify-animation" style="display: inline-block;" id="login_button">Login/Register</a>
+	<a onclick="openForm()" class="navigation opacify-animation">Faq</a>
+	<a href="../../recipes-page/recipes.html" class="navigation opacify-animation" id="dropdown">Recipes</a>
+	<a href="../../index.php" id="Home" class="navigation opacify-animation">Home</a>
+
+	<div class="php">
+		<!-- <img src="reg-background.jpg" id="bg"> -->
+		<div class="form">
+			<a href=""><img src="../../index-page/logo.png"></a>
+			<form method='post' action="alter_flags.php" id="divider2">
+				<h2 id="allergies-header">Allergies</h2>
+				<input class="allergies-checkbox" type="checkbox" name="flag0">
+				<label class="allergies-checkbox" for="flag0">Dairy free</label><br>
+				<input class="allergies-checkbox" type="checkbox" name="flag1">
+				<label class="allergies-checkbox" for="flag1">Eggs allergy</label><br>
+				<input class="allergies-checkbox" type="checkbox" name="flag2">
+				<label class="allergies-checkbox" for="flag2">Gluten free</label><br>
+				<input class="allergies-checkbox" type="checkbox" name="flag4">
+				<label class="allergies-checkbox" for="flag4">Nuts allergy</label><br>
+
+				<h2 id="cuisines-header">Cuisines</h2>
+				<input class="cuisines-checkbox" type="checkbox" name="flag3">
+				<label class="cuisines-checkbox" for="flag3">Halal</label><br>
+				<input class="cuisines-checkbox" type="checkbox" name="flag5">
+				<label class="cuisines-checkbox" for="flag5">Vegan</label><br>
+				<input class="cuisines-checkbox" type="checkbox" name="flag6">
+				<label class="cuisines-checkbox" for="flag6">Vegetarian</label><br>
+				<input class="save-button" type="submit" name="login" value="Save and exit">
+
+			</form>
+		</div>
 	</div>
-
 </body>
 
 </html>

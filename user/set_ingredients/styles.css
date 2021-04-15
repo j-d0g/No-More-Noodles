@@ -61,3 +61,291 @@ button {
     align-items: center;
     padding: 3%;
 }
+
+@keyframes animate {
+    0% {
+        transform: perspective(0px) rotateY(0deg);
+
+    }
+
+    100% {
+        transform: perspective(0px) rotateY(360deg);
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .sidepanel-bg {
+        width: 330px;
+        height: 200px;
+
+    }
+
+    .nomore-text {
+        font-size: 1.5rem;
+
+    }
+
+    #intro-text {
+        font-size: 0.8rem;
+    }
+
+    p>span {
+        font-size: 2rem;
+    }
+
+    .navigation {
+        font-size: 0.6rem;
+    }
+
+    #black-img {
+        height: 50px;
+    }
+
+    #logo {
+        width: 90px;
+    }
+
+    .form {
+        top: 70%;
+    }
+
+    button {
+        font-size: 0.8rem;
+    }
+
+
+}
+
+
+@keyframes opacify {
+    25% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes opacify_img {
+    25% {
+        opacity: 1;
+        z-index: 0;
+    }
+
+    100% {
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+.opacify-animation {
+    animation-name: opacify;
+    animation-direction: reverse;
+    animation-fill-mode: backwards;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-delay: 0s;
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: black;
+    border-radius: 10px;
+    border: 0.1px solid rgb(252, 196, 45);
+}
+
+#black-img {
+    opacity: 0.8;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    height: 65px;
+    width: 100%;
+    border-bottom: 1px solid rgb(252, 196, 45);
+
+
+}
+
+.navigation {
+    display: inline-block;
+    opacity: 1;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    position: relative;
+    float: right;
+    top: 20px;
+    margin-right: 1.5em;
+    font-size: 1.5rem;
+    font-family: 'Dancing Script', cursive;
+    transition: all 0.3s ease;
+}
+
+.navigation:hover {
+    opacity: 1;
+    top: 3px;
+    color: rgb(252, 196, 45);
+    text-shadow: 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black;
+}
+
+#Home:active {
+    background: red;
+}
+
+#symbol-dropdown {
+    padding: 15px;
+    color: white;
+    position: absolute;
+    padding-top: 24px;
+    margin-left: 4em;
+    cursor: default;
+    text-shadow: 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black;
+    transition: all 0.5s ease;
+    font-size: 1vw;
+    display: block;
+    left: 66%;
+    top: 3%;
+}
+
+.dropdown-items {
+    display: none;
+    padding: 15px;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    position: absolute;
+    padding-top: 24px;
+    margin-left: 4em;
+    left: 62%;
+    top: 0;
+    font-size: 1.6vw;
+    text-shadow: 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black;
+    font-family: 'Dancing Script', cursive;
+
+}
+
+.dropdown-items:hover {
+    position: absolute;
+    display: block;
+    opacity: 1;
+    transform: translateX(7px);
+    color: rgb(252, 196, 45);
+    text-shadow: 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black;
+    transition-duration: 0.3s;
+}
+
+.tag:hover .dropdown-items {
+    display: block;
+
+}
+
+
+.tag:hover #symbol-dropdown {
+    position: absolute;
+    top: 35%;
+}
+
+#dropdown:hover~.tag div {
+    position: absolute;
+    top: 35%;
+}
+
+
+
+#dropdown:hover~.tag a {
+    display: block;
+
+}
+
+
+#dropdown {
+    padding-bottom: 30px;
+}
+
+#logo {
+    opacity: 1;
+    width: 120px;
+    position: absolute;
+    left: 15px;
+    top: 0px;
+    /*! padding-top: 0; */
+}
+
+
+
+#logo:hover {
+    transition-duration: 0.3s;
+}
+
+button {
+    background-color: #202004;
+    color: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgb(252, 196, 45);
+    border-radius: 25px;
+    font-size: 1.4rem;
+    animation-name: opacify;
+    animation-direction: reverse;
+    animation-fill-mode: backwards;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-delay: 1s;
+    text-align: center;
+    padding-bottom: 2px;
+
+}
+
+button:active {
+    color: #202004;
+    background: rgb(252, 196, 45);
+    border: 1px solid black;
+}
+
+.FAQ {
+    width: 400px;
+    height: 500px;
+    background: #202004;
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid rgb(252, 196, 45);
+    border-radius: 25px;
+    transition: all 0.5s ease;
+}
+
+
+
+
+
+#x-button {
+    text-decoration: none;
+    position: absolute;
+    left: -3%;
+    top: -3%;
+    z-index: 1;
+    padding: 4%;
+    background-color: #202004;
+    border-radius: 50%;
+    font-size: 0.5rem;
+    border: 1px solid rgb(252, 196, 45);
+    color: white;
+    font-family: 'Yusei Magic', sans-serif;
+    transition: all 0.5s ease;
+}
+
+#x-button:hover {
+    background-color: rgb(252, 196, 45);
+    color: black;
+    border: 1px solid black;
+}
+
+.php {
+    padding-top: 5%;
+}

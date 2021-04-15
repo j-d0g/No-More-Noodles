@@ -155,89 +155,103 @@
 </head>
 
 <body>
+  <!-- NAVIGATION PANEL -->
+  <img src="../../index-page/black-img.jpg" id="black-img" class="opacify-animation">
+  <img src="../../index-page/logo.png" id="logo" class="opacify-animation">
+  <a href="../../registration-page/login/logout.php" class="navigation opacify-animation" style="display: none" id="logout_button">Logout</a>
 
-  <div class="oi_container">
-    <div class="owned_ingredients">
-      <h2 class="header">Your ingredients</h2>
-      <?php
-      if (isset($_SESSION['user_id'])) {
-        // Gets the current ingredients
-        $sql = "SELECT owned_ingredients FROM user WHERE userId=" . $_SESSION['user_id'];
-        if ($_SESSION['conn']->query($sql)) {
-          $records = $_SESSION['conn']->query($sql);
-          while ($row = $records->fetch_assoc()) {
-            $current_ingredients = $row['owned_ingredients'];
-          }
-        } else {
-          echo "Error: " . $_SESSION['conn']->error . "<br />";
-        }
+  <a href="../../user/set_ingredients/setting_ingredients.php" class="navigation opacify-animation" style="display: none;" id="settings_button1">Ingredients</a>
+  <a href="../../user/alter_flags/registration-settings.php" class="navigation opacify-animation" style="display: none;" id="settings_button2">Flags</a>
 
-        if (isset($current_ingredients)) {
-          // Uses Luke's code to split
-          $ingArray = preg_split("/~/", $current_ingredients);
-          echo "<ul>";
-          foreach ($ingArray as $ing) {
-            if ($ing != "") {
-              echo "<li>$ing</li>";
+  <a href="../../registration-page/registration.php" class="navigation opacify-animation" style="display: inline-block;" id="login_button">Login/Register</a>
+  <a onclick="openForm()" class="navigation opacify-animation">Faq</a>
+  <a href="../../recipes-page/recipes.html" class="navigation opacify-animation" id="dropdown">Recipes</a>
+  <a href="../../index.php" id="Home" class="navigation opacify-animation">Home</a>
+
+  <div class="php">
+    <div class="oi_container">
+      <div class="owned_ingredients">
+        <h2 class="header">Your ingredients</h2>
+        <?php
+        if (isset($_SESSION['user_id'])) {
+          // Gets the current ingredients
+          $sql = "SELECT owned_ingredients FROM user WHERE userId=" . $_SESSION['user_id'];
+          if ($_SESSION['conn']->query($sql)) {
+            $records = $_SESSION['conn']->query($sql);
+            while ($row = $records->fetch_assoc()) {
+              $current_ingredients = $row['owned_ingredients'];
             }
+          } else {
+            echo "Error: " . $_SESSION['conn']->error . "<br />";
+          }
+
+          if (isset($current_ingredients)) {
+            // Uses Luke's code to split
+            $ingArray = preg_split("/~/", $current_ingredients);
+            echo "<ul>";
+            foreach ($ingArray as $ing) {
+              if ($ing != "") {
+                echo "<li>$ing</li>";
+              }
+            }
+          } else {
+            echo "<li>No ingredients yet</li>";
           }
         } else {
           echo "<li>No ingredients yet</li>";
         }
-      } else {
-        echo "<li>No ingredients yet</li>";
-      }
-      echo "</ul>";
-      echo "</div>";
-      ?>
-    </div>
-  </div>
-
-  <div class="form-container">
-    <div class="page_forms">
-      <!-- Duplicate code for form to add ingredient -->
-      <div class="form">
-        <div class='add_ingredient_form'>
-          <h2>Add an ingredient</h2>
-          <form method='post' action='setting_ingredients.php'>
-            <input type='text' name='ingredient'>
-            <input type='submit' value='Submit' name='submit'>
-          </form>
-        </div>
-        <?php
-        // If set shows the previous ingredient or controlled error
-        if (isset($_SESSION['prev_ingredient'])) {
-          if ($_SESSION['prev_ingredient'] == 'e') {
-            echo "<p>ingredient already exists.</p>";
-          } else {
-            echo "<p>successfully added: " . $_SESSION['prev_ingredient'] . " to your saved ingredients</p>";
-          }
-          unset($_SESSION['prev_ingredient']);
-        }
+        echo "</ul>";
+        echo "</div>";
         ?>
       </div>
-      <!-- Duplicate code for form to remove ingredient -->
-      <div class="form">
-        <div class='add_ingredient_form'>
-          <h2>Remove ingredient</h2>
-          <form method='post' action='setting_ingredients.php'>
-            <input type='text' name='ingredient_r'>
-            <input type='submit' value='Submit' name='submit'>
-          </form>
+    </div>
+
+    <div class="form-container">
+      <div class="page_forms">
+        <!-- Duplicate code for form to add ingredient -->
+        <div class="form">
+          <div class='add_ingredient_form'>
+            <h2>Add an ingredient</h2>
+            <form method='post' action='setting_ingredients.php'>
+              <input type='text' name='ingredient'>
+              <input type='submit' value='Submit' name='submit'>
+            </form>
+          </div>
+          <?php
+          // If set shows the previous ingredient or controlled error
+          if (isset($_SESSION['prev_ingredient'])) {
+            if ($_SESSION['prev_ingredient'] == 'e') {
+              echo "<p>ingredient already exists.</p>";
+            } else {
+              echo "<p>successfully added: " . $_SESSION['prev_ingredient'] . " to your saved ingredients</p>";
+            }
+            unset($_SESSION['prev_ingredient']);
+          }
+          ?>
+        </div>
+        <!-- Duplicate code for form to remove ingredient -->
+        <div class="form">
+          <div class='add_ingredient_form'>
+            <h2>Remove ingredient</h2>
+            <form method='post' action='setting_ingredients.php'>
+              <input type='text' name='ingredient_r'>
+              <input type='submit' value='Submit' name='submit'>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
-    <?php
-    // If set shows the previous ingredient or controlled error
-    if (isset($_SESSION['prev_ingredient_r'])) {
-      if ($_SESSION['prev_ingredient_r'] == 'e') {
-        echo "<p>ingredient didn't exist.</p>";
-      } else {
-        echo "<p>successfully removed: " . $_SESSION['prev_ingredient_r'] . " from your saved ingredients</p>";
+      <?php
+      // If set shows the previous ingredient or controlled error
+      if (isset($_SESSION['prev_ingredient_r'])) {
+        if ($_SESSION['prev_ingredient_r'] == 'e') {
+          echo "<p>ingredient didn't exist.</p>";
+        } else {
+          echo "<p>successfully removed: " . $_SESSION['prev_ingredient_r'] . " from your saved ingredients</p>";
+        }
+        unset($_SESSION['prev_ingredient_r']);
       }
-      unset($_SESSION['prev_ingredient_r']);
-    }
-    ?>
+      ?>
+    </div>
   </div>
 </body>
 
