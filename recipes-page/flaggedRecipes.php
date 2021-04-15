@@ -10,82 +10,98 @@
 
 <body>
 
-  <?php
 
-  //include db connection
-  include "../registration-page/connection.php";
+  <!-- NAVIGATION PANEL -->
+  <img src="../index-page/black-img.jpg" id="black-img" class="opacify-animation">
+  <img src="../index-page/logo.png" id="logo" class="opacify-animation">
+  <a href="../registration-page/login/logout.php" class="navigation opacify-animation" style="display: none" id="logout_button">Logout</a>
 
-  //get the required flag list from post
-  $inputFlags = $_POST['flagsIn'];
-  //convert to an array
-  $inputFlagsList = str_split($inputFlags);
+  <a href="../user/set_ingredients/setting_ingredients.php" class="navigation opacify-animation" style="display: none;" id="settings_button1">Ingredients</a>
+  <a href="../user/alter_flags/registration-settings.php" class="navigation opacify-animation" style="display: none;" id="settings_button2">Flags</a>
 
-  //get all recipes in the database
-  $sql = "SELECT recipeId, recipe_name, image, flags FROM recipes";
-  $matches = $conn->query($sql);
+  <a href="../registration-page/registration.php" class="navigation opacify-animation" style="display: inline-block;" id="login_button">Login/Register</a>
+  <a onclick="openForm()" class="navigation opacify-animation">Faq</a>
+  <a href="../recipes-page/recipes.html" class="navigation opacify-animation" id="dropdown">Recipes</a>
+  <a href="../index.php" id="Home" class="navigation opacify-animation">Home</a>
 
-  $searchResults = array();
+  <div class="php">
+    <?php
 
-  //iterate through each recipe
-  while ($row = $matches->fetch_assoc()) {
+    //include db connection
+    include "../registration-page/connection.php";
 
-    $recipeFlagList = str_split($row['flags']);
-    $matchesFlags = true;
+    //get the required flag list from post
+    $inputFlags = $_POST['flagsIn'];
+    //convert to an array
+    $inputFlagsList = str_split($inputFlags);
 
-    for ($i = 0; $i < 7; $i++) {
-      if ($inputFlagsList[$i] == "1" and $recipeFlagList[$i] != "1") {
-        //if the input flag is 1, the recipe's flag MUST also be 1
-        $matchesFlags = false;
-      } else {
-        //all other combinations of flags is okay
-        continue;
+    //get all recipes in the database
+    $sql = "SELECT recipeId, recipe_name, image, flags FROM recipes";
+    $matches = $conn->query($sql);
+
+    $searchResults = array();
+
+    //iterate through each recipe
+    while ($row = $matches->fetch_assoc()) {
+
+      $recipeFlagList = str_split($row['flags']);
+      $matchesFlags = true;
+
+      for ($i = 0; $i < 7; $i++) {
+        if ($inputFlagsList[$i] == "1" and $recipeFlagList[$i] != "1") {
+          //if the input flag is 1, the recipe's flag MUST also be 1
+          $matchesFlags = false;
+        } else {
+          //all other combinations of flags is okay
+          continue;
+        }
+      }
+
+      if ($matchesFlags) {
+        $recipeData = [$row['recipeId'], $row['recipe_name'], $row['image']];
+        array_push($searchResults, $recipeData);
       }
     }
 
-    if ($matchesFlags) {
-      $recipeData = [$row['recipeId'], $row['recipe_name'], $row['image']];
-      array_push($searchResults, $recipeData);
-    }
-  }
-
-  $output = "";
-  foreach ($searchResults as $x) {
-    $output .= "  <a href='../search-results-page/method.php?recipeId=$x[0]'><div class='inside-form'>
+    $output = "";
+    foreach ($searchResults as $x) {
+      $output .= "  <a href='../search-results-page/method.php?recipeId=$x[0]'><div class='inside-form'>
                    <img class='img' src = '../recipes-page/$x[2]'>
                    <h2>$x[1]</h2>
                   </div></a>";
-  }
+    }
 
-//output different heading depending on flags
-  switch ($inputFlags) {
-    case "1000000":
-      echo "<h1>Dairy free recipes:</h1>";
-      break;
-    case "0100000":
-      echo "<h1>Egg free recipes:</h1>";
-      break;
-    case "0010000":
-      echo "<h1>Gluten free recipes:</h1>";
-      break;
-    case "0001000":
-      echo "<h1>Halal recipes:</h1>";
-      break;
-    case "0000100":
-      echo "<h1>Nut free recipes:</h1>";
-      break;
-    case "0000010":
-      echo "<h1>Vegan recipes:</h1>";
-      break;
-    case "0000001":
-      echo "<h1>Vegetarian recipes:</h1>";
-      break;
-    default:
-    echo "<h1>Results:</h1>";
-  }
+    //output different heading depending on flags
+    switch ($inputFlags) {
+      case "1000000":
+        echo "<h1>Dairy free recipes:</h1>";
+        break;
+      case "0100000":
+        echo "<h1>Egg free recipes:</h1>";
+        break;
+      case "0010000":
+        echo "<h1>Gluten free recipes:</h1>";
+        break;
+      case "0001000":
+        echo "<h1>Halal recipes:</h1>";
+        break;
+      case "0000100":
+        echo "<h1>Nut free recipes:</h1>";
+        break;
+      case "0000010":
+        echo "<h1>Vegan recipes:</h1>";
+        break;
+      case "0000001":
+        echo "<h1>Vegetarian recipes:</h1>";
+        break;
+      default:
+        echo "<h1>Results:</h1>";
+    }
 
-  echo $output;
+    echo $output;
 
-  ?>
+    ?>
+  </div>
 </body>
 
 </html>
