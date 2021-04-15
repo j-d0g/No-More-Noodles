@@ -47,19 +47,19 @@ h1 {
 }
 
 .img {
- 	width: 100%;
- 	height: 70%;
-  	display: block;
-    transition: all 0.3s ease;
-    border-bottom: 1px solid rgb(252, 196, 45);
-    object-fit: cover;
+	width: 100%;
+	height: 80%;
+	display: block;
+	transition: all 0.3s ease;
+	border-bottom: 1px solid rgb(252, 196, 45);
+	object-fit: cover;
 }
 
 
 .inside-form {
 	display: inline-block;
 	width: 30%;
-	height: 50%;
+	height: 500px;
 	position: relative;
 	background: #262626;
 	border: 1px solid rgb(252, 196, 45);
@@ -74,12 +74,12 @@ h1 {
 
 .inside-form:hover {
 	opacity: 1;
-	background-color: rgba(252, 196, 45,0.8);
+	background-color: rgba(252, 196, 45, 0.8);
 	color: #262626;
 }
 
 
-a{
+a {
 	text-decoration: none;
 	color: rgb(252, 196, 45);
 }
@@ -98,10 +98,10 @@ h2 {
 	margin: 10px;
 	border: none;
 	transition: all 0.3s ease;
-}  
+}
 
 #logo:hover {
-	margin-top: 7px; 
+	margin-top: 7px;
 }
 
 #searchbar {
@@ -111,37 +111,37 @@ h2 {
 	width: 20%;
 	height: 25px;
 	border: 1px solid rgb(252, 196, 45);
-	border-bottom-left-radius: 25px; 
-	border-top-left-radius: 25px; 
+	border-bottom-left-radius: 25px;
+	border-top-left-radius: 25px;
 	border-right: none;
 	background-color: #202004;
 	color: white;
 }
 
 
-@media screen and (max-width: 750px){
+@media screen and (max-width: 750px) {
 	.form {
 		width: 100%;
 		height: 100%;
 		border-radius: 0px;
 	}
+
 	.inside-form {
 		margin-left: 0;
 		position: relative;
 		left: 50%;
-		transform: translateX(-50%); 
+		transform: translateX(-50%);
 		width: 65%;
 	}
-	h1{
+
+	h1 {
 		font-size: 1.4rem;
 	}
-	#logo{
+
+	#logo {
 		width: 80px;
 		margin-top: 18px;
 	}
-	
-	
+
+
 }
-
-
-
