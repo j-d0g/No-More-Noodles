@@ -7,7 +7,7 @@ html {
 
 
 body * {
-	font-family: 'Times';
+	font-family: 'Times New Roman';
 
 
 
@@ -30,15 +30,23 @@ button {
 	cursor: pointer;
 }
 
+.button1 {
+	margin: 4%;
+}
+
+.button2 {
+	margin: 4%;
+}
+
 .form {
-	width: 80%;
-	height: 88%;
+	width: 60%;
+	height: 80%;
 	background: black;
 	position: absolute;
 	left: 50%;
-	top: 65%;
+	top: 55%;
 	transform: translate(-50%, -50%);
-	border: 1px solid rgb(252, 196, 45);
+	border: 1px solid grey;
 	transition: all 0.3s ease;
 	overflow: hidden;
 	border-radius: 25px;
@@ -46,9 +54,11 @@ button {
 }
 
 h1 {
+	font-family: Arial;
 	text-align: center;
-	color: rgb(252, 196, 45);
-	font-size: 1.3rem;
+	padding-top: 0.6%;
+	color: whitesmoke;
+	font-size: 1.45rem;
 
 }
 
@@ -63,16 +73,23 @@ h1 {
 
 .nutritional-facts-container {
 	position: absolute;
-	top: 54%;
+	top: 11%;
 	width: 40%;
-	height: 48%;
+	height: 45%;
+	border: 1px solid grey;
+	border-top: 1px solid grey;
+	border-left: 1px solid grey;
 	overflow: scroll;
 
 }
 
 .nutritional-facts-container>h2 {
+	font-family: "Dancing Script", cursive;
+	color: rgb(252, 196, 45);
+	padding-left: 5%;
+	padding-right: 5%;
 	text-align: center;
-	font-size: 1rem;
+	font-size: 1.5rem;
 }
 
 #logo {
@@ -90,38 +107,56 @@ h1 {
 
 .ingredients-container {
 	position: absolute;
-	left: 40%;
-	top: 11%;
-	border-right: 1px solid rgb(252, 196, 45);
-	border-left: 1px solid rgb(252, 196, 45);
-	border-top: 1px solid rgb(252, 196, 45);
-	width: 30%;
-	height: 91%;
+	top: 56%;
+	border-right: 1px solid grey;
+	border-left: 1px solid grey;
+	width: 40%;
+	height: 47.5%;
 	overflow: scroll;
 
 }
 
 .ingredients-container>h2 {
+	font-family: "Dancing Script", cursive;
+	color: rgb(252, 196, 45);
+	padding-left: 5%;
+	padding-right: 5%;
 	text-align: center;
-	font-size: 1rem;
+	font-size: 1.5rem;
+}
+
+.ingredients-list {
+	margin-left: -2%;
+	color: whitesmoke;
 }
 
 .steps-container {
 	position: absolute;
-	left: 70%;
+	left: 40%;
 	top: 11%;
-	border-right: 1px solid rgb(252, 196, 45);
-	border-top: 1px solid rgb(252, 196, 45);
+	border-right: 1px solid grey;
+	border-top: 1px solid grey;
 
-	width: 30%;
+	width: 60%;
 	height: 91%;
 	overflow: scroll;
 
 }
 
 .steps-container>h2 {
+	font-family: "Dancing Script", cursive;
+	color: rgb(252, 196, 45);
+	/*color: grey;*/
 	text-align: center;
-	font-size: 1rem;
+	padding-right: 5%;
+	padding-left: 5%;
+	font-size: 1.5rem;
+}
+
+.meth {
+	position: center;
+	padding-right: 3%;
+	color: whitesmoke;
 }
 
 
@@ -130,10 +165,19 @@ p {
 	margin-left: 5%;
 }
 
-th,
+th {
+	border: 1px solid white;
+	border-radius: 1px;
+	font-size: 1rem;
+	color: grey;
+	text-align: center;
+}
 td {
 	border: 1px solid white;
+	color: whitesmoke;
+	border-radius: 1px;
 	font-size: 1rem;
+	text-align: center;
 }
 
 td {
@@ -142,9 +186,8 @@ td {
 
 table {
 	position: relative;
-	left: 50%;
+	left: 46%;
 	transform: translateX(-50%);
-
 }
 
 
@@ -245,7 +288,7 @@ table {
 ::-webkit-scrollbar-thumb {
 	background: black;
 	border-radius: 10px;
-	border: 0.1px solid rgb(252, 196, 45);
+	border: 0.1px solid grey;
 }
 
 #black-img {
@@ -254,11 +297,9 @@ table {
 	top: 0;
 	left: 0;
 	margin: 0;
-	height: 65px;
+	height: 60px;
 	width: 100%;
 	border-bottom: 1px solid rgb(252, 196, 45);
-
-
 }
 
 .navigation {
@@ -433,6 +474,17 @@ button:active {
 
 .header {
 	display: absolute;
-	padding-bottom: 10%;
+	padding-bottom: 0%;
 	top: 0%;
+}
+
+input[type='submit'] {
+	background-color: #202004;
+	color: rgba(255, 255, 255, 0.7);
+	border: 1px solid rgb(252, 196, 45);
+	border-radius: 25px;
+	font-size: 1rem;
+	text-align: center;
+	padding-bottom: 2px;
+
 }
