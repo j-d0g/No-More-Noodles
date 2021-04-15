@@ -80,7 +80,18 @@
 
     //display time (inside nutritional info container)
     echo "<p>Time: $records[time]</p>";
-    echo "<p>Difficulty rating: $records[difficulty]</p>";
+
+    switch ($records["difficulty"]) {
+      case 1:
+        echo "<p>Difficulty rating: Easy</p>";
+        break;
+      case 2:
+        echo "<p>Difficulty rating: More effort</p>";
+        break;
+      case 3:
+        echo "<p>Difficulty rating: Skilled</p>";
+        break;
+    }
 
 
     echo "<form action='create_shopping_pdf.php' method = 'post'>";
