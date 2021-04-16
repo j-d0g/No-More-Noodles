@@ -154,9 +154,13 @@ button {
 	animation-duration: 0.5s;
 	animation-iteration-count: 1;
 	animation-delay: 1s;
-	text-align: center;
+	text-align: right;
 	padding-bottom: 2px;
 
+}
+
+::placeholder {
+	padding-left: 1%;
 }
 
 button:active {
@@ -329,7 +333,7 @@ p>span:hover {
 
 .searchbar {
 	border-radius: 25px;
-	width: 85%;
+	width: 70%;
 	height: 25px;
 	margin-left: 10px;
 	padding-left: 10px;
