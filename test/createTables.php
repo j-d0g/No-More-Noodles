@@ -34,25 +34,25 @@ if (!$conn) {
 }
 echo "Connected successfully" . "<br />";
 
-// -- Only on local
-$sql = "DROP DATABASE Y1";
-if ($conn->query($sql)) {
-  echo "DATABASE reset" . "<br />";
-} else {
-  echo ("Error: " . $conn->error . "<br />");
-}
+// // -- Only on local
+// $sql = "DROP DATABASE Y1";
+// if ($conn->query($sql)) {
+//   echo "DATABASE reset" . "<br />";
+// } else {
+//   echo ("Error: " . $conn->error . "<br />");
+// }
 
 // Creates the db
-$sql = "CREATE DATABASE Y1";
+// $sql = "CREATE DATABASE Y1";
 
-if ($conn->query($sql)) {
-  echo ("Database created successfully" . "<br />");
-} else {
-  echo ("Error: " . $conn->error . "<br />");
-}
+// if ($conn->query($sql)) {
+//   echo ("Database created successfully" . "<br />");
+// } else {
+//   echo ("Error: " . $conn->error . "<br />");
+// }
 //
 
-$conn->select_db("Y1");
+$conn->select_db("2020_comp10120_y1");
 // if UoM $conn->select_db("2020_comp10120_y1");
 if (!$conn) {
   echo ("Error: " . $conn->error . "<br />");

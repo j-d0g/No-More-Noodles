@@ -45,7 +45,7 @@
   $username = "m67064lh";
   $password = "SQLDatabaseP";
 
-  $db = "Y1";
+  $db = "2020_comp10120_y1";
 
   $conn = mysqli_connect($servername, $username, $password, $db);
 

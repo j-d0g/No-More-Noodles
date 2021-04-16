@@ -26,7 +26,7 @@
     die("Connection failed: " . mysqli_connect_error());
   }
 
-  $conn->select_db("Y1");
+  $conn->select_db("2020_comp10120_y1");
   // if UoM $conn->select_db("2020_comp10120_y1");
   if (!$conn) {
     echo ("Error: " . $conn->error . "<br />");
