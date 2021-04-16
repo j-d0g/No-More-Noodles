@@ -42,7 +42,7 @@
 
   // If on UoM
   $servername = "dbhost.cs.man.ac.uk";
-  $username = "m67064lh";
+  $username = "m37064lh";
   $password = "SQLDatabaseP";
 
   $db = "2020_comp10120_y1";

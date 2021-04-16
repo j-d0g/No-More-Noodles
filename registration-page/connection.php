@@ -6,7 +6,7 @@
 // $password = "root";
 //  If on UoM
 $servername = "dbhost.cs.man.ac.uk";
-$username = "m67064lh";
+$username = "m37064lh";
 $password = "SQLDatabaseP";
 
 if (!$conn = mysqli_connect($servername, $username, $password)) {

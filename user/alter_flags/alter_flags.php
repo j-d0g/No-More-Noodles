@@ -8,7 +8,7 @@ session_start();
 
 //  If on UoM
 $servername = "dbhost.cs.man.ac.uk";
-$username = "m67064lh";
+$username = "m37064lh";
 $password = "SQLDatabaseP";
 
 // Create connection
