@@ -58,13 +58,15 @@ h1 {
 	text-align: center;
 	padding-top: 0.6%;
 	color: whitesmoke;
-	font-size: 1.45rem;
-
+	font-size: 1.5rem;
+	padding-left: 20%;
+	padding-right: 20%;
 }
 
 
 .img {
 	min-height: 100%;
+	min-width: 100%;
 	position: absolute;
 	z-index: -2;
 }
