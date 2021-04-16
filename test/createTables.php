@@ -142,50 +142,50 @@ if ($conn->query($sql)) {
   echo "Error: " . $conn->error . "<br />";
 }
 
-// Inserting a test user
-$password = password_hash('test', PASSWORD_BCRYPT);
-$sql = "INSERT INTO login (forename, surname, email, password)
-            VALUES ('Lawrence', 'Hunter', 'lh@lh.com', '$password')";
-if ($conn->query($sql)) {
-  echo "Login added successfully" . "<br />";
-} else {
-  echo "Error: " . $conn->error . "<br />";
-}
+// // Inserting a test user
+// $password = password_hash('test', PASSWORD_BCRYPT);
+// $sql = "INSERT INTO login (forename, surname, email, password)
+//             VALUES ('Lawrence', 'Hunter', 'lh@lh.com', '$password')";
+// if ($conn->query($sql)) {
+//   echo "Login added successfully" . "<br />";
+// } else {
+//   echo "Error: " . $conn->error . "<br />";
+// }
 
-// Inserting a test user
-$sql = "INSERT INTO user (favourite_recipes, owned_ingredients, flag_list)
-            VALUES ('Test: favourite_recipes', 'Test: owned_ingredients', '0000100')";
-if ($conn->query($sql)) {
-  echo "User added successfully" . "<br />";
-} else {
-  echo "Error: " . $conn->error . "<br />";
-}
+// // Inserting a test user
+// $sql = "INSERT INTO user (favourite_recipes, owned_ingredients, flag_list)
+//             VALUES ('Test: favourite_recipes', 'Test: owned_ingredients', '0000100')";
+// if ($conn->query($sql)) {
+//   echo "User added successfully" . "<br />";
+// } else {
+//   echo "Error: " . $conn->error . "<br />";
+// }
 
-// Ve V N H G E D
+// // Ve V N H G E D
 
-//Inserting test1 recipe
-$sql = "INSERT INTO recipes (recipe_name, image, calories, fat,
-          carbs, protein, salt, sugar, time, difficulty, ingredients, method,
-          flags, user_rating, popularity) VALUES ('test gluten free', 'db_images/1.jpg',
-          100, 2, 30, 10, 0.2, 10, 30, 2, 'Test ingredients', 'Test method',
-          '0000100', '4.1~0', '9.8~0')";
-if ($conn->query($sql)) {
-  echo "Recipe added successfully" . "<br />";
-} else {
-  echo "Error: " . $conn->error . "<br />";
-}
+// //Inserting test1 recipe
+// $sql = "INSERT INTO recipes (recipe_name, image, calories, fat,
+//           carbs, protein, salt, sugar, time, difficulty, ingredients, method,
+//           flags, user_rating, popularity) VALUES ('test gluten free', 'db_images/1.jpg',
+//           100, 2, 30, 10, 0.2, 10, 30, 2, 'Test ingredients', 'Test method',
+//           '0000100', '4.1~0', '9.8~0')";
+// if ($conn->query($sql)) {
+//   echo "Recipe added successfully" . "<br />";
+// } else {
+//   echo "Error: " . $conn->error . "<br />";
+// }
 
-//Inserting test2 recipe
-$sql = "INSERT INTO recipes (recipe_name, image, calories, fat,
-          carbs, protein, salt, sugar, time, difficulty, ingredients, method,
-          flags, user_rating, popularity) VALUES ('test halal', 'db_images/2.jpg',
-          30, 20, 3, 100, 0.2, 10, 30, 2, 'Test ingredients', 'Test method',
-          '0001000', '4.1~0', '9.8~0')";
-if ($conn->query($sql)) {
-  echo "Recipe added successfully" . "<br />";
-} else {
-  echo "Error: " . $conn->error . "<br />";
-}
+// //Inserting test2 recipe
+// $sql = "INSERT INTO recipes (recipe_name, image, calories, fat,
+//           carbs, protein, salt, sugar, time, difficulty, ingredients, method,
+//           flags, user_rating, popularity) VALUES ('test halal', 'db_images/2.jpg',
+//           30, 20, 3, 100, 0.2, 10, 30, 2, 'Test ingredients', 'Test method',
+//           '0001000', '4.1~0', '9.8~0')";
+// if ($conn->query($sql)) {
+//   echo "Recipe added successfully" . "<br />";
+// } else {
+//   echo "Error: " . $conn->error . "<br />";
+// }
 //Inserting a test recipe: doughnuts
 $sql = "INSERT INTO recipes (recipe_name, image, calories, fat,
           carbs, protein, salt, sugar, time, difficulty, ingredients, method,
