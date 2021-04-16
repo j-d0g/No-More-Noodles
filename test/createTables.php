@@ -58,6 +58,29 @@ if (!$conn) {
   echo ("Error: " . $conn->error . "<br />");
 }
 
+$sql = "DROP TABLE login";
+if ($conn->query($sql)) {
+  echo "Dropped login table" . "<br />";
+} else {
+  echo "Error: " . $conn->error . "<br />";
+}
+
+$sql = "DROP TABLE user";
+if ($conn->query($sql)) {
+  echo "Dropped user table" . "<br />";
+} else {
+  echo "Error: " . $conn->error . "<br />";
+}
+
+
+$sql = "DROP TABLE recipes";
+if ($conn->query($sql)) {
+  echo "Dropped recipes table" . "<br />";
+} else {
+  echo "Error: " . $conn->error . "<br />";
+}
+
+
 // Creates login table
 $sql = "
           CREATE TABLE login (
