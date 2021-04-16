@@ -78,7 +78,7 @@
   //--- DISPLAY NUTRITIONAL INFORMATION SECTION ---
 
   echo "<div class='nutritional-facts-container'>";
-  echo "<h2>Nutritional information</h2>";
+  echo "<h2>Nutritional information<hr></h2>";
   $output =  "<table>
   	           <tr>
   	            <th>Calories</th>
@@ -125,24 +125,26 @@
 
   //--- DISPLAY INGREDIENTS SECTION ---
   echo "<div class='ingredients-container'>";
-  echo "<h2>Ingredients</h2>";
+  echo "<h2>Ingredients<hr></h2>";
 
   //split $records[ingredients] by the regex /~/
   $ingArray = preg_split("/~/", $records['ingredients']);
-  $_SESSION['ingredients'] = $ingArray;
+  $ingredients = array();
   $i = 0;
   echo "<ul>";
   foreach ($ingArray as $ing) {
+    array_push($ingredients, str_replace("+", " ", $ing));
     echo "<li id=ig" . $i . ">" . str_replace("+", " ", $ing) . "</li>";
     $i++;
   }
+  $_SESSION['ingredients'] = $ingredients;
   echo "</ul>";
   echo "</div>";
 
   //--- DISPLAY METHOD SECTION ---
   //(much the same as ingredients)
   echo "<div class='steps-container'>";
-  echo "<h2>Method</h2>";
+  echo "<h2>Method<hr></h2>";
 
   //split $records[method] by the regex /~/
   $metArray = preg_split("/~/", $records['method']);
