@@ -64,9 +64,9 @@ h1 {
 
 
 .img {
-	width: 100%;
-	height: auto;
-
+	min-height: 100%;
+	position: absolute;
+	z-index: -2;
 }
 
 
@@ -322,10 +322,6 @@ table {
 	top: 3px;
 	color: rgb(252, 196, 45);
 	text-shadow: 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black;
-}
-
-#Home:active {
-	background: red;
 }
 
 #symbol-dropdown {

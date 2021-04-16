@@ -67,6 +67,8 @@ hr {
     color: black;
     margin-left: 5%;
     margin-right: 5%;
+    border-style: none;
+    border: 0.1px solid black;
 }
 
 .form {
