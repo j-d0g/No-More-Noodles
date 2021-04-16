@@ -35,10 +35,16 @@
   <?php
   error_reporting(0);
   require('fpdf181/fpdf.php');
+  // If local:
+  // $servername = "localhost";
+  // $username = "root";
+  // $password = "root";
 
-  $servername = "localhost";
-  $username = "root";
-  $password = "root";
+  // If on UoM
+  $servername = "dbhost.cs.man.ac.uk";
+  $username = "m67064lh";
+  $password = "SQLDatabaseP";
+
   $db = "Y1";
 
   $conn = mysqli_connect($servername, $username, $password, $db);

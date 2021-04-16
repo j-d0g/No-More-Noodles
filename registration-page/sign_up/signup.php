@@ -70,4 +70,3 @@
 		}
 		header("Location: ../registration.php");
 		die();
-?>

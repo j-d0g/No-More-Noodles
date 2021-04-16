@@ -16,15 +16,15 @@
 <?php
 
 // If local:
-$servername = "localhost";
-$username = "root";
-$password = "root";
+// $servername = "localhost";
+// $username = "root";
+// $password = "root";
 
-/* If on UoM
-  $servername = "dbhost.cs.man.ac.uk";
-  $username = "m37064lh";
-  $password = "SQLDatabaseP";
-*/
+//  If on UoM
+$servername = "dbhost.cs.man.ac.uk";
+$username = "m37064lh";
+$password = "SQLDatabaseP";
+
 // Create connection
 $conn = mysqli_connect($servername, $username, $password);
 
