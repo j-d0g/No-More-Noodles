@@ -18,7 +18,7 @@ $pdf->Cell(40, 15, 'Shopping list');
 $pdf->SetFont('Arial', '', 10);
 $pdf->Ln();
 
-if (isset($_SESSION['unowned_ingredient'])) {
+if (isset($_SESSION['unowned_ingredients'])) {
   foreach ($_SESSION['unowned_ingredients'] as $ingredient) {
     $pdf->Cell(5, 3, chr(127), 0, 0, 'R');
     $pdf->MultiCell(0, 3, trim($ingredient));
